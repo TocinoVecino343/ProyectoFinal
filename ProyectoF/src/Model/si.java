@@ -10,9 +10,15 @@ public class si {
 	int j;
 	
 	//sijddwij
-	
+	int i;
+	//hola
 	String java;
+
 	int x;
 	int holaa;
 	
+
+	int nojos;
+
+	int etsteo1;
 }
