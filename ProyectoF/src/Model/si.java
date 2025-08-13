@@ -13,6 +13,5 @@ public class si {
 	int popo;
 	//hola
 	String java;
-	int lola;
-float jojo;
+
 }
