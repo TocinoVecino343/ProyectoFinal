@@ -13,5 +13,6 @@ public class si {
 	int i;
 	//hola
 	String java;
+	int nojos;
 
 }
