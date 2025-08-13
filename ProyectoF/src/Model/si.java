@@ -10,7 +10,7 @@ public class si {
 	int j;
 	
 	//sijddwij
-	int popo;
+	int i;
 	//hola
 	String java;
 
