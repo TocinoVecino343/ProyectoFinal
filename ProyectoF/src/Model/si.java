@@ -13,5 +13,5 @@ public class si {
 	
 	String java;
 	int x;
-	int y1;
+	int y12;
 }
