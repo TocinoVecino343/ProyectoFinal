@@ -12,5 +12,5 @@ public class si {
 	//sijddwij
 	
 	String java;
-	
+	int x;
 }
