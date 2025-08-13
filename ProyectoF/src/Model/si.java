@@ -6,6 +6,12 @@ public class si {
 	
 	public int chi;
 	int te;
+	int y;
+	int j;
+	
+	//sijddwij
+	
+	String java;
 	
 
 }
