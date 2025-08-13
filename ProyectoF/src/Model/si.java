@@ -14,5 +14,5 @@ public class si {
 	//hola
 	String java;
 	int lola;
-sjfhufh
+float jojo;
 }
