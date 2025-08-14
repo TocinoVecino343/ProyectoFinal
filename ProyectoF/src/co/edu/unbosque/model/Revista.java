@@ -5,26 +5,29 @@ public class Revista extends Publicacion {
 	private String autor;
 	private String fuente;
 	private String terminosGeograficos;
-	
+	private String descipcionFisica;
+
 	public Revista() {
 		super();
 	}
-	
-	public Revista(String autor, String fuente, String terminosGeograficos) {
+
+	public Revista(String autor, String fuente, String terminosGeograficos, String descipcionFisica) {
 		super();
 		this.autor = autor;
 		this.fuente = fuente;
 		this.terminosGeograficos = terminosGeograficos;
+		this.descipcionFisica = descipcionFisica;
 	}
-	
+
 	public Revista(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion, String idioma,
-			String autor, String fuente, String terminosGeograficos) {
+			String autor, String fuente, String terminosGeograficos, String descipcionFisica) {
 		super(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma);
 		this.autor = autor;
 		this.fuente = fuente;
 		this.terminosGeograficos = terminosGeograficos;
+		this.descipcionFisica = descipcionFisica;
 	}
-	
+
 	public Revista(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion,
 			String idioma) {
 		super(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma);
@@ -55,12 +58,18 @@ public class Revista extends Publicacion {
 		this.terminosGeograficos = terminosGeograficos;
 	}
 
-	@Override
-	public String toString() {
-		return super.toString()+" Revista [autor=" + autor + ", fuente=" + fuente + ", terminosGeograficos=" + terminosGeograficos + "]";
+	public String getDescipcionFisica() {
+		return descipcionFisica;
 	}
 
-	
-	
-	
+	public void setDescipcionFisica(String descipcionFisica) {
+		this.descipcionFisica = descipcionFisica;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " Revista [autor=" + autor + ", fuente=" + fuente + ", terminosGeograficos="
+				+ terminosGeograficos + ", descipcionFisica=" + descipcionFisica + "]";
+	}
+
 }
