@@ -19,6 +19,12 @@ public class Controlador {
 	private ArrayList<Pelicula> listaPeliculas;
 	//articulo
 	
+	public void run() {
+		
+		
+	}
+	
+	
 public Controlador() {
 	objf = new LibroFisico();
 	objLv = new LibroVirtual();
