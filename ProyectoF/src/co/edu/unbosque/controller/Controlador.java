@@ -12,14 +12,14 @@ public class Controlador {
 	private Steam objS;
 	private Revista objR;
 	private Pelicula objP;
-	// articulo
-	
+	private Articulo objA;
+
 	private ArrayList<LibroFisico> listaLibrosFisicos;
 	private ArrayList<LibroVirtual> listaLibroVirtuales;
 	private ArrayList<Steam> listaSteam;
 	private ArrayList<Revista> listaRevistas;
 	private ArrayList<Pelicula> listaPeliculas;
-	// articulo
+	private ArrayList<Articulo> listaArticulos;
 
 	public void run() {
 
