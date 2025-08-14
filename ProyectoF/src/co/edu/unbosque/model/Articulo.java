@@ -1,34 +1,34 @@
 package co.edu.unbosque.model;
 
-public class Revista extends Publicacion {
+public class Articulo extends Publicacion {
 
 	private String autor;
 	private String fuente;
 	private String terminosGeograficos;
-	private String descipcionFisica;
+	private int cantidadDePaginas;
 
-	public Revista() {
+	public Articulo() {
 		super();
 	}
 
-	public Revista(String autor, String fuente, String terminosGeograficos, String descipcionFisica) {
+	public Articulo(String autor, String fuente, String terminosGeograficos, int cantidadDePaginas) {
 		super();
 		this.autor = autor;
 		this.fuente = fuente;
 		this.terminosGeograficos = terminosGeograficos;
-		this.descipcionFisica = descipcionFisica;
+		this.cantidadDePaginas = cantidadDePaginas;
 	}
 
-	public Revista(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion, String idioma,
-			String autor, String fuente, String terminosGeograficos, String descipcionFisica) {
+	public Articulo(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion, String idioma,
+			String autor, String fuente, String terminosGeograficos, int cantidadDePaginas) {
 		super(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma);
 		this.autor = autor;
 		this.fuente = fuente;
 		this.terminosGeograficos = terminosGeograficos;
-		this.descipcionFisica = descipcionFisica;
+		this.cantidadDePaginas = cantidadDePaginas;
 	}
 
-	public Revista(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion,
+	public Articulo(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion,
 			String idioma) {
 		super(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma);
 		// TODO Auto-generated constructor stub
@@ -58,18 +58,18 @@ public class Revista extends Publicacion {
 		this.terminosGeograficos = terminosGeograficos;
 	}
 
-	public String getDescipcionFisica() {
-		return descipcionFisica;
+	public int getCantidadDePaginas() {
+		return cantidadDePaginas;
 	}
 
-	public void setDescipcionFisica(String descipcionFisica) {
-		this.descipcionFisica = descipcionFisica;
+	public void setCantidadDePaginas(int cantidadDePaginas) {
+		this.cantidadDePaginas = cantidadDePaginas;
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + " Revista [autor=" + autor + ", fuente=" + fuente + ", terminosGeograficos="
-				+ terminosGeograficos + ", descipcionFisica=" + descipcionFisica + "]";
+		return super.toString() + " Articulo [autor=" + autor + ", fuente=" + fuente + ", terminosGeograficos="
+				+ terminosGeograficos + ", cantidadDePaginas=" + cantidadDePaginas + "]";
 	}
 
 }
