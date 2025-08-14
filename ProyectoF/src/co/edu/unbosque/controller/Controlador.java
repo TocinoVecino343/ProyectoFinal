@@ -28,16 +28,17 @@ public class Controlador {
 	public Controlador() {
 		objf = new LibroFisico();
 		objLv = new LibroVirtual();
-		// steam
+		objS = new Steam();
 		objR = new Revista();
 		objP = new Pelicula();
-		// articulo
+		objA = new Articulo();
+		
 		listaLibrosFisicos = new ArrayList<>();
 		listaLibroVirtuales = new ArrayList<>();
-		// steam
+		listaSteam = new ArrayList<>();
 		listaRevistas = new ArrayList<>();
 		listaPeliculas = new ArrayList<>();
-		// articulo
+		listaArticulos = new ArrayList<>();
 
 	}
 
