@@ -33,6 +33,7 @@ public Controlador() {
 	listaPeliculas = new ArrayList<>();
 	//articulo
 	
+	
 }
 
 public LibroFisico getObjf() {
