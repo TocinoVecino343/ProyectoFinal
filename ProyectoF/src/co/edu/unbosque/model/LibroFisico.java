@@ -5,7 +5,7 @@ public final class LibroFisico extends Libro {
 	private int cantidadDeCopias;
 	private int tiempoDePrestamo;
 	
-	//Constructores (8)
+	//listo respecto a UML
 	
 	public LibroFisico() {
 		// TODO Auto-generated constructor stub

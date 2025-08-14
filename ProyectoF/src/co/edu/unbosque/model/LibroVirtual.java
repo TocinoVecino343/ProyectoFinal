@@ -5,7 +5,7 @@ public class LibroVirtual extends Libro {
 	private String tipoDeArchivo;
 	private boolean esAudioLibro;
 	
-	// Constructores (8)
+	// listo respecto a UML
 	
 	public LibroVirtual() {
 		// TODO Auto-generated constructor stub

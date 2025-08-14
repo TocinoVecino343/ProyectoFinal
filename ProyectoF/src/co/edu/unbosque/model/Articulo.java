@@ -1,6 +1,8 @@
 package co.edu.unbosque.model;
 
 public class Articulo extends Publicacion {
+	
+	//listo respecto a UML
 
 	private String autor;
 	private String fuente;
