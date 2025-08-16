@@ -35,6 +35,8 @@ public class Articulo extends Publicacion {
 		super(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 	public String getAutor() {
 		return autor;

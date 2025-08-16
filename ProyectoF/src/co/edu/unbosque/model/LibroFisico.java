@@ -8,7 +8,7 @@ public final class LibroFisico extends Libro {
 	//listo respecto a UML
 	
 	public LibroFisico() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 	
 	public LibroFisico(int cantidadDeCopias, int tiempoDePrestamo) {
