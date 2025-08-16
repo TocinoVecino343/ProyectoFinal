@@ -153,7 +153,7 @@ public class Controlador {
 
 					con.escribirConSalto("Ingrese el tipo de archivo");
 					String tipoDeArchivo = con.leerPalabra();
-					con.escribirConSalto("Es audio libro");
+					con.escribirConSalto("Es audio libro, escriba Si para afirmar, de lo contrario escriba No");
 					boolean esAudioLibro = con.leerBoolean();
 
 					LibroVirtual tempLv = new LibroVirtual(id, titulo, clasificacion, facultad, fechaDePublicacion,
@@ -167,6 +167,36 @@ public class Controlador {
 
 				break;
 			case 2:
+
+				con.escribirConSalto(
+						"¿Desea mostrar todas las publicaciones?, Escriba Si para confirmar de lo contrario escriba No");
+				boolean mostrarTodo = con.leerBoolean();
+				int opcionMostrarTodo = 0;
+				if (mostrarTodo == true) {
+					opcionMostrarTodo = 1;
+				} else {
+					opcionMostrarTodo = 2;
+				}
+				
+				switch (opcionMostrarTodo) {
+				case 1:
+					break;
+				case 2:
+					con.escribirConSalto("Ingrese la publicacion que desea mostrar");
+					con.escribirConSalto("Mostrar: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
+							+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
+					int seleccionMostrar = con.leerInt();
+					
+					switch(seleccionMostrar) {
+					case 1:
+						
+					}
+					
+					break;
+				default:
+					break;
+				}
+				
 				break;
 			case 3:
 				break;
