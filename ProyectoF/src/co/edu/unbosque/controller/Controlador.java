@@ -1,13 +1,12 @@
 package co.edu.unbosque.controller;
 
-import java.util.ArrayList;
 import co.edu.unbosque.model.*;
 import co.edu.unbosque.model.persistence.*;
 import co.edu.unbosque.view.*;
 
 public class Controlador {
 
-	private LibroFisicoDAO objf;
+	private LibroFisicoDAO objLf;
 	private LibroVirtualDAO objLv;
 	private SteamDAO objS;
 	private RevistaDAO objR;
@@ -16,7 +15,7 @@ public class Controlador {
 	private Consola con;
 
 	public Controlador() {
-		objf = new LibroFisicoDAO();
+		objLf = new LibroFisicoDAO();
 		objLv = new LibroVirtualDAO();
 		objS = new SteamDAO();
 		objR = new RevistaDAO();
@@ -56,13 +55,14 @@ public class Controlador {
 				String facultad = con.leerPalabra();
 				con.escribirConSalto("Ingrese la fecha de publicacion");
 				int fechaDePublicacion = con.leerInt();
+				con.escribirConSalto("Ingrese el idioma de la publicacion");
+				String idioma = con.leerPalabra();
 
 				con.quemarLinea();
-				
+
 				switch (opcionCrear) {
 				case 1:
-					con.escribirConSalto("Ingrese el idioma de la pelicula");
-					String idioma = con.leerPalabra();
+
 					con.escribirConSalto("Ingrese la productora");
 					String productora = con.leerPalabra();
 					con.escribirConSalto("Ingrese el pais de la pelicula");
@@ -84,14 +84,87 @@ public class Controlador {
 					con.escribirConSalto("Ingrese los idiomas en los cuales estan disponibles lo subtitulos");
 					String subtitulos = con.leerLineaCompleta();
 
-					Pelicula temp = new Pelicula(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
+					Pelicula tempP = new Pelicula(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
 							productora, pais, director, guion, fotografia, musica, reparto, duracion,
 							idiomasDisponibles, subtitulos);
-					objP.crear(temp);
+					objP.crear(tempP);
+
+					break;
+				case 2:
+
+					con.escribirConSalto("Ingrese el autor");
+					String autorA = con.leerPalabra();
+					con.escribirConSalto("Ingrese la fuente del articulo");
+					String fuenteA = con.leerPalabra();
+					con.escribirConSalto("Ingrese los terminos geograficos");
+					String terminosGeograficosA = con.leerLineaCompleta();
+					con.escribirConSalto("Ingrese la cantidad de paginas");
+					int cantidadDePaginasA = con.leerInt();
+
+					Articulo tempA = new Articulo(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
+							autorA, fuenteA, terminosGeograficosA, cantidadDePaginasA);
+					objA.crear(tempA);
+
+					break;
+				case 3:
+
+					con.escribirConSalto("Ingrese el autor");
+					String autorR = con.leerPalabra();
+					con.escribirConSalto("Ingrese la fuente de la revista");
+					String fuenteR = con.leerPalabra();
+					con.escribirConSalto("Ingrese los terminos geograficos");
+					String terminosGeograficosR = con.leerLineaCompleta();
+					con.escribirConSalto("Ingrese la descripcion fisica de la revista");
+					String descripcionFisica = con.leerLineaCompleta();
+
+					Revista tempR = new Revista(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autorR,
+							fuenteR, terminosGeograficosR, descripcionFisica);
+					objR.crear(tempR);
+
+					break;
+
+				case 4:
+
+					con.escribirConSalto("Ingrese la desarrollador");
+					String desarrrolladora = con.leerPalabra();
+					con.escribirConSalto("Ingrese el editor");
+					String editor = con.leerPalabra();
+					con.escribirConSalto("Ingrese el genero");
+					String genero = con.leerPalabra();
+
+					Steam tempS = new Steam(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
+							desarrrolladora, editor, genero);
+					objS.crear(tempS);
+
+					break;
+				case 5:
+
+					con.escribirConSalto("Ingrese la cantidad de copias del libro");
+					int cantidadDeCopias = con.leerInt();
+					con.escribirConSalto("Ingrese el tiempo de prestamo");
+					int tiempoDePrestamo = con.leerInt();
+
+					LibroFisico tempLf = new LibroFisico(id, titulo, clasificacion, facultad, fechaDePublicacion,
+							idioma, cantidadDeCopias, tiempoDePrestamo);
+					objLf.crear(tempLf);
+
+					break;
+				case 6:
+
+					con.escribirConSalto("Ingrese el tipo de archivo");
+					String tipoDeArchivo = con.leerPalabra();
+					con.escribirConSalto("Es audio libro");
+					boolean esAudioLibro = con.leerBoolean();
+
+					LibroVirtual tempLv = new LibroVirtual(id, titulo, clasificacion, facultad, fechaDePublicacion,
+							idioma, tipoDeArchivo, esAudioLibro);
+					objLv.crear(tempLv);
+
+					break;
+				default:
 					break;
 				}
-				
-				
+
 				break;
 			case 2:
 				break;

@@ -8,7 +8,7 @@ public final class LibroFisico extends Libro {
 	//Constructores (8)
 	
 	public LibroFisico() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 	
 	public LibroFisico(int cantidadDeCopias, int tiempoDePrestamo) {
