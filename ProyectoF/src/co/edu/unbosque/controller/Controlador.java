@@ -31,7 +31,7 @@ public class Controlador {
 
 			con.escribirConSalto("Seleccione la opcion que desea realizar");
 			con.escribirConSalto("1. Crear Publicacion" + "\n2. Mostrar Publicacion" + "\n3. Eliminar Publicacion"
-					+ "\n4. Actualizar Publicacion ");
+					+ "\n4. Actualizar Publicacion " + "\n5. SALIR");
 			opcion = con.leerInt();
 			switch (opcion) {
 
@@ -177,32 +177,60 @@ public class Controlador {
 				} else {
 					opcionMostrarTodo = 2;
 				}
-				
+
 				switch (opcionMostrarTodo) {
 				case 1:
+
+					objP.mostrarDatos();
+					objA.mostrarDatos();
+					objR.mostrarDatos();
+					objS.mostrarDatos();
+					objLf.mostrarDatos();
+					objLv.mostrarDatos();
+
 					break;
 				case 2:
 					con.escribirConSalto("Ingrese la publicacion que desea mostrar");
 					con.escribirConSalto("Mostrar: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
 							+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
 					int seleccionMostrar = con.leerInt();
-					
-					switch(seleccionMostrar) {
+
+					switch (seleccionMostrar) {
 					case 1:
-						
+						objP.mostrarDatos();
+						break;
+					case 2:
+						objA.mostrarDatos();
+						break;
+					case 3:
+						objR.mostrarDatos();
+						break;
+					case 4:
+						objS.mostrarDatos();
+						break;
+					case 5:
+						objLf.mostrarDatos();
+						break;
+					case 6:
+						objLv.mostrarDatos();
+						break;
+
 					}
-					
+
 					break;
 				default:
 					break;
 				}
-				
+
 				break;
 			case 3:
+
+				break;
+			case 4:
 				break;
 			default:
 				break;
 			}
-		} while (opcion != 8);
+		} while (opcion != 5);
 	}
 }
