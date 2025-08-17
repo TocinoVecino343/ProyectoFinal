@@ -12,14 +12,6 @@ public class SteamDAO implements DAO<Steam> {
 		listaSteam = new ArrayList<Steam>();
 	}
 
-	public ArrayList<Steam> getListaSteam() {
-		return listaSteam;
-	}
-
-	public void setListaSteam(ArrayList<Steam> listaSteam) {
-		this.listaSteam = listaSteam;
-	}
-
 	@Override
 	public void crear(Steam nuevoDato) {
 		listaSteam.add(nuevoDato);

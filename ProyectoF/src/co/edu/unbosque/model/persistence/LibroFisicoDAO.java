@@ -12,14 +12,6 @@ public class LibroFisicoDAO implements DAO<LibroFisico> {
 		listaLibrosFisicos = new ArrayList<LibroFisico>();
 	}
 
-	public ArrayList<LibroFisico> getListaLibrosFisicos() {
-		return listaLibrosFisicos;
-	}
-
-	public void setListaLibrosFisicos(ArrayList<LibroFisico> listaLibrosFisicos) {
-		this.listaLibrosFisicos = listaLibrosFisicos;
-	}
-
 	@Override
 	public void crear(LibroFisico nuevoDato) {
 		listaLibrosFisicos.add(nuevoDato);

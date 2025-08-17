@@ -12,14 +12,6 @@ public class ArticuloDAO implements DAO<Articulo> {
 		listaArticulos = new ArrayList<Articulo>();
 	}
 
-	public ArrayList<Articulo> getListaArticulos() {
-		return listaArticulos;
-	}
-
-	public void setListaArticulos(ArrayList<Articulo> listaArticulos) {
-		this.listaArticulos = listaArticulos;
-	}
-
 	@Override
 	public void crear(Articulo nuevoDato) {
 		listaArticulos.add(nuevoDato);

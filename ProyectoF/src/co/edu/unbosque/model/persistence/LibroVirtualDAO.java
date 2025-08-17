@@ -12,14 +12,6 @@ public class LibroVirtualDAO implements DAO<LibroVirtual> {
 		listaLibrosVirtuales = new ArrayList<LibroVirtual>();
 	}
 
-	public ArrayList<LibroVirtual> getListaLibrosVirtuales() {
-		return listaLibrosVirtuales;
-	}
-
-	public void setListaLibrosVirtuales(ArrayList<LibroVirtual> listaLibrosVirtuales) {
-		this.listaLibrosVirtuales = listaLibrosVirtuales;
-	}
-
 	@Override
 	public void crear(LibroVirtual nuevoDato) {
 		listaLibrosVirtuales.add(nuevoDato);

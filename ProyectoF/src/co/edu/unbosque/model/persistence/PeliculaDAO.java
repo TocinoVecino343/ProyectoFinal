@@ -12,14 +12,6 @@ public class PeliculaDAO implements DAO<Pelicula> {
 		listaPeliculas = new ArrayList<Pelicula>();
 	}
 
-	public ArrayList<Pelicula> getListaPeliculas() {
-		return listaPeliculas;
-	}
-
-	public void setListaPeliculas(ArrayList<Pelicula> listaPeliculas) {
-		this.listaPeliculas = listaPeliculas;
-	}
-
 	@Override
 	public void crear(Pelicula nuevoDato) {
 		listaPeliculas.add(nuevoDato);
