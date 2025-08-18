@@ -13,6 +13,7 @@ public class Controlador {
 	private PeliculaDAO objP;
 	private ArticuloDAO objA;
 	private Consola con;
+	private VentanaPrincipal vp; //Clase interfaz gráfica
 
 	public Controlador() {
 		objLf = new LibroFisicoDAO();
@@ -22,6 +23,11 @@ public class Controlador {
 		objP = new PeliculaDAO();
 		objA = new ArticuloDAO();
 		con = new Consola();
+	}
+	
+	public void runGUI() { // Run de la ventana
+		vp = new VentanaPrincipal();
+		vp.setVisible(true);
 	}
 
 	public void run() {
