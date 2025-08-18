@@ -141,7 +141,7 @@ public class Controlador {
 
 					con.escribirConSalto("Ingrese la cantidad de copias del libro");
 					int cantidadDeCopias = con.leerInt();
-					con.escribirConSalto("Ingrese el tiempo de prestamo");
+					con.escribirConSalto("Ingrese el tiempo de prestamo (días)");
 					int tiempoDePrestamo = con.leerInt();
 
 					LibroFisico tempLf = new LibroFisico(id, titulo, clasificacion, facultad, fechaDePublicacion,
