@@ -356,7 +356,9 @@ public class Controlador implements ActionListener {
 						con.escribirConSalto("Actualizar: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
 								+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
 						int seleccionActualizar = con.leerInt();
-
+						
+						con.quemarLinea();
+						
 						switch (seleccionActualizar) {
 						case 1:
 
