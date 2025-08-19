@@ -32,6 +32,10 @@ public class VentanaCrear extends JFrame {
 	private JButton botonCrearLibroFisico;
 	private JButton botonCrearLibroVirtual;
 	
+	public VentanaCrear() {
+		inicializarCrear();
+	}
+	
 	public void inicializarCrear() {
 		setTitle("Menú de Creación");
 	    setBounds(10, 10, 1280, 800);
