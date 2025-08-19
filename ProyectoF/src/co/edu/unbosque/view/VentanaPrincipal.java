@@ -31,34 +31,38 @@ public class VentanaPrincipal extends JFrame {
 		mensajeBienvenida = new JLabel("Bienvenido a la Biblioteca de la UEB", SwingConstants.CENTER);
 		mensajeBienvenida.setBounds(200, 20, 400, 30);
 		mensajeBienvenida.setForeground(Color.BLACK);
-		mensajeBienvenida.setFont(new Font("Arial", Font.BOLD, 20)); // Tipo de letra, negrilla y tamaño
+		mensajeBienvenida.setFont(new Font("Times New Roman", Font.BOLD, 20)); // Tipo de letra, negrilla y tamaño
 		this.add(mensajeBienvenida);
 
 		// Botones menú principal
 		botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
 		botonCrearPublicacion.setBounds(120, 100, 200, 60); // Posición y tamaño del botón
-		botonCrearPublicacion.setBackground(Color.CYAN);// Color del FONDO del botón
+		botonCrearPublicacion.setBackground(Color.GRAY);// Color del FONDO del botón
+		botonCrearPublicacion.setForeground(Color.WHITE);
 		botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
 		this.add(botonCrearPublicacion);
 		this.setLayout(null);
 		//
 		botonMostrarPublicacion = new JButton("Mostrar publicación");
 		botonMostrarPublicacion.setBounds(120, 300, 200, 60);
-		botonMostrarPublicacion.setBackground(Color.YELLOW);
+		botonMostrarPublicacion.setBackground(Color.GRAY);
+		botonMostrarPublicacion.setForeground(Color.WHITE);
 		botonMostrarPublicacion.setFocusPainted(false);
 		this.add(botonMostrarPublicacion);
 		this.setLayout(null);
 		//
 		botonEliminarPublicacion = new JButton("Eliminar publicación");
 		botonEliminarPublicacion.setBounds(450, 100, 200, 60);
-		botonEliminarPublicacion.setBackground(Color.RED);
+		botonEliminarPublicacion.setBackground(Color.GRAY);
+		botonEliminarPublicacion.setForeground(Color.WHITE);
 		botonEliminarPublicacion.setFocusPainted(false);
 		this.add(botonEliminarPublicacion);
 		this.setLayout(null);
 		//
 		botonActualizarPublicacion = new JButton("Actualizar publicación");
 		botonActualizarPublicacion.setBounds(450, 300, 200, 60);
-		botonActualizarPublicacion.setBackground(Color.GREEN);
+		botonActualizarPublicacion.setBackground(Color.GRAY);
+		botonActualizarPublicacion.setForeground(Color.WHITE);
 		botonActualizarPublicacion.setFocusPainted(false);
 		this.add(botonActualizarPublicacion);
 		this.setLayout(null);
