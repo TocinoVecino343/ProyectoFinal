@@ -38,11 +38,6 @@ public class ArticuloDAO implements DAO<Articulo> {
 	}
 
 	@Override
-	public boolean eliminarDato(Articulo objetoEliminar) {
-		return listaArticulos.remove(objetoEliminar);
-	}
-
-	@Override
 	public boolean actualizar(int indice, Articulo datoActualizado) {
 		if (indice < 0 || indice >= listaArticulos.size()) {
 			return false;

@@ -38,11 +38,6 @@ public class LibroFisicoDAO implements DAO<LibroFisico> {
 	}
 
 	@Override
-	public boolean eliminarDato(LibroFisico objetoEliminar) {
-		return listaLibrosFisicos.remove(objetoEliminar);
-	}
-
-	@Override
 	public boolean actualizar(int indice, LibroFisico datoActualizado) {
 		if (indice < 0 || indice >= listaLibrosFisicos.size()) {
 			return false;
