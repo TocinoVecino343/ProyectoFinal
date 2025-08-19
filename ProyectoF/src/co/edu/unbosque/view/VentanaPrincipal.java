@@ -23,7 +23,7 @@ public class VentanaPrincipal extends JFrame {
 	public void inicializarComponentes() {
 		// Configuración de la ventana
 		this.setTitle("Biblioteca UEB");
-		this.setBounds(10, 10, 800, 600); // posición y tamaño de la VENTANA
+		this.setBounds(10, 10, 1280, 720); // posición y tamaño de la VENTANA
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Finaliza el programa completamente.
 		this.setResizable(false);
 		this.setLayout(null);
