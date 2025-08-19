@@ -313,4 +313,5 @@ public class VentanaActualizar extends JFrame {
 	public void setBotonActualizarLibroVirtual(JButton botonActualizarLibroVirtual) {
 		this.botonActualizarLibroVirtual = botonActualizarLibroVirtual;
 	}
+	
 }
