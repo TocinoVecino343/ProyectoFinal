@@ -46,11 +46,6 @@ public class RevistaDAO implements DAO<Revista> {
 	}
 
 	@Override
-	public boolean eliminarDato(Revista objetoEliminar) {
-		return listaRevistas.remove(objetoEliminar);
-	}
-
-	@Override
 	public boolean actualizar(int indice, Revista datoActualizado) {
 		if (indice < 0 || indice >= listaRevistas.size()) {
 			return false;

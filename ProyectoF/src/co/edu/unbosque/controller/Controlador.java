@@ -268,27 +268,19 @@ public class Controlador implements ActionListener {
 				case 3:
 
 					int opcionEliminar = 0;
-					con.escribirConSalto("Seleccione la acción que desea realizar");
+					con.escribirConSalto("Eliminación de una publicación por índice:");
 
-					con.escribirConSalto("Eliminar una publicación por:");
-					con.escribirConSalto("\n1. Índice de la publicación" + "\n2. Tipo de publicación"); // por revisar la opcion 2
-					opcionEliminar = con.leerInt();
+					int opcionTipoAEliminar = 0;
 
-					switch (opcionEliminar) {
-					case 1:
+					con.escribirConSalto("Ingrese el tipo de publicación que desea eliminar:");
+					con.escribirConSalto("\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
+							+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
+					opcionTipoAEliminar = con.leerInt();
 
-						int opcionTipoAEliminar = 0;
-
-						con.escribirConSalto("Ingrese el tipo de publicación que desea eliminar:");
-						con.escribirConSalto("\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
-								+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
-						opcionTipoAEliminar = con.leerInt();
-
-						con.quemarLinea();
+					con.quemarLinea();
 
 						switch (opcionTipoAEliminar) {
 						case 1:
-
 							objP.mostrarDatos();
 							int indiceP = 0;
 
@@ -358,11 +350,6 @@ public class Controlador implements ActionListener {
 
 						break;
 
-					case 2:
-
-						// Por revisar
-
-						break;
 					case 4:
 						// Por revisar
 						con.escribirConSalto("Ingrese la publicacion que desea actualizar");
@@ -443,7 +430,6 @@ public class Controlador implements ActionListener {
 						break;
 					}
 				}
-			}
 		}  while (opcion != 5);
 	}
 }

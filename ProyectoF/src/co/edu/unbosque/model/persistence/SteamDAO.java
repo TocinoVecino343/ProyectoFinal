@@ -38,11 +38,6 @@ public class SteamDAO implements DAO<Steam> {
 	}
 
 	@Override
-	public boolean eliminarDato(Steam objetoEliminar) {
-		return listaSteam.remove(objetoEliminar);
-	}
-
-	@Override
 	public boolean actualizar(int indice, Steam datoActualizado) {
 		if (indice < 0 || indice >= listaSteam.size()) {
 			return false;
