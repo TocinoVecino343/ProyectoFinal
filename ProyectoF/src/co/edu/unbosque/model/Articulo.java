@@ -1,8 +1,8 @@
 package co.edu.unbosque.model;
 
 public class Articulo extends Publicacion {
-	
-	//listo respecto a UML
+
+	// listo respecto a UML
 
 	private String autor;
 	private String fuente;
@@ -35,8 +35,6 @@ public class Articulo extends Publicacion {
 		super(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public String getAutor() {
 		return autor;
@@ -72,8 +70,8 @@ public class Articulo extends Publicacion {
 
 	@Override
 	public String toString() {
-		return super.toString() + " Articulo [autor=" + autor + ", fuente=" + fuente + ", terminosGeograficos="
-				+ terminosGeograficos + ", cantidadDePaginas=" + cantidadDePaginas + "]";
+		return super.toString() + " -----Artículo------" + "\nAutor: " + autor + "\nFuente:" + fuente
+				+ "Términos Geograficos: " + terminosGeograficos + "\nCantidad de Páginas: " + cantidadDePaginas;
 	}
 
 }
