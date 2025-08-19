@@ -7,7 +7,7 @@ import co.edu.unbosque.model.*;
 import co.edu.unbosque.model.persistence.*;
 import co.edu.unbosque.view.*;
 
-public class Controlador implements ActionListener{
+public class Controlador implements ActionListener {
 
 	private LibroFisicoDAO objLf;
 	private LibroVirtualDAO objLv;
@@ -17,7 +17,6 @@ public class Controlador implements ActionListener{
 	private ArticuloDAO objA;
 	private Consola con;
 	private VentanaPrincipal vp; //Clase interfaz gráfica
-	private VentanaCrear vc;
 
 	public Controlador() {
 		objLf = new LibroFisicoDAO();
@@ -27,8 +26,6 @@ public class Controlador implements ActionListener{
 		objP = new PeliculaDAO();
 		objA = new ArticuloDAO();
 		con = new Consola();
-		vp = new VentanaPrincipal();
-		asignarOyentes();
 	}
 	
 	public void asignarOyentes() {// Aqui se agregan los lectores a los componentes
@@ -43,20 +40,25 @@ public class Controlador implements ActionListener{
 		vp.getBotonSalir().addActionListener(this);
 		vp.getBotonSalir().setActionCommand("boton1_salir");
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String alias = e.getActionCommand();
-		
-		switch(alias) {
+
+		switch (alias) {
 		case "boton1_crear_publicacion":
-		vc = new VentanaCrear();
-		vc.setVisible(true);
-		break;
+			VentanaCrear vc;
+			vc = new VentanaCrear();
+			break;
+		case "boton1_mostrar_publicacion":
+			VentanaMostrar vm;
+			vm = new VentanaMostrar();
+			break;
 		default:
 			break;
 		}
 	}
+
 	
 	public void runGUI() { // Run de la ventana
 		vp = new VentanaPrincipal();
@@ -92,9 +94,7 @@ public class Controlador implements ActionListener{
 				String clasificacion = con.leerPalabra();
 				con.escribirConSalto("Ingrese la facultad a la que pertenece la publicacion");
 				String facultad = con.leerPalabra();
-
-				con.quemarLinea();
-
+				
 				con.escribirConSalto("Ingrese la fecha de publicacion");
 				int fechaDePublicacion = con.leerInt();
 

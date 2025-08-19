@@ -37,59 +37,58 @@ public class VentanaCrear extends JFrame {
 	}
 	
 	public void inicializarCrear() {
-		setTitle("Menú de Creación");
-	    setBounds(10, 10, 1280, 800);
-	    setResizable(false);
-	    setDefaultCloseOperation(EXIT_ON_CLOSE);
-	    setLayout(null);
+		this.setBounds(10, 10, 1280, 800);
+		this.setResizable(false);
+	    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	    this.setLayout(null);
 
 	    labelPublicacion = new JLabel("Publicación:");
 	    labelPublicacion.setBounds(50, 50, 150, 30);
-	    add(labelPublicacion);
+	    this.add(labelPublicacion);
 
 	    textoPublicacion = new JTextField();
 	    textoPublicacion.setBounds(200, 50, 200, 30);
-	    add(textoPublicacion);
+	    this.add(textoPublicacion);
 
 	    labelTituloPublicacion = new JLabel("Título:");
 	    labelTituloPublicacion.setBounds(50, 100, 150, 30);
-	    add(labelTituloPublicacion);
+	    this.add(labelTituloPublicacion);
 
 	    textoTituloPublicacion = new JTextField();
 	    textoTituloPublicacion.setBounds(200, 100, 200, 30);
-	    add(textoTituloPublicacion);
+	    this.add(textoTituloPublicacion);
 
 	    labelClasificacion = new JLabel("Clasificación:");
 	    labelClasificacion.setBounds(50, 150, 150, 30);
-	    add(labelClasificacion);
+	    this.add(labelClasificacion);
 
 	    textoClasificacion = new JTextField();
 	    textoClasificacion.setBounds(200, 150, 200, 30);
-	    add(textoClasificacion);
+	    this.add(textoClasificacion);
 
 	    labelFacultad = new JLabel("Facultad:");
 	    labelFacultad.setBounds(50, 200, 150, 30);
-	    add(labelFacultad);
+	    this.add(labelFacultad);
 
 	    textoFacultad = new JTextField();
 	    textoFacultad.setBounds(200, 200, 200, 30);
-	    add(textoFacultad);
+	    this.add(textoFacultad);
 
 	    labelFecha = new JLabel("Fecha:");
 	    labelFecha.setBounds(50, 250, 150, 30);
-	    add(labelFecha);
+	    this.add(labelFecha);
 
 	    textoFecha = new JTextField();
 	    textoFecha.setBounds(200, 250, 200, 30);
-	    add(textoFecha);
+	    this.add(textoFecha);
 
 	    labelIdioma = new JLabel("Idioma:");
 	    labelIdioma.setBounds(50, 300, 150, 30);
-	    add(labelIdioma);
+	    this.add(labelIdioma);
 
 	    textoIdioma = new JTextField();
 	    textoIdioma.setBounds(200, 300, 200, 30);
-	    add(textoIdioma);
+	    this.add(textoIdioma);
 
 	    menuCreacion = new JTextArea(
 	        "1. Crear Película\n" +
@@ -100,31 +99,31 @@ public class VentanaCrear extends JFrame {
 	        "6. Crear Libro Virtual"
 	    );
 	    menuCreacion.setBounds(500, 50, 300, 150);
-	    add(menuCreacion);
+	    this.add(menuCreacion);
 
 	    botonCrearPelicula = new JButton("Crear Película");
 	    botonCrearPelicula.setBounds(500, 250, 200, 30);
-	    add(botonCrearPelicula);
+	    this.add(botonCrearPelicula);
 
 	    botonCrearArticulo = new JButton("Crear Artículo");
 	    botonCrearArticulo.setBounds(500, 300, 200, 30);
-	    add(botonCrearArticulo);
+	    this.add(botonCrearArticulo);
 
 	    botonCrearRevista = new JButton("Crear Revista");
 	    botonCrearRevista.setBounds(500, 350, 200, 30);
-	    add(botonCrearRevista);
+	    this.add(botonCrearRevista);
 
 	    botonCrearJuego4Prot = new JButton("Crear Juego 4 Prot");
 	    botonCrearJuego4Prot.setBounds(500, 400, 200, 30);
-	    add(botonCrearJuego4Prot);
+	    this.add(botonCrearJuego4Prot);
 
 	    botonCrearLibroFisico = new JButton("Crear Libro Físico");
 	    botonCrearLibroFisico.setBounds(500, 450, 200, 30);
-	    add(botonCrearLibroFisico);
+	    this.add(botonCrearLibroFisico);
 
 	    botonCrearLibroVirtual = new JButton("Crear Libro Virtual");
 	    botonCrearLibroVirtual.setBounds(500, 500, 200, 30);
-	    add(botonCrearLibroVirtual);
+	    this.add(botonCrearLibroVirtual);
 	}
 
 	public JLabel getLabelPublicacion() {
