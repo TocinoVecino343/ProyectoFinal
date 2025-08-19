@@ -53,8 +53,14 @@ public class Controlador {
 				String clasificacion = con.leerPalabra();
 				con.escribirConSalto("Ingrese la facultad a la que pertenece la publicacion");
 				String facultad = con.leerPalabra();
+
+				con.quemarLinea();
+
 				con.escribirConSalto("Ingrese la fecha de publicacion");
 				int fechaDePublicacion = con.leerInt();
+
+				con.quemarLinea();
+
 				con.escribirConSalto("Ingrese el idioma de la publicacion");
 				String idioma = con.leerPalabra();
 
@@ -94,11 +100,11 @@ public class Controlador {
 
 					con.escribirConSalto("Ingrese el autor");
 					String autorA = con.leerPalabra();
-					con.escribirConSalto("Ingrese la fuente del articulo");
+					con.escribirConSalto("Ingrese la fuente del artículo");
 					String fuenteA = con.leerPalabra();
-					con.escribirConSalto("Ingrese los terminos geograficos");
+					con.escribirConSalto("Ingrese los terminos geográficos del artículo");
 					String terminosGeograficosA = con.leerLineaCompleta();
-					con.escribirConSalto("Ingrese la cantidad de paginas");
+					con.escribirConSalto("Ingrese la cantidad de páginas del artículo");
 					int cantidadDePaginasA = con.leerInt();
 
 					Articulo tempA = new Articulo(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
@@ -112,7 +118,7 @@ public class Controlador {
 					String autorR = con.leerPalabra();
 					con.escribirConSalto("Ingrese la fuente de la revista");
 					String fuenteR = con.leerPalabra();
-					con.escribirConSalto("Ingrese los terminos geograficos");
+					con.escribirConSalto("Ingrese los terminos geograficos de la revista");
 					String terminosGeograficosR = con.leerLineaCompleta();
 					con.escribirConSalto("Ingrese la descripcion fisica de la revista");
 					String descripcionFisica = con.leerLineaCompleta();
@@ -125,11 +131,11 @@ public class Controlador {
 
 				case 4:
 
-					con.escribirConSalto("Ingrese la desarrollador");
+					con.escribirConSalto("Ingrese la desarrolladora del juego");
 					String desarrrolladora = con.leerPalabra();
-					con.escribirConSalto("Ingrese el editor");
+					con.escribirConSalto("Ingrese el editor del juego");
 					String editor = con.leerPalabra();
-					con.escribirConSalto("Ingrese el genero");
+					con.escribirConSalto("Ingrese el género del juego");
 					String genero = con.leerPalabra();
 
 					Steam tempS = new Steam(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
@@ -151,7 +157,7 @@ public class Controlador {
 					break;
 				case 6:
 
-					con.escribirConSalto("Ingrese el tipo de archivo");
+					con.escribirConSalto("Ingrese el tipo de archivo en el que esta disponible el libro");
 					String tipoDeArchivo = con.leerPalabra();
 					con.escribirConSalto("Es audio libro, escriba Si para afirmar, de lo contrario escriba No");
 					boolean esAudioLibro = con.leerBoolean();
@@ -214,23 +220,193 @@ public class Controlador {
 					case 6:
 						objLv.mostrarDatos();
 						break;
-
+					default:
+						break;
 					}
 
 					break;
-				default:
-					break;
+
+				case 3:
+
+					int opcionEliminar = 0;
+					con.escribirConSalto("Seleccione la acción que desea realizar");
+
+					con.escribirConSalto("Eliminar una publicación por:");
+					con.escribirConSalto("\n1. Índice de la publicación" + "\n2. Tipo de publicación"); // por revisar la opcion 2
+					opcionEliminar = con.leerInt();
+
+					switch (opcionEliminar) {
+					case 1:
+
+						int opcionTipoAEliminar = 0;
+
+						con.escribirConSalto("Ingrese el tipo de publicación que desea eliminar:");
+						con.escribirConSalto("\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
+								+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
+						opcionTipoAEliminar = con.leerInt();
+
+						con.quemarLinea();
+
+						switch (opcionTipoAEliminar) {
+						case 1:
+
+							objP.mostrarDatos();
+							int indiceP = 0;
+
+							con.escribirConSalto("Ingrese el índice de la película que desea eliminar");
+							indiceP = con.leerInt();
+
+							objP.eliminarDato(indiceP);
+							break;
+						case 2:
+
+							objA.mostrarDatos();
+							int indiceA = 0;
+
+							con.escribirConSalto("Ingrese el índice del artículo que desea eliminar");
+							indiceA = con.leerInt();
+
+							objA.eliminarDato(indiceA);
+
+							break;
+						case 3:
+
+							objR.mostrarDatos();
+							int indiceR = 0;
+
+							con.escribirConSalto("Ingrese el índice de la revista que desea eliminar");
+							indiceR = con.leerInt();
+
+							objR.eliminarDato(indiceR);
+
+							break;
+						case 4:
+
+							objS.mostrarDatos();
+							int indiceS = 0;
+
+							con.escribirConSalto("Ingrese el índice del juego que desea eliminar");
+							indiceS = con.leerInt();
+
+							objS.eliminarDato(indiceS);
+
+							break;
+						case 5:
+
+							objLf.mostrarDatos();
+							int indiceLf = 0;
+
+							con.escribirConSalto("Ingrese el índice del libro físico que desea eliminar");
+							indiceLf = con.leerInt();
+
+							objLf.eliminarDato(indiceLf);
+
+							break;
+						case 6:
+
+							objLv.mostrarDatos();
+							int indiceLv = 0;
+
+							con.escribirConSalto("Ingrese el índice del libro virtual que desea eliminar");
+							indiceLv = con.leerInt();
+
+							objLv.eliminarDato(indiceLv);
+
+							break;
+						default:
+							break;
+						}
+
+						break;
+
+					case 2:
+
+						// Por revisar
+
+						break;
+					case 4:
+						// Por revisar
+						con.escribirConSalto("Ingrese la publicacion que desea actualizar");
+						con.escribirConSalto("Actualizar: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
+								+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
+						int seleccionActualizar = con.leerInt();
+
+						switch (seleccionActualizar) {
+						case 1:
+
+							objP.mostrarDatos();
+							int indiceP = 0;
+
+							con.escribirConSalto("Ingrese el índice de la película que desea actualizar");
+							indiceP = con.leerInt();
+
+							objP.actualizar(indiceP, null);
+							break;
+						case 2:
+
+							objA.mostrarDatos();
+							int indiceA = 0;
+
+							con.escribirConSalto("Ingrese el índice del artículo que desea actualizar");
+							indiceA = con.leerInt();
+
+							objA.actualizar(indiceA, null);
+
+							break;
+						case 3:
+
+							objR.mostrarDatos();
+							int indiceR = 0;
+
+							con.escribirConSalto("Ingrese el índice de la revista que desea actualizar");
+							indiceR = con.leerInt();
+
+							objR.actualizar(indiceR, null);
+
+							break;
+						case 4:
+
+							objS.mostrarDatos();
+							int indiceS = 0;
+
+							con.escribirConSalto("Ingrese el índice del juego que desea actualizar");
+							indiceS = con.leerInt();
+
+							objS.actualizar(indiceS, null);
+
+							break;
+						case 5:
+
+							objLf.mostrarDatos();
+							int indiceLf = 0;
+
+							con.escribirConSalto("Ingrese el índice del libro físico que desea actualizar");
+							indiceLf = con.leerInt();
+
+							objLf.actualizar(indiceLf, null);
+
+							break;
+						case 6:
+
+							objLv.mostrarDatos();
+							int indiceLv = 0;
+
+							con.escribirConSalto("Ingrese el índice del libro virtual que desea actualizar");
+							indiceLv = con.leerInt();
+
+							objLv.actualizar(indiceLv, null);
+
+							break;
+						default:
+							break;
+						}
+					case 5: 
+						break;
+					}
 				}
-
-				break;
-			case 3:
-
-				break;
-			case 4:
-				break;
-			default:
-				break;
 			}
-		} while (opcion != 5);
+		}  while (opcion != 5);
 	}
 }
+	
+	
