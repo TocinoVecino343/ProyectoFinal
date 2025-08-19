@@ -1,10 +1,13 @@
 package co.edu.unbosque.controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import co.edu.unbosque.model.*;
 import co.edu.unbosque.model.persistence.*;
 import co.edu.unbosque.view.*;
 
-public class Controlador {
+public class Controlador implements ActionListener {
 
 	private LibroFisicoDAO objLf;
 	private LibroVirtualDAO objLv;
@@ -24,6 +27,38 @@ public class Controlador {
 		objA = new ArticuloDAO();
 		con = new Consola();
 	}
+	
+	public void asignarOyentes() {// Aqui se agregan los lectores a los componentes
+		vp.getBotonCrearPublicacion().addActionListener(this);
+		vp.getBotonCrearPublicacion().setActionCommand("boton1_crear_publicacion");
+		vp.getBotonMostrarPublicacion().addActionListener(this);
+		vp.getBotonMostrarPublicacion().setActionCommand("boton1_mostrar_publicacion");
+		vp.getBotonMostrarPublicacion().addActionListener(this);
+		vp.getBotonEliminarPublicacion().setActionCommand("boton1_eliminar_publicacion");
+		vp.getBotonEliminarPublicacion().addActionListener(this);
+		vp.getBotonActualizarPublicacion().setActionCommand("boton1_actualizar_publicacion");
+		vp.getBotonSalir().addActionListener(this);
+		vp.getBotonSalir().setActionCommand("boton1_salir");
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String alias = e.getActionCommand();
+
+		switch (alias) {
+		case "boton1_crear_publicacion":
+			VentanaCrear vc;
+			vc = new VentanaCrear();
+			break;
+		case "boton1_mostrar_publicacion":
+			VentanaMostrar vm;
+			vm = new VentanaMostrar();
+			break;
+		default:
+			break;
+		}
+	}
+
 	
 	public void runGUI() { // Run de la ventana
 		vp = new VentanaPrincipal();
