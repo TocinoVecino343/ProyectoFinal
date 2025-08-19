@@ -26,6 +26,7 @@ public class Controlador implements ActionListener {
 		objP = new PeliculaDAO();
 		objA = new ArticuloDAO();
 		con = new Consola();
+		asignarOyentes();
 	}
 	
 	public void asignarOyentes() {// Aqui se agregan los lectores a los componentes
@@ -33,9 +34,9 @@ public class Controlador implements ActionListener {
 		vp.getBotonCrearPublicacion().setActionCommand("boton1_crear_publicacion");
 		vp.getBotonMostrarPublicacion().addActionListener(this);
 		vp.getBotonMostrarPublicacion().setActionCommand("boton1_mostrar_publicacion");
-		vp.getBotonMostrarPublicacion().addActionListener(this);
-		vp.getBotonEliminarPublicacion().setActionCommand("boton1_eliminar_publicacion");
 		vp.getBotonEliminarPublicacion().addActionListener(this);
+		vp.getBotonEliminarPublicacion().setActionCommand("boton1_eliminar_publicacion");
+		vp.getBotonActualizarPublicacion().addActionListener(this);
 		vp.getBotonActualizarPublicacion().setActionCommand("boton1_actualizar_publicacion");
 		vp.getBotonSalir().addActionListener(this);
 		vp.getBotonSalir().setActionCommand("boton1_salir");
