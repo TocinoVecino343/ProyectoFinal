@@ -7,6 +7,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class VentanaCrear extends JFrame {
+
 	
 	private JLabel labelPublicacion;
 	private JLabel labelTituloPublicacion;

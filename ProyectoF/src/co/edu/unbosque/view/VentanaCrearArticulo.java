@@ -140,5 +140,4 @@ public class VentanaCrearArticulo extends JFrame{
 	}
 	
 	
-
 }
