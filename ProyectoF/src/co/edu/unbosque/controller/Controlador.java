@@ -20,12 +20,20 @@ public class Controlador implements ActionListener {
 	private VentanaPrincipal vp; // Clases interfaz gráfica
 	private VentanaCrear vc;
 	private VentanaMostrar vm;
-	private VentanaCrearPelicula vcp;
+
+	private VentanaCrearPelicula vcp; // Ventana crear
 	private VentanaCrearArticulo vca;
 	private VentanaCrearRevista vcr;
 	private VentanaCrearJuego vcj;
 	private VentanaCrearLibroFisico vclf;
 	private VentanaCrearLibroVirtual vclv;
+
+	private VentanaMostrarPelicula vmp; // Ventanas mostrar
+	private VentanaMostrarArticulo vma;
+	private VentanaMostrarRevista vmr;
+	private VentanaMostrarJuego vmj;
+	private VentanaMostrarLibroFisico vmlf;
+	private VentanaMostrarLibroVirtual vmlv;
 
 	public Controlador() {
 		objLf = new LibroFisicoDAO();
@@ -35,15 +43,24 @@ public class Controlador implements ActionListener {
 		objP = new PeliculaDAO();
 		objA = new ArticuloDAO();
 		con = new Consola();
+
 		vp = new VentanaPrincipal();
 		vc = new VentanaCrear();
 		vm = new VentanaMostrar();
+
 		vcp = new VentanaCrearPelicula();
 		vca = new VentanaCrearArticulo();
 		vcr = new VentanaCrearRevista();
 		vcj = new VentanaCrearJuego();
 		vclf = new VentanaCrearLibroFisico();
 		vclv = new VentanaCrearLibroVirtual();
+
+		vmp = new VentanaMostrarPelicula();
+		vma = new VentanaMostrarArticulo();
+		vmr = new VentanaMostrarRevista();
+		vmj = new VentanaMostrarJuego();
+		vmlf = new VentanaMostrarLibroFisico();
+		vmlv = new VentanaMostrarLibroVirtual();
 		asignarOyentes();
 	}
 
@@ -176,24 +193,37 @@ public class Controlador implements ActionListener {
 			break;
 		case "boton_guardar_libro_virtual":
 			break;
-		
-			//Botones Mostrar
+
+		// Botones Mostrar
 		case "boton_mostrar_todo":
+			vm.setVisible(false);
 			break;
 		case "boton_mostrar_pelicula":
+			vm.setVisible(false);
+			vmp.setVisible(true);
 			break;
 		case "boton_mostrar_articulo":
+			vm.setVisible(false);
+			vma.setVisible(true);
 			break;
 		case "boton_mostrar_revista":
+			vm.setVisible(false);
+			vmr.setVisible(true);
 			break;
 		case "boton_mostrar_juego":
+			vm.setVisible(false);
+			vmj.setVisible(true);
 			break;
 		case "boton_mostrar_libro_fisico":
+			vm.setVisible(false);
+			vmlf.setVisible(true);
 			break;
 		case "boton_mostrar_libro_virtual":
+			vm.setVisible(false);
+			vmlv.setVisible(true);
 			break;
 		}
-		
+
 	}
 
 	public void runGUI() { // Run de la ventana
