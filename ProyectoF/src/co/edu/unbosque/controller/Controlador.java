@@ -17,6 +17,8 @@ public class Controlador implements ActionListener {
 	private ArticuloDAO objA;
 	private Consola con;
 	private VentanaPrincipal vp; // Clase interfaz gráfica
+	private VentanaCrear vc;
+	private VentanaMostrar vm;
 
 	public Controlador() {
 		objLf = new LibroFisicoDAO();
@@ -27,6 +29,8 @@ public class Controlador implements ActionListener {
 		objA = new ArticuloDAO();
 		con = new Consola();
 		vp = new VentanaPrincipal();
+		vc = new VentanaCrear();
+		vm = new VentanaMostrar();
 		asignarOyentes();
 	}
 
@@ -49,22 +53,38 @@ public class Controlador implements ActionListener {
 
 		switch (alias) {
 		case "boton1_crear_publicacion":
-			VentanaCrear vc;
-			vc = new VentanaCrear();
 			vc.setVisible(true);
+			
 			break;
 		case "boton1_mostrar_publicacion":
-			VentanaMostrar vm;
-			vm = new VentanaMostrar();
+			vm.setVisible(true);
+			
 			break;
-		default:
+		case "boton1_eliminar_publicacion":
+			break;
+		case "boton1_actualizar_publicacion":
+			VentanaActualizar va;
+			va = new VentanaActualizar();
+			va.setVisible(true);
 			break;
 		}
 	}
 
+	public void agregarAtributosBasicos() {
+		int id = Integer.parseInt(""+vc.getTextoPublicacion());
+		String titulo = ""+vc.getTextoTituloPublicacion();
+		String clasificacion = ""+vc.getTextoClasificacion();
+		String facultad =  ""+vc.getTextoFacultad();
+		int fechaDePublicacion = Integer.parseInt(""+vc.getTextoFecha());
+		String idioma =  ""+vc.getTextoIdioma();
+	}
+	
+	
+	
+	
 	public void runGUI() { // Run de la ventana
-		
 		vp.setVisible(true);
+		
 	}
 
 	public void run() {
