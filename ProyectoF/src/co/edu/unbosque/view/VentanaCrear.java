@@ -43,7 +43,7 @@ public class VentanaCrear extends JFrame {
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);
 	    setLayout(null);
 
-	    labelPublicacion = new JLabel("ID:");
+	    labelPublicacion = new JLabel("Publicación:");
 	    labelPublicacion.setBounds(50, 50, 150, 30);
 	    add(labelPublicacion);
 

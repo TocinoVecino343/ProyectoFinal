@@ -71,7 +71,7 @@ public class Controlador implements ActionListener {
 		vc.getBotonCrearLibroVirtual().addActionListener(this);
 		vc.getBotonCrearLibroVirtual().setActionCommand("boton_crear_libro_virtual");
 
-		// Oyentes crear objeto especifico
+		// Oyentes guardar objeto
 		vcp.getBotonGuardarPelicula().addActionListener(this);
 		vcp.getBotonGuardarPelicula().setActionCommand("boton_guardar_pelicula");
 		vca.getBotonGuardarArticulo().addActionListener(this);
@@ -88,78 +88,87 @@ public class Controlador implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String alias = e.getActionCommand();
-
+		System.out.println(e);
 		switch (alias) {
 
 		case "boton1_crear_publicacion":
 			vc.setVisible(true);
-			switch (alias) {
+			vp.setVisible(false);
 
-			case "boton_crear_pelicula":
-				agregarAtributosBasicos();
-				vca.setVisible(true);
-				switch (alias) {
-				case "boton_guardar_pelicula":
-					agregarAtributosPelicula();
-				}
-				break;
-			case "boton_crear_articulo":
-				agregarAtributosBasicos();
-				break;
-			case "boton_crear_revista":
-				agregarAtributosBasicos();
-				break;
-			case "boton_crear_juego":
-				agregarAtributosBasicos();
-				break;
-			case "boton_crear_libro_fisico":
-				agregarAtributosBasicos();
-				break;
-			case "boton_crear_libro_virtual":
-				agregarAtributosBasicos();
-				break;
-			}
 			break;
 
 		case "boton2_mostrar_publicacion":
-			vm.setVisible(true);
 
 			break;
+
 		case "boton3_eliminar_publicacion":
+
 			break;
+
 		case "boton4_actualizar_publicacion":
 			VentanaActualizar va;
 			va = new VentanaActualizar();
 			va.setVisible(true);
 			break;
+
+		case "boton_crear_pelicula":
+			vcp.setVisible(true);
+			vc.setVisible(false);
+
+			break;
+
+		case "boton_crear_articulo":
+
+			break;
+
+		case "boton_crear_revista":
+
+			break;
+
+		case "boton_crear_juego":
+
+			break;
+
+		case "boton_crear_libro_fisico":
+
+			break;
+
+		case "boton_crear_libro_virtual":
+			
+			break;
+
+		case "boton_guardar_pelicula":
+			int id = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			String titulo = "" + vc.getTextoTituloPublicacion().getText();
+			String clasificacion = "" + vc.getTextoClasificacion().getText();
+			String facultad = "" + vc.getTextoFacultad().getText();
+			int fechaDePublicacion = Integer.parseInt("" + vc.getTextoFecha().getText());
+			String idioma = "" + vc.getTextoIdioma().getText();
+
+			String productora = "" + vcp.getTextoProductora().getText();
+			String pais = "" + vcp.getTextoPais().getText();
+			String director = "" + vcp.getTextoDirector().getText();
+			String guion = "" + vcp.getTextoGuion().getText();
+			String fotografia = "" + vcp.getTextoFotografia().getText();
+			String musica = "" + vcp.getTextoMusica().getText();
+			String reparto = "" + vcp.getTextoReparto().getText();
+			String duracion = "" + vcp.getTextoDuracion().getText();
+			String idiomasDisponibles = "" + vcp.getTextoIdiomasDisponibles().getText();
+			String subtitulos = "" + vcp.getTextoSubtitulos().getText();
+
+			Pelicula tempP = new Pelicula(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, productora,
+					pais, director, guion, fotografia, musica, reparto, duracion, idiomasDisponibles, subtitulos);
+			objP.crear(tempP);
+			vcp.setVisible(false);
+			vp.setVisible(true);
+			break;
+
 		}
-	}
 
-	public void agregarAtributosBasicos() {
-		int id = Integer.parseInt("" + vc.getTextoPublicacion());
-		String titulo = "" + vc.getTextoTituloPublicacion();
-		String clasificacion = "" + vc.getTextoClasificacion();
-		String facultad = "" + vc.getTextoFacultad();
-		int fechaDePublicacion = Integer.parseInt("" + vc.getTextoFecha());
-		String idioma = "" + vc.getTextoIdioma();
-	}
-
-	public void agregarAtributosPelicula() {
-		String productora = "" + vcp.getTextoProductora();
-		String pais = "" + vcp.getTextoPais();
-		String director = "" + vcp.getTextoDirector();
-		String guion = "" + vcp.getTextoGuion();
-		String fotografia = "" + vcp.getTextoFotografia();
-		String musica = "" + vcp.getTextoMusica();
-		String reparto = "" + vcp.getTextoReparto();
-		String duracion = "" + vcp.getTextoDuracion();
-		String idiomasDisponibles = "" + vcp.getTextoIdiomasDisponibles();
-		String subtitulos = "" + vcp.getTextoSubtitulos();
 	}
 
 	public void runGUI() { // Run de la ventana
 		vp.setVisible(true);
-
 	}
 
 	public void run() {
@@ -225,11 +234,6 @@ public class Controlador implements ActionListener {
 					String idiomasDisponibles = con.leerLineaCompleta();
 					con.escribirConSalto("Ingrese los idiomas en los cuales estan disponibles lo subtitulos");
 					String subtitulos = con.leerLineaCompleta();
-
-					Pelicula tempP = new Pelicula(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
-							productora, pais, director, guion, fotografia, musica, reparto, duracion,
-							idiomasDisponibles, subtitulos);
-					objP.crear(tempP);
 
 					break;
 				case 2:
