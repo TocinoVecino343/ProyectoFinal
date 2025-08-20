@@ -35,21 +35,21 @@ public class VentanaPrincipal extends JFrame {
 
 		// Universidad
 		mensajeBienvenida = new JLabel("UEB", SwingConstants.CENTER);
-		mensajeBienvenida.setBounds(10, 10, 400, 30);
+		mensajeBienvenida.setBounds(0, 40, 400, 30);
 		mensajeBienvenida.setForeground(Color.decode("#144031"));
 		mensajeBienvenida.setFont(new Font("Times New Roman", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
 		this.add(mensajeBienvenida);
 		
 		//Titulo 
 		titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
-		titulo.setBounds(600, 800, 400, 30);
+		titulo.setBounds(200, 40, 600, 30);
 		titulo.setForeground(Color.decode("#144031"));
-		titulo.setFont(new Font("Times New Roman", Font.BOLD, 20)); // Tipo de letra, negrilla y tamaño
+		titulo.setFont(new Font("Times New Roman", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
 		this.add(titulo);
 
 		// Botones menú principal
 		botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
-		botonCrearPublicacion.setBounds(40, 100, 200, 60); // Posición y tamaño del botón
+		botonCrearPublicacion.setBounds(40, 150, 200, 60); // Posición y tamaño del botón
 		botonCrearPublicacion.setBackground(Color.decode("#f5f5dc"));// Color del FONDO del botón
 		botonCrearPublicacion.setForeground(Color.decode("#144031"));
 		botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
@@ -57,7 +57,7 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonMostrarPublicacion = new JButton("Mostrar publicación");
-		botonMostrarPublicacion.setBounds(40, 200, 200, 60);
+		botonMostrarPublicacion.setBounds(40, 250, 200, 60);
 		botonMostrarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonMostrarPublicacion.setForeground(Color.decode("#144031"));
 		botonMostrarPublicacion.setFocusPainted(false);
@@ -65,7 +65,7 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonEliminarPublicacion = new JButton("Eliminar publicación");
-		botonEliminarPublicacion.setBounds(40, 300, 200, 60);
+		botonEliminarPublicacion.setBounds(40, 350, 200, 60);
 		botonEliminarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonEliminarPublicacion.setForeground(Color.decode("#144031"));
 		botonEliminarPublicacion.setFocusPainted(false);
@@ -73,7 +73,7 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonActualizarPublicacion = new JButton("Actualizar publicación");
-		botonActualizarPublicacion.setBounds(40, 400, 200, 60);
+		botonActualizarPublicacion.setBounds(40, 459, 200, 60);
 		botonActualizarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonActualizarPublicacion.setForeground(Color.decode("#144031"));
 		botonActualizarPublicacion.setFocusPainted(false);
