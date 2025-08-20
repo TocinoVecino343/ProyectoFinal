@@ -6,55 +6,55 @@ import java.awt.*;
 public class VentanaEliminar extends JFrame {
 
 	private JLabel titulo;
-	private JButton eliminarArticulo;
-	private JButton eliminarJuego;
-	private JButton eliminarRevista;
-	private JButton eliminarPelicula;
-	private JButton eliminarLibroFisico;
-	private JButton eliminarLibroDigital;
-	private JButton cancelar;
+	private JButton botonEliminarArticulo;
+	private JButton botonEliminarJuego;
+	private JButton botonEliminarRevista;
+	private JButton botonEliminarPelicula;
+	private JButton botonEliminarLibroFisico;
+	private JButton botonEliminarLibroDigital;
+	private JButton botonCancelar;
 
 	public VentanaEliminar() {
-		setTitle("Eliminar Publicación");
-		setSize(400, 350);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(null);
-		setLocationRelativeTo(null);
+		this.setTitle("Eliminar Publicación");
+		this.setSize(400, 350);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLayout(null);
+		this.setLocationRelativeTo(null);
 
 		titulo = new JLabel("ELIMINAR PUBLICACIÓN");
 		titulo.setFont(new Font("Arial", Font.BOLD, 18));
 		titulo.setBounds(90, 10, 250, 30);
-		add(titulo);
+		this.add(titulo);
 
-		eliminarArticulo = new JButton("Artículo");
-		eliminarArticulo.setBounds(50, 60, 130, 40);
-		add(eliminarArticulo);
+		botonEliminarArticulo = new JButton("Artículo");
+		botonEliminarArticulo.setBounds(50, 60, 130, 40);
+		this.add(botonEliminarArticulo);
 
-		eliminarJuego = new JButton("Juego");
-		eliminarJuego.setBounds(220, 60, 130, 40);
-		add(eliminarJuego);
+		botonEliminarJuego = new JButton("Juego");
+		botonEliminarJuego.setBounds(220, 60, 130, 40);
+		this.add(botonEliminarJuego);
 
-		eliminarRevista = new JButton("Revista");
-		eliminarRevista.setBounds(50, 120, 130, 40);
-		add(eliminarRevista);
+		botonEliminarRevista = new JButton("Revista");
+		botonEliminarRevista.setBounds(50, 120, 130, 40);
+		this.add(botonEliminarRevista);
 
-		eliminarPelicula = new JButton("Película");
-		eliminarPelicula.setBounds(220, 120, 130, 40);
-		add(eliminarPelicula);
+		botonEliminarPelicula = new JButton("Película");
+		botonEliminarPelicula.setBounds(220, 120, 130, 40);
+		this.add(botonEliminarPelicula);
 
-		eliminarLibroFisico = new JButton("Libro Físico");
-		eliminarLibroFisico.setBounds(50, 180, 130, 40);
-		add(eliminarLibroFisico);
+		botonEliminarLibroFisico = new JButton("Libro Físico");
+		botonEliminarLibroFisico.setBounds(50, 180, 130, 40);
+		this.add(botonEliminarLibroFisico);
 
-		eliminarLibroDigital = new JButton("Libro Digital");
-		eliminarLibroDigital.setBounds(220, 180, 130, 40);
-		add(eliminarLibroDigital);
+		botonEliminarLibroDigital = new JButton("Libro Digital");
+		botonEliminarLibroDigital.setBounds(220, 180, 130, 40);
+		this.add(botonEliminarLibroDigital);
 
-		cancelar = new JButton("Cancelar");
-		cancelar.setBounds(135, 250, 130, 30);
-		add(cancelar);
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBounds(135, 250, 130, 30);
+		this.add(botonCancelar);
 
-		setVisible(true);
+		this.setVisible(true);
 	}
 
 	public JLabel getTitulo() {
@@ -65,60 +65,60 @@ public class VentanaEliminar extends JFrame {
 		this.titulo = titulo;
 	}
 
-	public JButton getEliminarArticulo() {
-		return eliminarArticulo;
+	public JButton getBotonEliminarArticulo() {
+		return botonEliminarArticulo;
 	}
 
-	public void setEliminarArticulo(JButton eliminarArticulo) {
-		this.eliminarArticulo = eliminarArticulo;
+	public void setBotonEliminarArticulo(JButton botonEliminarArticulo) {
+		this.botonEliminarArticulo = botonEliminarArticulo;
 	}
 
-	public JButton getEliminarJuego() {
-		return eliminarJuego;
+	public JButton getBotonEliminarJuego() {
+		return botonEliminarJuego;
 	}
 
-	public void setEliminarJuego(JButton eliminarJuego) {
-		this.eliminarJuego = eliminarJuego;
+	public void setBotonEliminarJuego(JButton botonEliminarJuego) {
+		this.botonEliminarJuego = botonEliminarJuego;
 	}
 
-	public JButton getEliminarRevista() {
-		return eliminarRevista;
+	public JButton getBotonEliminarRevista() {
+		return botonEliminarRevista;
 	}
 
-	public void setEliminarRevista(JButton eliminarRevista) {
-		this.eliminarRevista = eliminarRevista;
+	public void setBotonEliminarRevista(JButton botonEliminarRevista) {
+		this.botonEliminarRevista = botonEliminarRevista;
 	}
 
-	public JButton getEliminarPelicula() {
-		return eliminarPelicula;
+	public JButton getBotonEliminarPelicula() {
+		return botonEliminarPelicula;
 	}
 
-	public void setEliminarPelicula(JButton eliminarPelicula) {
-		this.eliminarPelicula = eliminarPelicula;
+	public void setBotonEliminarPelicula(JButton botonEliminarPelicula) {
+		this.botonEliminarPelicula = botonEliminarPelicula;
 	}
 
-	public JButton getEliminarLibroFisico() {
-		return eliminarLibroFisico;
+	public JButton getBotonEliminarLibroFisico() {
+		return botonEliminarLibroFisico;
 	}
 
-	public void setEliminarLibroFisico(JButton eliminarLibroFisico) {
-		this.eliminarLibroFisico = eliminarLibroFisico;
+	public void setBotonEliminarLibroFisico(JButton botonEliminarLibroFisico) {
+		this.botonEliminarLibroFisico = botonEliminarLibroFisico;
 	}
 
-	public JButton getEliminarLibroDigital() {
-		return eliminarLibroDigital;
+	public JButton getBotonEliminarLibroDigital() {
+		return botonEliminarLibroDigital;
 	}
 
-	public void setEliminarLibroDigital(JButton eliminarLibroDigital) {
-		this.eliminarLibroDigital = eliminarLibroDigital;
+	public void setBotonEliminarLibroDigital(JButton botonEliminarLibroDigital) {
+		this.botonEliminarLibroDigital = botonEliminarLibroDigital;
 	}
 
-	public JButton getCancelar() {
-		return cancelar;
+	public JButton getBotonCancelar() {
+		return botonCancelar;
 	}
 
-	public void setCancelar(JButton cancelar) {
-		this.cancelar = cancelar;
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
 	}
 
 }

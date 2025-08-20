@@ -20,6 +20,8 @@ public class Controlador implements ActionListener {
 	private VentanaPrincipal vp; // Clases interfaz gráfica
 	private VentanaCrear vc;
 	private VentanaMostrar vm;
+	private VentanaActualizar va;
+	private VentanaEliminar ve;
 
 	private VentanaCrearPelicula vcp; // Ventana crear
 	private VentanaCrearArticulo vca;
@@ -35,6 +37,13 @@ public class Controlador implements ActionListener {
 	private VentanaMostrarLibroFisico vmlf;
 	private VentanaMostrarLibroVirtual vmlv;
 
+	private VentanaEliminarPelicula vep; // Ventanas eliminar
+	private VentanaEliminarArticulo vea;
+	private VentanaEliminarRevista ver;
+	private VentanaEliminarJuego vej;
+	private VentanaEliminarLibroFisico velf;
+	private VentanaEliminarLibroDigital velv;
+
 	public Controlador() {
 		objLf = new LibroFisicoDAO();
 		objLv = new LibroVirtualDAO();
@@ -47,6 +56,8 @@ public class Controlador implements ActionListener {
 		vp = new VentanaPrincipal();
 		vc = new VentanaCrear();
 		vm = new VentanaMostrar();
+		va = new VentanaActualizar();
+		ve = new VentanaEliminar();
 
 		vcp = new VentanaCrearPelicula();
 		vca = new VentanaCrearArticulo();
@@ -61,6 +72,14 @@ public class Controlador implements ActionListener {
 		vmj = new VentanaMostrarJuego();
 		vmlf = new VentanaMostrarLibroFisico();
 		vmlv = new VentanaMostrarLibroVirtual();
+
+		vep = new VentanaEliminarPelicula();
+		vea = new VentanaEliminarArticulo();
+		ver = new VentanaEliminarRevista();
+		vej = new VentanaEliminarJuego();
+		velf = new VentanaEliminarLibroFisico();
+		velv = new VentanaEliminarLibroDigital();
+
 		asignarOyentes();
 	}
 
@@ -116,6 +135,23 @@ public class Controlador implements ActionListener {
 		vm.getBotonMostrarLibroFisico().setActionCommand("boton_mostrar_libro_fisico");
 		vm.getBotonMostrarLibroVirtual().addActionListener(this);
 		vm.getBotonMostrarLibroVirtual().setActionCommand("boton_mostrar_libro_virtual");
+
+		// OyentesEliminar
+		ve.getBotonEliminarPelicula().addActionListener(this);
+		ve.getBotonEliminarPelicula().setActionCommand("boton_eliminar_pelicula");
+		ve.getBotonEliminarArticulo().addActionListener(this);
+		ve.getBotonEliminarArticulo().setActionCommand("boton_eliminar_articulo");
+		ve.getBotonEliminarRevista().addActionListener(this);
+		ve.getBotonEliminarRevista().setActionCommand("boton_eliminar_revista");
+		ve.getBotonEliminarJuego().addActionListener(this);
+		ve.getBotonEliminarJuego().setActionCommand("boton_eliminar_juego");
+		ve.getBotonEliminarLibroFisico().addActionListener(this);
+		ve.getBotonEliminarLibroFisico().setActionCommand("boton_eliminar_libro_fisico");
+		ve.getBotonEliminarLibroDigital().addActionListener(this);
+		ve.getBotonEliminarLibroDigital().setActionCommand("boton_eliminar_libro_virtual");
+		ve.getBotonCancelar().addActionListener(this);
+		ve.getBotonCancelar().setActionCommand("boton_cancelar");
+
 	}
 
 	@Override
@@ -135,10 +171,11 @@ public class Controlador implements ActionListener {
 			vm.setVisible(true);
 			break;
 		case "boton3_eliminar_publicacion":
+			vp.setVisible(false);
+			ve.setVisible(true);
 			break;
 		case "boton4_actualizar_publicacion":
-			VentanaActualizar va;
-			va = new VentanaActualizar();
+			vp.setVisible(false);
 			va.setVisible(true);
 			break;
 
@@ -148,14 +185,24 @@ public class Controlador implements ActionListener {
 			vc.setVisible(false);
 			break;
 		case "boton_crear_articulo":
+			vca.setVisible(true);
+			vc.setVisible(false);
 			break;
 		case "boton_crear_revista":
+			vcr.setVisible(true);
+			vc.setVisible(false);
 			break;
 		case "boton_crear_juego":
+			vcj.setVisible(true);
+			vc.setVisible(false);
 			break;
 		case "boton_crear_libro_fisico":
+			vclf.setVisible(true);
+			vc.setVisible(false);
 			break;
 		case "boton_crear_libro_virtual":
+			vclv.setVisible(true);
+			vc.setVisible(false);
 
 			break;
 
@@ -227,6 +274,34 @@ public class Controlador implements ActionListener {
 			vm.setVisible(false);
 			vmlv.setVisible(true);
 			vmlv.getTextoMostrarLibroVirtual().setText(objLv.mostrarDatos());
+			break;
+
+		// Botones eliminar
+		case "boton_eliminar_pelicula":
+			ve.setVisible(false);
+			vep.setVisible(true);
+			break;
+		case "boton_eliminar_articulo":
+			ve.setVisible(false);
+			vea.setVisible(true);
+			break;
+		case "boton_eliminar_revista":
+			ve.setVisible(false);
+			ver.setVisible(true);
+			break;
+		case "boton_eliminar_juego":
+			ve.setVisible(false);
+			vej.setVisible(true);
+			break;
+		case "boton_eliminar_libro_fisico":
+			ve.setVisible(false);
+			velf.setVisible(true);
+			break;
+		case "boton_eliminar_libro_virtual":
+			ve.setVisible(false);
+			velv.setVisible(true);
+			break;
+		case "boton_cancelar":
 			break;
 		}
 
