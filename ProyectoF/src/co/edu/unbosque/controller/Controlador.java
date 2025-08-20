@@ -56,8 +56,7 @@ public class Controlador implements ActionListener {
 		vp.getBotonEliminarPublicacion().setActionCommand("boton3_eliminar_publicacion");
 		vp.getBotonActualizarPublicacion().addActionListener(this);
 		vp.getBotonActualizarPublicacion().setActionCommand("boton4_actualizar_publicacion");
-		vp.getBotonSalir().addActionListener(this);
-		vp.getBotonSalir().setActionCommand("boton5_salir");
+		
 
 		// Oyentes Ventana Crear
 		vc.getBotonCrearPelicula().addActionListener(this);

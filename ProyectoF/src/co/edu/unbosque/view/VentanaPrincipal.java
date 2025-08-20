@@ -18,8 +18,7 @@ public class VentanaPrincipal extends JFrame {
 	private JButton botonMostrarPublicacion;
 	private JButton botonEliminarPublicacion;
 	private JButton botonActualizarPublicacion;
-	private JButton botonSalir;
-	private JLabel mensajeBienvenida;
+		private JLabel mensajeBienvenida;
 
 	public VentanaPrincipal() {
 		inicializarComponentes();
@@ -42,7 +41,7 @@ public class VentanaPrincipal extends JFrame {
 
 		// Botones menú principal
 		botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
-		botonCrearPublicacion.setBounds(80, 100, 200, 60); // Posición y tamaño del botón
+		botonCrearPublicacion.setBounds(40, 100, 200, 60); // Posición y tamaño del botón
 		botonCrearPublicacion.setBackground(Color.decode("#f5f5dc"));// Color del FONDO del botón
 		botonCrearPublicacion.setForeground(Color.decode("#144031"));
 		botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
@@ -50,7 +49,7 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonMostrarPublicacion = new JButton("Mostrar publicación");
-		botonMostrarPublicacion.setBounds(80, 200, 200, 60);
+		botonMostrarPublicacion.setBounds(40, 200, 200, 60);
 		botonMostrarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonMostrarPublicacion.setForeground(Color.decode("#144031"));
 		botonMostrarPublicacion.setFocusPainted(false);
@@ -58,7 +57,7 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonEliminarPublicacion = new JButton("Eliminar publicación");
-		botonEliminarPublicacion.setBounds(80, 300, 200, 60);
+		botonEliminarPublicacion.setBounds(40, 300, 200, 60);
 		botonEliminarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonEliminarPublicacion.setForeground(Color.decode("#144031"));
 		botonEliminarPublicacion.setFocusPainted(false);
@@ -66,21 +65,13 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonActualizarPublicacion = new JButton("Actualizar publicación");
-		botonActualizarPublicacion.setBounds(80, 400, 200, 60);
+		botonActualizarPublicacion.setBounds(40, 400, 200, 60);
 		botonActualizarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonActualizarPublicacion.setForeground(Color.decode("#144031"));
 		botonActualizarPublicacion.setFocusPainted(false);
 		this.add(botonActualizarPublicacion);
 		this.setLayout(null);
-		//
-		botonSalir = new JButton("Salir");
-		botonSalir.setBounds(290, 500, 200, 30);
-		botonSalir.setBackground(Color.RED);
-		botonSalir.setForeground(Color.WHITE);
-		botonSalir.setFocusPainted(false);
-		this.add(botonSalir);
-		this.setLayout(null);
-
+		
 	}
 
 	// Getters y setters de los botones
@@ -114,14 +105,6 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setBotonActualizarPublicacion(JButton botonActualizarPublicacion) {
 		this.botonActualizarPublicacion = botonActualizarPublicacion;
-	}
-
-	public JButton getBotonSalir() {
-		return botonSalir;
-	}
-
-	public void setBotonSalir(JButton botonSalir) {
-		this.botonSalir = botonSalir;
 	}
 
 	public JLabel getMensajeBienvenida() {
