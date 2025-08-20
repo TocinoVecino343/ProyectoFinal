@@ -18,7 +18,8 @@ public class VentanaPrincipal extends JFrame {
 	private JButton botonMostrarPublicacion;
 	private JButton botonEliminarPublicacion;
 	private JButton botonActualizarPublicacion;
-		private JLabel mensajeBienvenida;
+	private JLabel mensajeBienvenida;
+	private JLabel titulo;
 
 	public VentanaPrincipal() {
 		inicializarComponentes();
@@ -32,12 +33,19 @@ public class VentanaPrincipal extends JFrame {
 		this.setResizable(false);
 		this.setLayout(null);
 
-		// Mensaje de Bienvenida
-		mensajeBienvenida = new JLabel("Bienvenido a la Biblioteca de la UEB", SwingConstants.CENTER);
-		mensajeBienvenida.setBounds(300, 20, 400, 30);
+		// Universidad
+		mensajeBienvenida = new JLabel("UEB", SwingConstants.CENTER);
+		mensajeBienvenida.setBounds(10, 10, 400, 30);
 		mensajeBienvenida.setForeground(Color.decode("#144031"));
-		mensajeBienvenida.setFont(new Font("Times New Roman", Font.BOLD, 20)); // Tipo de letra, negrilla y tamaño
+		mensajeBienvenida.setFont(new Font("Times New Roman", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
 		this.add(mensajeBienvenida);
+		
+		//Titulo 
+		titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
+		titulo.setBounds(600, 800, 400, 30);
+		titulo.setForeground(Color.decode("#144031"));
+		titulo.setFont(new Font("Times New Roman", Font.BOLD, 20)); // Tipo de letra, negrilla y tamaño
+		this.add(titulo);
 
 		// Botones menú principal
 		botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
@@ -114,5 +122,14 @@ public class VentanaPrincipal extends JFrame {
 	public void setMensajeBienvenida(JLabel mensajeBienvenida) {
 		this.mensajeBienvenida = mensajeBienvenida;
 	}
+
+	public JLabel getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(JLabel titulo) {
+		this.titulo = titulo;
+	}
+	
 
 }
