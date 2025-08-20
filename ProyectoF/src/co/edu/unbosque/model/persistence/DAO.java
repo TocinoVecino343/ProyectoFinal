@@ -8,8 +8,6 @@ public interface DAO<E> {
 
 	public boolean eliminarDato(int indice);
 
-	public boolean eliminarDato(E objetoEliminar);
-
 	public boolean actualizar(int indice, E datoActualizado);
 
 	public int contar();

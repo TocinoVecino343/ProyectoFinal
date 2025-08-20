@@ -38,11 +38,6 @@ public class LibroVirtualDAO implements DAO<LibroVirtual> {
 	}
 
 	@Override
-	public boolean eliminarDato(LibroVirtual objetoEliminar) {
-		return listaLibrosVirtuales.remove(objetoEliminar);
-	}
-
-	@Override
 	public boolean actualizar(int indice, LibroVirtual datoActualizado) {
 		if (indice < 0 || indice >= listaLibrosVirtuales.size()) {
 			return false;

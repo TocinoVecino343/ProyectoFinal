@@ -38,11 +38,6 @@ public class PeliculaDAO implements DAO<Pelicula> {
 	}
 
 	@Override
-	public boolean eliminarDato(Pelicula objetoEliminar) {
-		return listaPeliculas.remove(objetoEliminar);
-	}
-
-	@Override
 	public boolean actualizar(int indice, Pelicula datoActualizado) {
 		if (indice < 0 || indice >= listaPeliculas.size()) {
 			return false;

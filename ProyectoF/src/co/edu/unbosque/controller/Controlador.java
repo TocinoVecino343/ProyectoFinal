@@ -16,7 +16,7 @@ public class Controlador implements ActionListener {
 	private PeliculaDAO objP;
 	private ArticuloDAO objA;
 	private Consola con;
-	private VentanaPrincipal vp; //Clase interfaz gráfica
+	private VentanaPrincipal vp; // Clase interfaz gráfica
 
 	public Controlador() {
 		objLf = new LibroFisicoDAO();
@@ -28,7 +28,7 @@ public class Controlador implements ActionListener {
 		con = new Consola();
 		asignarOyentes();
 	}
-	
+
 	public void asignarOyentes() {// Aqui se agregan los lectores a los componentes
 		vp.getBotonCrearPublicacion().addActionListener(this);
 		vp.getBotonCrearPublicacion().setActionCommand("boton1_crear_publicacion");
@@ -60,7 +60,6 @@ public class Controlador implements ActionListener {
 		}
 	}
 
-	
 	public void runGUI() { // Run de la ventana
 		vp = new VentanaPrincipal();
 		vp.setVisible(true);
@@ -95,7 +94,7 @@ public class Controlador implements ActionListener {
 				String clasificacion = con.leerPalabra();
 				con.escribirConSalto("Ingrese la facultad a la que pertenece la publicacion");
 				String facultad = con.leerPalabra();
-				
+
 				con.escribirConSalto("Ingrese la fecha de publicacion");
 				int fechaDePublicacion = con.leerInt();
 
@@ -269,184 +268,170 @@ public class Controlador implements ActionListener {
 				case 3:
 
 					int opcionEliminar = 0;
-					con.escribirConSalto("Seleccione la acción que desea realizar");
+					con.escribirConSalto("Eliminación de una publicación por índice:");
 
-					con.escribirConSalto("Eliminar una publicación por:");
-					con.escribirConSalto("\n1. Índice de la publicación" + "\n2. Tipo de publicación"); // por revisar la opcion 2
-					opcionEliminar = con.leerInt();
+					int opcionTipoAEliminar = 0;
 
-					switch (opcionEliminar) {
+					con.escribirConSalto("Ingrese el tipo de publicación que desea eliminar:");
+					con.escribirConSalto("\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista" + "\n4. Juego de 4Prot"
+							+ "\n5. Libro Fisico" + "\n6. Libro Virtual");
+					opcionTipoAEliminar = con.leerInt();
+
+					con.quemarLinea();
+
+					switch (opcionTipoAEliminar) {
 					case 1:
+						objP.mostrarDatos();
+						int indiceP = 0;
 
-						int opcionTipoAEliminar = 0;
+						con.escribirConSalto("Ingrese el índice de la película que desea eliminar");
+						indiceP = con.leerInt();
 
-						con.escribirConSalto("Ingrese el tipo de publicación que desea eliminar:");
-						con.escribirConSalto("\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
-								+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
-						opcionTipoAEliminar = con.leerInt();
-
-						con.quemarLinea();
-
-						switch (opcionTipoAEliminar) {
-						case 1:
-
-							objP.mostrarDatos();
-							int indiceP = 0;
-
-							con.escribirConSalto("Ingrese el índice de la película que desea eliminar");
-							indiceP = con.leerInt();
-
-							objP.eliminarDato(indiceP);
-							break;
-						case 2:
-
-							objA.mostrarDatos();
-							int indiceA = 0;
-
-							con.escribirConSalto("Ingrese el índice del artículo que desea eliminar");
-							indiceA = con.leerInt();
-
-							objA.eliminarDato(indiceA);
-
-							break;
-						case 3:
-
-							objR.mostrarDatos();
-							int indiceR = 0;
-
-							con.escribirConSalto("Ingrese el índice de la revista que desea eliminar");
-							indiceR = con.leerInt();
-
-							objR.eliminarDato(indiceR);
-
-							break;
-						case 4:
-
-							objS.mostrarDatos();
-							int indiceS = 0;
-
-							con.escribirConSalto("Ingrese el índice del juego que desea eliminar");
-							indiceS = con.leerInt();
-
-							objS.eliminarDato(indiceS);
-
-							break;
-						case 5:
-
-							objLf.mostrarDatos();
-							int indiceLf = 0;
-
-							con.escribirConSalto("Ingrese el índice del libro físico que desea eliminar");
-							indiceLf = con.leerInt();
-
-							objLf.eliminarDato(indiceLf);
-
-							break;
-						case 6:
-
-							objLv.mostrarDatos();
-							int indiceLv = 0;
-
-							con.escribirConSalto("Ingrese el índice del libro virtual que desea eliminar");
-							indiceLv = con.leerInt();
-
-							objLv.eliminarDato(indiceLv);
-
-							break;
-						default:
-							break;
-						}
-
+						objP.eliminarDato(indiceP);
 						break;
-
 					case 2:
 
-						// Por revisar
+						objA.mostrarDatos();
+						int indiceA = 0;
+
+						con.escribirConSalto("Ingrese el índice del artículo que desea eliminar");
+						indiceA = con.leerInt();
+
+						objA.eliminarDato(indiceA);
+
+						break;
+					case 3:
+
+						objR.mostrarDatos();
+						int indiceR = 0;
+
+						con.escribirConSalto("Ingrese el índice de la revista que desea eliminar");
+						indiceR = con.leerInt();
+
+						objR.eliminarDato(indiceR);
 
 						break;
 					case 4:
-						// Por revisar
-						con.escribirConSalto("Ingrese la publicacion que desea actualizar");
-						con.escribirConSalto("Actualizar: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
-								+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
-						int seleccionActualizar = con.leerInt();
 
-						switch (seleccionActualizar) {
-						case 1:
+						objS.mostrarDatos();
+						int indiceS = 0;
 
-							objP.mostrarDatos();
-							int indiceP = 0;
+						con.escribirConSalto("Ingrese el índice del juego que desea eliminar");
+						indiceS = con.leerInt();
 
-							con.escribirConSalto("Ingrese el índice de la película que desea actualizar");
-							indiceP = con.leerInt();
+						objS.eliminarDato(indiceS);
 
-							objP.actualizar(indiceP, null);
-							break;
-						case 2:
+						break;
+					case 5:
 
-							objA.mostrarDatos();
-							int indiceA = 0;
+						objLf.mostrarDatos();
+						int indiceLf = 0;
 
-							con.escribirConSalto("Ingrese el índice del artículo que desea actualizar");
-							indiceA = con.leerInt();
+						con.escribirConSalto("Ingrese el índice del libro físico que desea eliminar");
+						indiceLf = con.leerInt();
 
-							objA.actualizar(indiceA, null);
+						objLf.eliminarDato(indiceLf);
 
-							break;
-						case 3:
+						break;
+					case 6:
 
-							objR.mostrarDatos();
-							int indiceR = 0;
+						objLv.mostrarDatos();
+						int indiceLv = 0;
 
-							con.escribirConSalto("Ingrese el índice de la revista que desea actualizar");
-							indiceR = con.leerInt();
+						con.escribirConSalto("Ingrese el índice del libro virtual que desea eliminar");
+						indiceLv = con.leerInt();
 
-							objR.actualizar(indiceR, null);
+						objLv.eliminarDato(indiceLv);
 
-							break;
-						case 4:
-
-							objS.mostrarDatos();
-							int indiceS = 0;
-
-							con.escribirConSalto("Ingrese el índice del juego que desea actualizar");
-							indiceS = con.leerInt();
-
-							objS.actualizar(indiceS, null);
-
-							break;
-						case 5:
-
-							objLf.mostrarDatos();
-							int indiceLf = 0;
-
-							con.escribirConSalto("Ingrese el índice del libro físico que desea actualizar");
-							indiceLf = con.leerInt();
-
-							objLf.actualizar(indiceLf, null);
-
-							break;
-						case 6:
-
-							objLv.mostrarDatos();
-							int indiceLv = 0;
-
-							con.escribirConSalto("Ingrese el índice del libro virtual que desea actualizar");
-							indiceLv = con.leerInt();
-
-							objLv.actualizar(indiceLv, null);
-
-							break;
-						default:
-							break;
-						}
-					case 5: 
+						break;
+					default:
 						break;
 					}
+
+					break;
+
+				case 4:
+					// Por revisar
+					con.escribirConSalto("Ingrese la publicacion que desea actualizar");
+					con.escribirConSalto("Actualizar: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
+							+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
+					int seleccionActualizar = con.leerInt();
+
+					con.quemarLinea();
+
+					switch (seleccionActualizar) {
+					case 1:
+
+						objP.mostrarDatos();
+						int indiceP = 0;
+
+						con.escribirConSalto("Ingrese el índice de la película que desea actualizar");
+						indiceP = con.leerInt();
+
+						objP.actualizar(indiceP, null);
+						break;
+					case 2:
+
+						objA.mostrarDatos();
+						int indiceA = 0;
+
+						con.escribirConSalto("Ingrese el índice del artículo que desea actualizar");
+						indiceA = con.leerInt();
+
+						objA.actualizar(indiceA, null);
+
+						break;
+					case 3:
+
+						objR.mostrarDatos();
+						int indiceR = 0;
+
+						con.escribirConSalto("Ingrese el índice de la revista que desea actualizar");
+						indiceR = con.leerInt();
+
+						objR.actualizar(indiceR, null);
+
+						break;
+					case 4:
+
+						objS.mostrarDatos();
+						int indiceS = 0;
+
+						con.escribirConSalto("Ingrese el índice del juego que desea actualizar");
+						indiceS = con.leerInt();
+
+						objS.actualizar(indiceS, null);
+
+						break;
+					case 5:
+
+						objLf.mostrarDatos();
+						int indiceLf = 0;
+
+						con.escribirConSalto("Ingrese el índice del libro físico que desea actualizar");
+						indiceLf = con.leerInt();
+
+						objLf.actualizar(indiceLf, null);
+
+						break;
+					case 6:
+
+						objLv.mostrarDatos();
+						int indiceLv = 0;
+
+						con.escribirConSalto("Ingrese el índice del libro virtual que desea actualizar");
+						indiceLv = con.leerInt();
+
+						objLv.actualizar(indiceLv, null);
+
+						break;
+					default:
+						break;
+					}
+				case 5:
+					break;
 				}
 			}
-		}  while (opcion != 5);
+		} while (opcion != 5);
 	}
 }
-	
-	
