@@ -196,31 +196,37 @@ public class Controlador implements ActionListener {
 
 		// Botones Mostrar
 		case "boton_mostrar_todo":
-			vm.setVisible(false);
+			vm.setVisible(false); // FALTA CLASE MOSTRAR TODO
 			break;
 		case "boton_mostrar_pelicula":
 			vm.setVisible(false);
 			vmp.setVisible(true);
+			vmp.getTextoMostrarPelicula().setText(objP.mostrarDatos());
 			break;
 		case "boton_mostrar_articulo":
 			vm.setVisible(false);
 			vma.setVisible(true);
+			vma.getTextoMostrarArticulo().setText(objA.mostrarDatos());
 			break;
 		case "boton_mostrar_revista":
 			vm.setVisible(false);
 			vmr.setVisible(true);
+			vmr.getTextoMostrarRevista().setText(objR.mostrarDatos());
 			break;
 		case "boton_mostrar_juego":
 			vm.setVisible(false);
 			vmj.setVisible(true);
+			vmj.getTextoMostrarJuego().setText(objS.mostrarDatos());
 			break;
 		case "boton_mostrar_libro_fisico":
 			vm.setVisible(false);
 			vmlf.setVisible(true);
+			vmlf.getTextoMostrarLibroFisico().setText(objLf.mostrarDatos());
 			break;
 		case "boton_mostrar_libro_virtual":
 			vm.setVisible(false);
 			vmlv.setVisible(true);
+			vmlv.getTextoMostrarLibroVirtual().setText(objLv.mostrarDatos());
 			break;
 		}
 
