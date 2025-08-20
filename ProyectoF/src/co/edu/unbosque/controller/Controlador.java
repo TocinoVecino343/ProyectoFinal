@@ -157,7 +157,7 @@ public class Controlador implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String alias = e.getActionCommand();
-		System.out.println(e);
+		System.out.println(e); //Quitar este syso una vez terminado todo
 
 		switch (alias) {
 
@@ -203,7 +203,6 @@ public class Controlador implements ActionListener {
 		case "boton_crear_libro_virtual":
 			vclv.setVisible(true);
 			vc.setVisible(false);
-
 			break;
 
 		// Botones guardar
@@ -302,9 +301,10 @@ public class Controlador implements ActionListener {
 			velv.setVisible(true);
 			break;
 		case "boton_cancelar":
+			ve.setVisible(false);
+			vp.setVisible(true);
 			break;
 		}
-
 	}
 
 	public void runGUI() { // Run de la ventana

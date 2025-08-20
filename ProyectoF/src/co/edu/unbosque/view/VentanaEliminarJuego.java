@@ -39,7 +39,6 @@ public class VentanaEliminarJuego extends JFrame {
 		cancelar.setBounds(180, 110, 100, 30);
 		add(cancelar);
 
-		setVisible(true);
 	}
 
 	public JLabel getTitulo() {

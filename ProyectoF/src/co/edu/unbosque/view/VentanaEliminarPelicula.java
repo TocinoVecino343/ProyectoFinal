@@ -38,8 +38,6 @@ public class VentanaEliminarPelicula extends JFrame {
 		cancelar = new JButton("Cancelar");
 		cancelar.setBounds(180, 110, 100, 30);
 		add(cancelar);
-
-		setVisible(true);
 	}
 
 	public JLabel getTitulo() {

@@ -54,7 +54,6 @@ public class VentanaEliminar extends JFrame {
 		botonCancelar.setBounds(135, 250, 130, 30);
 		this.add(botonCancelar);
 
-		this.setVisible(true);
 	}
 
 	public JLabel getTitulo() {
