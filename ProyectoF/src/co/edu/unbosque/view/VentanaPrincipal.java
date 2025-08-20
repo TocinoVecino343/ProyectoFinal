@@ -18,7 +18,6 @@ public class VentanaPrincipal extends JFrame {
 	private JButton botonMostrarPublicacion;
 	private JButton botonEliminarPublicacion;
 	private JButton botonActualizarPublicacion;
-	private JButton botonSalir;
 	private JLabel mensajeBienvenida;
 
 	public VentanaPrincipal() {
@@ -73,13 +72,7 @@ public class VentanaPrincipal extends JFrame {
 		this.add(botonActualizarPublicacion);
 		this.setLayout(null);
 		//
-		botonSalir = new JButton("Salir");
-		botonSalir.setBounds(290, 500, 200, 30);
-		botonSalir.setBackground(Color.RED);
-		botonSalir.setForeground(Color.WHITE);
-		botonSalir.setFocusPainted(false);
-		this.add(botonSalir);
-		this.setLayout(null);
+		
 
 	}
 
@@ -114,14 +107,6 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setBotonActualizarPublicacion(JButton botonActualizarPublicacion) {
 		this.botonActualizarPublicacion = botonActualizarPublicacion;
-	}
-
-	public JButton getBotonSalir() {
-		return botonSalir;
-	}
-
-	public void setBotonSalir(JButton botonSalir) {
-		this.botonSalir = botonSalir;
 	}
 
 	public JLabel getMensajeBienvenida() {
