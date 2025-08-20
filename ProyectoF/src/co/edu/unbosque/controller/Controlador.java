@@ -19,6 +19,12 @@ public class Controlador implements ActionListener {
 	private VentanaPrincipal vp; // Clase interfaz gráfica
 	private VentanaCrear vc;
 	private VentanaMostrar vm;
+	private VentanaCrearPelicula vcp;
+	private VentanaCrearArticulo vca;
+	private VentanaCrearRevista vcr;
+	private VentanaCrearJuego vcj;
+	private VentanaCrearLibroFisico vclf;
+	private VentanaCrearLibroVirtual vclv;
 
 	public Controlador() {
 		objLf = new LibroFisicoDAO();
@@ -31,20 +37,41 @@ public class Controlador implements ActionListener {
 		vp = new VentanaPrincipal();
 		vc = new VentanaCrear();
 		vm = new VentanaMostrar();
+		vcp = new VentanaCrearPelicula();
+		vca = new VentanaCrearArticulo();
+		vcr = new VentanaCrearRevista();
+		vcj = new VentanaCrearJuego();
+		vclf = new VentanaCrearLibroFisico();
+		vclv = new VentanaCrearLibroVirtual();
 		asignarOyentes();
 	}
 
 	public void asignarOyentes() {// Aqui se agregan los lectores a los componentes
+		//Oyentes Ventana Principal
 		vp.getBotonCrearPublicacion().addActionListener(this);
 		vp.getBotonCrearPublicacion().setActionCommand("boton1_crear_publicacion");
 		vp.getBotonMostrarPublicacion().addActionListener(this);
-		vp.getBotonMostrarPublicacion().setActionCommand("boton1_mostrar_publicacion");
+		vp.getBotonMostrarPublicacion().setActionCommand("boton2_mostrar_publicacion");
 		vp.getBotonEliminarPublicacion().addActionListener(this);
-		vp.getBotonEliminarPublicacion().setActionCommand("boton1_eliminar_publicacion");
+		vp.getBotonEliminarPublicacion().setActionCommand("boton3_eliminar_publicacion");
 		vp.getBotonActualizarPublicacion().addActionListener(this);
-		vp.getBotonActualizarPublicacion().setActionCommand("boton1_actualizar_publicacion");
+		vp.getBotonActualizarPublicacion().setActionCommand("boton4_actualizar_publicacion");
 		vp.getBotonSalir().addActionListener(this);
-		vp.getBotonSalir().setActionCommand("boton1_salir");
+		vp.getBotonSalir().setActionCommand("boton5_salir");
+		
+		//Oyentes Ventana Crear
+		vc.getBotonCrearPelicula().addActionListener(this);
+		vc.getBotonCrearPelicula().setActionCommand("boton_crear_pelicula");
+		vc.getBotonCrearArticulo().addActionListener(this);
+		vc.getBotonCrearArticulo().setActionCommand("boton_crear_articulo");
+		vc.getBotonCrearRevista().addActionListener(this);
+		vc.getBotonCrearRevista().setActionCommand("boton_crear_revista");
+		vc.getBotonCrearJuego4Prot().addActionListener(this);
+		vc.getBotonCrearJuego4Prot().setActionCommand("boton_crear_juego");
+		vc.getBotonCrearLibroFisico().addActionListener(this);
+		vc.getBotonCrearLibroFisico().setActionCommand("boton_crear_libro_fisico");
+		vc.getBotonCrearLibroVirtual().addActionListener(this);
+		vc.getBotonCrearLibroVirtual().setActionCommand("boton_crear_libro_virtual");
 	}
 
 	@Override
@@ -54,15 +81,34 @@ public class Controlador implements ActionListener {
 		switch (alias) {
 		case "boton1_crear_publicacion":
 			vc.setVisible(true);
-			
+			switch(alias) {
+			case "boton_crear_pelicula":
+				agregarAtributosBasicos();
 			break;
-		case "boton1_mostrar_publicacion":
+			case "boton_crear_articulo":
+				agregarAtributosBasicos();
+			break;
+			case "boton_crear_revista":
+				agregarAtributosBasicos();
+			break;
+			case "boton_crear_juego":
+				agregarAtributosBasicos();
+			break;
+			case "boton_crear_libro_fisico":
+				agregarAtributosBasicos();
+			break;
+			case "boton_crear_libro_virtual":
+				agregarAtributosBasicos();
+			break;
+			}
+			break;
+		case "boton2_mostrar_publicacion":
 			vm.setVisible(true);
 			
 			break;
-		case "boton1_eliminar_publicacion":
+		case "boton3_eliminar_publicacion":
 			break;
-		case "boton1_actualizar_publicacion":
+		case "boton4_actualizar_publicacion":
 			VentanaActualizar va;
 			va = new VentanaActualizar();
 			va.setVisible(true);
