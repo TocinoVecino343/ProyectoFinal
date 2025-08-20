@@ -16,7 +16,8 @@ public class Controlador implements ActionListener {
 	private PeliculaDAO objP;
 	private ArticuloDAO objA;
 	private Consola con;
-	private VentanaPrincipal vp; // Clase interfaz gráfica
+
+	private VentanaPrincipal vp; // Clases interfaz gráfica
 	private VentanaCrear vc;
 	private VentanaMostrar vm;
 	private VentanaCrearPelicula vcp;
@@ -83,60 +84,65 @@ public class Controlador implements ActionListener {
 		vclv.getBotonGuardarLibroVirtual().addActionListener(this);
 		vclv.getBotonGuardarLibroVirtual().setActionCommand("boton_guardar_libro_virtual");
 
+		// Oyentes mostrar
+		vm.getBotonMostrarTodo().addActionListener(this);
+		vm.getBotonMostrarTodo().setActionCommand("boton_mostrar_todo");
+		vm.getBotonMostrarPelicula().addActionListener(this);
+		vm.getBotonMostrarPelicula().setActionCommand("boton_mostrar_pelicula");
+		vm.getBotonMostrarArticulo().addActionListener(this);
+		vm.getBotonMostrarArticulo().setActionCommand("boton_mostrar_articulo");
+		vm.getBotonMostrarRevista().addActionListener(this);
+		vm.getBotonMostrarRevista().setActionCommand("boton_mostrar_revista");
+		vm.getBotonMostrarJuego().addActionListener(this);
+		vm.getBotonMostrarJuego().setActionCommand("boton_mostrar_juego");
+		vm.getBotonMostrarLibroFisico().addActionListener(this);
+		vm.getBotonMostrarLibroFisico().setActionCommand("boton_mostrar_libro_fisico");
+		vm.getBotonMostrarLibroVirtual().addActionListener(this);
+		vm.getBotonMostrarLibroVirtual().setActionCommand("boton_mostrar_libro_virtual");
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String alias = e.getActionCommand();
 		System.out.println(e);
+
 		switch (alias) {
 
+		// Botones CRUD
 		case "boton1_crear_publicacion":
 			vc.setVisible(true);
 			vp.setVisible(false);
-
 			break;
-
 		case "boton2_mostrar_publicacion":
-
+			vp.setVisible(false);
+			vm.setVisible(true);
 			break;
-
 		case "boton3_eliminar_publicacion":
-
 			break;
-
 		case "boton4_actualizar_publicacion":
 			VentanaActualizar va;
 			va = new VentanaActualizar();
 			va.setVisible(true);
 			break;
 
+		// Botones crear
 		case "boton_crear_pelicula":
 			vcp.setVisible(true);
 			vc.setVisible(false);
-
 			break;
-
 		case "boton_crear_articulo":
-
 			break;
-
 		case "boton_crear_revista":
-
 			break;
-
 		case "boton_crear_juego":
-
 			break;
-
 		case "boton_crear_libro_fisico":
-
 			break;
-
 		case "boton_crear_libro_virtual":
-			
+
 			break;
 
+		// Botones guardar
 		case "boton_guardar_pelicula":
 			int id = Integer.parseInt("" + vc.getTextoPublicacion().getText());
 			String titulo = "" + vc.getTextoTituloPublicacion().getText();
@@ -162,9 +168,32 @@ public class Controlador implements ActionListener {
 			vcp.setVisible(false);
 			vp.setVisible(true);
 			break;
-
+		case "boton_guardar_articulo":
+			break;
+		case "boton_guardar_revista":
+			break;
+		case "boton_guardar_libro_fisico":
+			break;
+		case "boton_guardar_libro_virtual":
+			break;
+		
+			//Botones Mostrar
+		case "boton_mostrar_todo":
+			break;
+		case "boton_mostrar_pelicula":
+			break;
+		case "boton_mostrar_articulo":
+			break;
+		case "boton_mostrar_revista":
+			break;
+		case "boton_mostrar_juego":
+			break;
+		case "boton_mostrar_libro_fisico":
+			break;
+		case "boton_mostrar_libro_virtual":
+			break;
 		}
-
+		
 	}
 
 	public void runGUI() { // Run de la ventana
