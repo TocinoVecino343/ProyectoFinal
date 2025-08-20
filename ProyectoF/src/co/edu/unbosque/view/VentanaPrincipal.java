@@ -40,7 +40,7 @@ public class VentanaPrincipal extends JFrame {
 		mensajeBienvenida.setFont(new Font("Times New Roman", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
 		this.add(mensajeBienvenida);
 		
-		//Titulo 
+		//Titulo h
 		titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
 		titulo.setBounds(200, 40, 600, 30);
 		titulo.setForeground(Color.decode("#144031"));
