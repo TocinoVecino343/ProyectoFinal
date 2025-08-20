@@ -73,7 +73,7 @@ public class Controlador implements ActionListener {
 		vc.getBotonCrearLibroVirtual().addActionListener(this);
 		vc.getBotonCrearLibroVirtual().setActionCommand("boton_crear_libro_virtual");
 
-		// Oyentes ventana Crear Especifico
+		// Oyentes crear objeto especifico
 		vcp.getBotonGuardarPelicula().addActionListener(this);
 		vcp.getBotonGuardarPelicula().setActionCommand("boton_guardar_pelicula");
 		vca.getBotonGuardarArticulo().addActionListener(this);
@@ -97,7 +97,7 @@ public class Controlador implements ActionListener {
 			switch (alias) {
 			case "boton_crear_pelicula":
 				agregarAtributosBasicos();
-
+				vca.setVisible(true);
 				break;
 			case "boton_crear_articulo":
 				agregarAtributosBasicos();
