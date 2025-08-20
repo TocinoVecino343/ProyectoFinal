@@ -56,7 +56,6 @@ public class Controlador implements ActionListener {
 		vp.getBotonEliminarPublicacion().setActionCommand("boton3_eliminar_publicacion");
 		vp.getBotonActualizarPublicacion().addActionListener(this);
 		vp.getBotonActualizarPublicacion().setActionCommand("boton4_actualizar_publicacion");
-		
 
 		// Oyentes Ventana Crear
 		vc.getBotonCrearPelicula().addActionListener(this);
@@ -91,12 +90,18 @@ public class Controlador implements ActionListener {
 		String alias = e.getActionCommand();
 
 		switch (alias) {
+
 		case "boton1_crear_publicacion":
 			vc.setVisible(true);
 			switch (alias) {
+
 			case "boton_crear_pelicula":
 				agregarAtributosBasicos();
 				vca.setVisible(true);
+				switch (alias) {
+				case "boton_guardar_pelicula":
+					agregarAtributosPelicula();
+				}
 				break;
 			case "boton_crear_articulo":
 				agregarAtributosBasicos();
@@ -115,6 +120,7 @@ public class Controlador implements ActionListener {
 				break;
 			}
 			break;
+
 		case "boton2_mostrar_publicacion":
 			vm.setVisible(true);
 
@@ -136,6 +142,19 @@ public class Controlador implements ActionListener {
 		String facultad = "" + vc.getTextoFacultad();
 		int fechaDePublicacion = Integer.parseInt("" + vc.getTextoFecha());
 		String idioma = "" + vc.getTextoIdioma();
+	}
+
+	public void agregarAtributosPelicula() {
+		String productora = "" + vcp.getTextoProductora();
+		String pais = "" + vcp.getTextoPais();
+		String director = "" + vcp.getTextoDirector();
+		String guion = "" + vcp.getTextoGuion();
+		String fotografia = "" + vcp.getTextoFotografia();
+		String musica = "" + vcp.getTextoMusica();
+		String reparto = "" + vcp.getTextoReparto();
+		String duracion = "" + vcp.getTextoDuracion();
+		String idiomasDisponibles = "" + vcp.getTextoIdiomasDisponibles();
+		String subtitulos = "" + vcp.getTextoSubtitulos();
 	}
 
 	public void runGUI() { // Run de la ventana
