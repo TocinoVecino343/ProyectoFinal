@@ -47,7 +47,7 @@ public class Controlador implements ActionListener {
 	}
 
 	public void asignarOyentes() {// Aqui se agregan los lectores a los componentes
-		//Oyentes Ventana Principal
+		// Oyentes Ventana Principal
 		vp.getBotonCrearPublicacion().addActionListener(this);
 		vp.getBotonCrearPublicacion().setActionCommand("boton1_crear_publicacion");
 		vp.getBotonMostrarPublicacion().addActionListener(this);
@@ -56,10 +56,9 @@ public class Controlador implements ActionListener {
 		vp.getBotonEliminarPublicacion().setActionCommand("boton3_eliminar_publicacion");
 		vp.getBotonActualizarPublicacion().addActionListener(this);
 		vp.getBotonActualizarPublicacion().setActionCommand("boton4_actualizar_publicacion");
-		vp.getBotonSalir().addActionListener(this);
-		vp.getBotonSalir().setActionCommand("boton5_salir");
 		
-		//Oyentes Ventana Crear
+
+		// Oyentes Ventana Crear
 		vc.getBotonCrearPelicula().addActionListener(this);
 		vc.getBotonCrearPelicula().setActionCommand("boton_crear_pelicula");
 		vc.getBotonCrearArticulo().addActionListener(this);
@@ -72,6 +71,19 @@ public class Controlador implements ActionListener {
 		vc.getBotonCrearLibroFisico().setActionCommand("boton_crear_libro_fisico");
 		vc.getBotonCrearLibroVirtual().addActionListener(this);
 		vc.getBotonCrearLibroVirtual().setActionCommand("boton_crear_libro_virtual");
+
+		// Oyentes crear objeto especifico
+		vcp.getBotonGuardarPelicula().addActionListener(this);
+		vcp.getBotonGuardarPelicula().setActionCommand("boton_guardar_pelicula");
+		vca.getBotonGuardarArticulo().addActionListener(this);
+		vca.getBotonGuardarArticulo().setActionCommand("boton_guardar_articulo");
+		vcr.getBotonGuardarRevista().addActionListener(this);
+		vcr.getBotonGuardarRevista().setActionCommand("boton_guardar_revista");
+		vclf.getBotonGuardarLibroFisico().addActionListener(this);
+		vclf.getBotonGuardarLibroFisico().setActionCommand("boton_guardar_libro_fisico");
+		vclv.getBotonGuardarLibroVirtual().addActionListener(this);
+		vclv.getBotonGuardarLibroVirtual().setActionCommand("boton_guardar_libro_virtual");
+
 	}
 
 	@Override
@@ -81,30 +93,31 @@ public class Controlador implements ActionListener {
 		switch (alias) {
 		case "boton1_crear_publicacion":
 			vc.setVisible(true);
-			switch(alias) {
+			switch (alias) {
 			case "boton_crear_pelicula":
 				agregarAtributosBasicos();
-			break;
+				vca.setVisible(true);
+				break;
 			case "boton_crear_articulo":
 				agregarAtributosBasicos();
-			break;
+				break;
 			case "boton_crear_revista":
 				agregarAtributosBasicos();
-			break;
+				break;
 			case "boton_crear_juego":
 				agregarAtributosBasicos();
-			break;
+				break;
 			case "boton_crear_libro_fisico":
 				agregarAtributosBasicos();
-			break;
+				break;
 			case "boton_crear_libro_virtual":
 				agregarAtributosBasicos();
-			break;
+				break;
 			}
 			break;
 		case "boton2_mostrar_publicacion":
 			vm.setVisible(true);
-			
+
 			break;
 		case "boton3_eliminar_publicacion":
 			break;
@@ -117,20 +130,17 @@ public class Controlador implements ActionListener {
 	}
 
 	public void agregarAtributosBasicos() {
-		int id = Integer.parseInt(""+vc.getTextoPublicacion());
-		String titulo = ""+vc.getTextoTituloPublicacion();
-		String clasificacion = ""+vc.getTextoClasificacion();
-		String facultad =  ""+vc.getTextoFacultad();
-		int fechaDePublicacion = Integer.parseInt(""+vc.getTextoFecha());
-		String idioma =  ""+vc.getTextoIdioma();
+		int id = Integer.parseInt("" + vc.getTextoPublicacion());
+		String titulo = "" + vc.getTextoTituloPublicacion();
+		String clasificacion = "" + vc.getTextoClasificacion();
+		String facultad = "" + vc.getTextoFacultad();
+		int fechaDePublicacion = Integer.parseInt("" + vc.getTextoFecha());
+		String idioma = "" + vc.getTextoIdioma();
 	}
-	
-	
-	
-	
+
 	public void runGUI() { // Run de la ventana
 		vp.setVisible(true);
-		
+
 	}
 
 	public void run() {
