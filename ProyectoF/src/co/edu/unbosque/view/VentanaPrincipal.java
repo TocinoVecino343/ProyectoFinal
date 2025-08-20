@@ -2,10 +2,15 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.HexFormat;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.text.AttributeSet.ColorAttribute;
+
+import org.w3c.dom.css.RGBColor;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -30,40 +35,40 @@ public class VentanaPrincipal extends JFrame {
 
 		// Mensaje de Bienvenida
 		mensajeBienvenida = new JLabel("Bienvenido a la Biblioteca de la UEB", SwingConstants.CENTER);
-		mensajeBienvenida.setBounds(200, 20, 400, 30);
-		mensajeBienvenida.setForeground(Color.BLACK);
+		mensajeBienvenida.setBounds(300, 20, 400, 30);
+		mensajeBienvenida.setForeground(Color.decode("#144031"));
 		mensajeBienvenida.setFont(new Font("Times New Roman", Font.BOLD, 20)); // Tipo de letra, negrilla y tamaño
 		this.add(mensajeBienvenida);
 
 		// Botones menú principal
 		botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
-		botonCrearPublicacion.setBounds(120, 100, 200, 60); // Posición y tamaño del botón
-		botonCrearPublicacion.setBackground(Color.GRAY);// Color del FONDO del botón
-		botonCrearPublicacion.setForeground(Color.WHITE);
+		botonCrearPublicacion.setBounds(80, 100, 200, 60); // Posición y tamaño del botón
+		botonCrearPublicacion.setBackground(Color.decode("#f5f5dc"));// Color del FONDO del botón
+		botonCrearPublicacion.setForeground(Color.decode("#144031"));
 		botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
 		this.add(botonCrearPublicacion);
 		this.setLayout(null);
 		//
 		botonMostrarPublicacion = new JButton("Mostrar publicación");
-		botonMostrarPublicacion.setBounds(120, 300, 200, 60);
-		botonMostrarPublicacion.setBackground(Color.GRAY);
-		botonMostrarPublicacion.setForeground(Color.WHITE);
+		botonMostrarPublicacion.setBounds(80, 200, 200, 60);
+		botonMostrarPublicacion.setBackground(Color.decode("#f5f5dc"));
+		botonMostrarPublicacion.setForeground(Color.decode("#144031"));
 		botonMostrarPublicacion.setFocusPainted(false);
 		this.add(botonMostrarPublicacion);
 		this.setLayout(null);
 		//
 		botonEliminarPublicacion = new JButton("Eliminar publicación");
-		botonEliminarPublicacion.setBounds(450, 100, 200, 60);
-		botonEliminarPublicacion.setBackground(Color.GRAY);
-		botonEliminarPublicacion.setForeground(Color.WHITE);
+		botonEliminarPublicacion.setBounds(80, 300, 200, 60);
+		botonEliminarPublicacion.setBackground(Color.decode("#f5f5dc"));
+		botonEliminarPublicacion.setForeground(Color.decode("#144031"));
 		botonEliminarPublicacion.setFocusPainted(false);
 		this.add(botonEliminarPublicacion);
 		this.setLayout(null);
 		//
 		botonActualizarPublicacion = new JButton("Actualizar publicación");
-		botonActualizarPublicacion.setBounds(450, 300, 200, 60);
-		botonActualizarPublicacion.setBackground(Color.GRAY);
-		botonActualizarPublicacion.setForeground(Color.WHITE);
+		botonActualizarPublicacion.setBounds(80, 400, 200, 60);
+		botonActualizarPublicacion.setBackground(Color.decode("#f5f5dc"));
+		botonActualizarPublicacion.setForeground(Color.decode("#144031"));
 		botonActualizarPublicacion.setFocusPainted(false);
 		this.add(botonActualizarPublicacion);
 		this.setLayout(null);

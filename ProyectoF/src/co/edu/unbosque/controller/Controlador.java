@@ -26,6 +26,7 @@ public class Controlador implements ActionListener {
 		objP = new PeliculaDAO();
 		objA = new ArticuloDAO();
 		con = new Consola();
+		vp = new VentanaPrincipal();
 		asignarOyentes();
 	}
 
@@ -50,6 +51,7 @@ public class Controlador implements ActionListener {
 		case "boton1_crear_publicacion":
 			VentanaCrear vc;
 			vc = new VentanaCrear();
+			vc.setVisible(true);
 			break;
 		case "boton1_mostrar_publicacion":
 			VentanaMostrar vm;
@@ -61,7 +63,7 @@ public class Controlador implements ActionListener {
 	}
 
 	public void runGUI() { // Run de la ventana
-		vp = new VentanaPrincipal();
+		
 		vp.setVisible(true);
 	}
 
