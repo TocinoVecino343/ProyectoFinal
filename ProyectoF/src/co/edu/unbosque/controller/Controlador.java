@@ -150,47 +150,54 @@ public class Controlador implements ActionListener {
 		switch (alias) {
 
 		// Botones CRUD
-		case "boton1_crear_publicacion":
+		case "boton1_crear_publicacion": {
 			vc.setVisible(true);
 			vp.setVisible(false);
 			break;
-		case "boton2_mostrar_publicacion":
+		}
+		case "boton2_mostrar_publicacion": {
 			vp.setVisible(false);
 			vm.setVisible(true);
 			break;
-		case "boton3_eliminar_publicacion":
+		}
+		case "boton3_eliminar_publicacion": {
 			vp.setVisible(false);
 			ve.setVisible(true);
 			break;
-		case "boton4_actualizar_publicacion":
+		}
+		case "boton4_actualizar_publicacion": {
 			vp.setVisible(false);
 			va.setVisible(true);
 			break;
-
+		}
 		// Botones crear
-		case "boton_crear_pelicula":
+		case "boton_crear_pelicula": {
 			vcp.setVisible(true);
 			vc.setVisible(false);
 			break;
-		case "boton_crear_articulo":
+		}
+		case "boton_crear_articulo": {
 			vca.setVisible(true);
 			vc.setVisible(false);
 			break;
-		case "boton_crear_revista":
+		}
+		case "boton_crear_revista": {
 			vcr.setVisible(true);
 			vc.setVisible(false);
 			break;
-		case "boton_crear_libro_fisico":
+		}
+		case "boton_crear_libro_fisico": {
 			vclf.setVisible(true);
 			vc.setVisible(false);
 			break;
-		case "boton_crear_libro_virtual":
+		}
+		case "boton_crear_libro_virtual": {
 			vclv.setVisible(true);
 			vc.setVisible(false);
 			break;
-
+		}
 		// Botones guardar
-		case "boton_guardar_pelicula":
+		case "boton_guardar_pelicula": {
 			int id = Integer.parseInt("" + vc.getTextoPublicacion().getText());
 			String titulo = "" + vc.getTextoTituloPublicacion().getText();
 			String clasificacion = "" + vc.getTextoClasificacion().getText();
@@ -215,70 +222,145 @@ public class Controlador implements ActionListener {
 			vcp.setVisible(false);
 			vp.setVisible(true);
 			break;
-		case "boton_guardar_articulo":
-			break;
-		case "boton_guardar_revista":
-			break;
-		case "boton_guardar_libro_fisico":
-			break;
-		case "boton_guardar_libro_virtual":
-			break;
+		}
+		case "boton_guardar_articulo": {
+			int id1 = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			String titulo1 = "" + vc.getTextoTituloPublicacion().getText();
+			String clasificacion1 = "" + vc.getTextoClasificacion().getText();
+			String facultad1 = "" + vc.getTextoFacultad().getText();
+			int fechaDePublicacion1 = Integer.parseInt("" + vc.getTextoFecha().getText());
+			String idioma1 = "" + vc.getTextoIdioma().getText();
 
+			String autor = "" + vca.getTextoAutor().getText();
+			String fuente = "" + vca.getTextoFuente().getText();
+			String terminosGeograficos = "" + vca.getTextoGeograficos().getText();
+			int cantidadDePaginas = Integer.parseInt("" + vca.getTextoCantidadPaginas().getText());
+
+			Articulo tempA = new Articulo(id1, titulo1, clasificacion1, facultad1, fechaDePublicacion1, idioma1, autor, fuente, terminosGeograficos, cantidadDePaginas);
+			objA.crear(tempA);
+			vca.setVisible(false);
+			vp.setVisible(true);
+			break;
+		}
+		case "boton_guardar_revista": {
+			int id2 = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			String titulo2 = "" + vc.getTextoTituloPublicacion().getText();
+			String clasificacion2 = "" + vc.getTextoClasificacion().getText();
+			String facultad2 = "" + vc.getTextoFacultad().getText();
+			int fechaDePublicacion2 = Integer.parseInt("" + vc.getTextoFecha().getText());
+			String idioma2 = "" + vc.getTextoIdioma().getText();
+
+			String autor1 = "" + vcr.getTextoAutor().getText();
+			String fuente1 = "" + vcr.getTextoFuente().getText();
+			String terminosGeograficos1 = "" + vcr.getTextoGeograficos().getText();
+			String descripcionFisica = "" + vcr.getTextoDescripcionFisica().getText();
+
+			Revista tempR = new Revista(id2, titulo2, clasificacion2, facultad2, fechaDePublicacion2, idioma2, autor1, fuente1, terminosGeograficos1, descripcionFisica);
+			objR.crear(tempR);;
+			vcr.setVisible(false);
+			vp.setVisible(true);
+			break;
+		}
+		case "boton_guardar_libro_fisico": {
+			int id3 = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			String titulo3 = "" + vc.getTextoTituloPublicacion().getText();
+			String clasificacion3 = "" + vc.getTextoClasificacion().getText();
+			String facultad3 = "" + vc.getTextoFacultad().getText();
+			int fechaDePublicacion3 = Integer.parseInt("" + vc.getTextoFecha().getText());
+			String idioma3 = "" + vc.getTextoIdioma().getText();
+
+			int cantidadDeCopias = Integer.parseInt("" + vclf.getTextoCantidadCopias().getText());
+			int tiempoDePrestamo = Integer.parseInt("" + vclf.getTextoTiempoPrestamo().getText());
+
+			LibroFisico tempLf = new LibroFisico(id3, titulo3, clasificacion3, facultad3, fechaDePublicacion3, idioma3, cantidadDePaginas, autor1, autor, cantidadDeCopias, tiempoDePrestamo);
+			objLf.crear(tempLf);;
+			vclf.setVisible(false);
+			vp.setVisible(true);
+			break;
+		}
+		case "boton_guardar_libro_virtual": {
+			int id4 = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			String titulo4 = "" + vc.getTextoTituloPublicacion().getText();
+			String clasificacion4 = "" + vc.getTextoClasificacion().getText();
+			String facultad4 = "" + vc.getTextoFacultad().getText();
+			int fechaDePublicacion4 = Integer.parseInt("" + vc.getTextoFecha().getText());
+			String idioma4 = "" + vc.getTextoIdioma().getText();
+
+			String tipoDeArchivo = "" + vclv.getTextoTipoArchivo().getText();
+			boolean esAudioLibro = vclv.getTextoEsAudioLibro();
+
+			LibroVirtual tempLv = new LibroVirtual(id4, titulo4, clasificacion4, facultad4, fechaDePublicacion4, idioma4, cantidadDePaginas, autor1, autor, tipoDeArchivo, esAudioLibro);
+			objLv.crear(tempLv);;
+			vclv.setVisible(false);
+			vp.setVisible(true);
+			break;
+		}
 		// Botones Mostrar
-		case "boton_mostrar_todo":
+		case "boton_mostrar_todo": {
 			vm.setVisible(false); // FALTA CLASE MOSTRAR TODO
 			break;
-		case "boton_mostrar_pelicula":
+		}
+		case "boton_mostrar_pelicula": {
 			vm.setVisible(false);
 			vmp.setVisible(true);
 			vmp.getTextoMostrarPelicula().setText(objP.mostrarDatos());
 			break;
-		case "boton_mostrar_articulo":
+		}
+		case "boton_mostrar_articulo": {
 			vm.setVisible(false);
 			vma.setVisible(true);
 			vma.getTextoMostrarArticulo().setText(objA.mostrarDatos());
 			break;
-		case "boton_mostrar_revista":
+		}
+		case "boton_mostrar_revista": {
 			vm.setVisible(false);
 			vmr.setVisible(true);
 			vmr.getTextoMostrarRevista().setText(objR.mostrarDatos());
 			break;
-		case "boton_mostrar_libro_fisico":
+		}
+		case "boton_mostrar_libro_fisico": {
 			vm.setVisible(false);
 			vmlf.setVisible(true);
 			vmlf.getTextoMostrarLibroFisico().setText(objLf.mostrarDatos());
 			break;
-		case "boton_mostrar_libro_virtual":
+		}
+		case "boton_mostrar_libro_virtual": {
 			vm.setVisible(false);
 			vmlv.setVisible(true);
 			vmlv.getTextoMostrarLibroVirtual().setText(objLv.mostrarDatos());
 			break;
-
+		}
 		// Botones eliminar
-		case "boton_eliminar_pelicula":
+		case "boton_eliminar_pelicula": {
 			ve.setVisible(false);
 			vep.setVisible(true);
 			break;
-		case "boton_eliminar_articulo":
+		}
+		case "boton_eliminar_articulo": {
 			ve.setVisible(false);
 			vea.setVisible(true);
 			break;
-		case "boton_eliminar_revista":
+		}
+		case "boton_eliminar_revista": {
 			ve.setVisible(false);
 			ver.setVisible(true);
 			break;
-		case "boton_eliminar_libro_fisico":
+		}
+		case "boton_eliminar_libro_fisico": {
 			ve.setVisible(false);
 			velf.setVisible(true);
 			break;
-		case "boton_eliminar_libro_virtual":
+		}
+		case "boton_eliminar_libro_virtual": {
 			ve.setVisible(false);
 			velv.setVisible(true);
 			break;
-		case "boton_cancelar":
+		}
+		case "boton_cancelar": {
 			ve.setVisible(false);
 			vp.setVisible(true);
 			break;
+		}
 		}
 	}
 
@@ -297,7 +379,7 @@ public class Controlador implements ActionListener {
 			opcion = con.leerInt();
 			switch (opcion) {
 
-			case 1:
+			case 1: {
 				int opcionCrear = 0;
 				con.escribirConSalto("Seleccione la accion que desea realizar");
 				con.escribirConSalto("Crear un/a: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
@@ -327,7 +409,7 @@ public class Controlador implements ActionListener {
 				con.quemarLinea();
 
 				switch (opcionCrear) {
-				case 1:
+				case 1: {
 
 					con.escribirConSalto("Ingrese la productora");
 					String productora = con.leerPalabra();
@@ -351,7 +433,8 @@ public class Controlador implements ActionListener {
 					String subtitulos = con.leerLineaCompleta();
 
 					break;
-				case 2:
+				}
+				case 2: {
 
 					con.escribirConSalto("Ingrese el autor");
 					String autorA = con.leerPalabra();
@@ -367,7 +450,8 @@ public class Controlador implements ActionListener {
 					objA.crear(tempA);
 
 					break;
-				case 3:
+				}
+				case 3: {
 
 					con.escribirConSalto("Ingrese el autor");
 					String autorR = con.leerPalabra();
@@ -383,8 +467,8 @@ public class Controlador implements ActionListener {
 					objR.crear(tempR);
 
 					break;
-
-				case 4:
+				}
+				case 4: {
 
 					con.escribirConSalto("Ingrese la desarrolladora del juego");
 					String desarrrolladora = con.leerPalabra();
@@ -398,7 +482,8 @@ public class Controlador implements ActionListener {
 					objS.crear(tempS);
 
 					break;
-				case 5:
+				}
+				case 5: {
 
 					con.escribirConSalto("Ingrese la cantidad de copias del libro");
 					int cantidadDeCopias = con.leerInt();
@@ -410,7 +495,8 @@ public class Controlador implements ActionListener {
 					objLf.crear(tempLf);
 
 					break;
-				case 6:
+				}
+				case 6: {
 
 					con.escribirConSalto("Ingrese el tipo de archivo en el que esta disponible el libro");
 					String tipoDeArchivo = con.leerPalabra();
@@ -422,12 +508,15 @@ public class Controlador implements ActionListener {
 					objLv.crear(tempLv);
 
 					break;
-				default:
+				}
+				default: {
 					break;
+				}
 				}
 
 				break;
-			case 2:
+			}
+			case 2: {
 
 				con.escribirConSalto(
 						"¿Desea mostrar todas las publicaciones?, Escriba Si para confirmar de lo contrario escriba No");
@@ -440,7 +529,7 @@ public class Controlador implements ActionListener {
 				}
 
 				switch (opcionMostrarTodo) {
-				case 1:
+				case 1: {
 
 					objP.mostrarDatos();
 					objA.mostrarDatos();
@@ -450,38 +539,47 @@ public class Controlador implements ActionListener {
 					objLv.mostrarDatos();
 
 					break;
-				case 2:
+				}
+				case 2: {
 					con.escribirConSalto("Ingrese la publicacion que desea mostrar");
 					con.escribirConSalto("Mostrar: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
 							+ "\n4. Juego de 4Prot" + "\n5. Libro Fisico" + "\n6. Libro Virtual");
 					int seleccionMostrar = con.leerInt();
 
 					switch (seleccionMostrar) {
-					case 1:
+					case 1: {
 						objP.mostrarDatos();
 						break;
-					case 2:
+					}
+					case 2: {
 						objA.mostrarDatos();
 						break;
-					case 3:
+					}
+					case 3: {
 						objR.mostrarDatos();
 						break;
-					case 4:
+					}
+					case 4: {
 						objS.mostrarDatos();
 						break;
-					case 5:
+					}
+					case 5: {
 						objLf.mostrarDatos();
 						break;
-					case 6:
+					}
+					case 6: {
 						objLv.mostrarDatos();
 						break;
-					default:
+					}
+					default: {
 						break;
+					}
 					}
 
 					break;
+				}
 
-				case 3:
+				case 3: {
 
 					int opcionEliminar = 0;
 					con.escribirConSalto("Eliminación de una publicación por índice:");
@@ -496,7 +594,7 @@ public class Controlador implements ActionListener {
 					con.quemarLinea();
 
 					switch (opcionTipoAEliminar) {
-					case 1:
+					case 1: {
 						objP.mostrarDatos();
 						int indiceP = 0;
 
@@ -505,7 +603,8 @@ public class Controlador implements ActionListener {
 
 						objP.eliminarDato(indiceP);
 						break;
-					case 2:
+					}
+					case 2: {
 
 						objA.mostrarDatos();
 						int indiceA = 0;
@@ -516,7 +615,8 @@ public class Controlador implements ActionListener {
 						objA.eliminarDato(indiceA);
 
 						break;
-					case 3:
+					}
+					case 3: {
 
 						objR.mostrarDatos();
 						int indiceR = 0;
@@ -527,7 +627,8 @@ public class Controlador implements ActionListener {
 						objR.eliminarDato(indiceR);
 
 						break;
-					case 4:
+					}
+					case 4: {
 
 						objS.mostrarDatos();
 						int indiceS = 0;
@@ -538,7 +639,8 @@ public class Controlador implements ActionListener {
 						objS.eliminarDato(indiceS);
 
 						break;
-					case 5:
+					}
+					case 5: {
 
 						objLf.mostrarDatos();
 						int indiceLf = 0;
@@ -549,7 +651,8 @@ public class Controlador implements ActionListener {
 						objLf.eliminarDato(indiceLf);
 
 						break;
-					case 6:
+					}
+					case 6: {
 
 						objLv.mostrarDatos();
 						int indiceLv = 0;
@@ -560,13 +663,16 @@ public class Controlador implements ActionListener {
 						objLv.eliminarDato(indiceLv);
 
 						break;
-					default:
+					}
+					default: {
 						break;
+					}
 					}
 
 					break;
+				}
 
-				case 4:
+				case 4: {
 					// Por revisar
 					con.escribirConSalto("Ingrese la publicacion que desea actualizar");
 					con.escribirConSalto("Actualizar: " + "\n1. Pelicula" + "\n2. Articulo" + "\n3. Revista"
@@ -576,7 +682,7 @@ public class Controlador implements ActionListener {
 					con.quemarLinea();
 
 					switch (seleccionActualizar) {
-					case 1:
+					case 1: {
 
 						objP.mostrarDatos();
 						int indiceP = 0;
@@ -586,7 +692,8 @@ public class Controlador implements ActionListener {
 
 						objP.actualizar(indiceP, null);
 						break;
-					case 2:
+					}
+					case 2: {
 
 						objA.mostrarDatos();
 						int indiceA = 0;
@@ -597,7 +704,8 @@ public class Controlador implements ActionListener {
 						objA.actualizar(indiceA, null);
 
 						break;
-					case 3:
+					}
+					case 3: {
 
 						objR.mostrarDatos();
 						int indiceR = 0;
@@ -608,7 +716,8 @@ public class Controlador implements ActionListener {
 						objR.actualizar(indiceR, null);
 
 						break;
-					case 4:
+					}
+					case 4: {
 
 						objS.mostrarDatos();
 						int indiceS = 0;
@@ -619,7 +728,8 @@ public class Controlador implements ActionListener {
 						objS.actualizar(indiceS, null);
 
 						break;
-					case 5:
+					}
+					case 5: {
 
 						objLf.mostrarDatos();
 						int indiceLf = 0;
@@ -630,7 +740,8 @@ public class Controlador implements ActionListener {
 						objLf.actualizar(indiceLf, null);
 
 						break;
-					case 6:
+					}
+					case 6: {
 
 						objLv.mostrarDatos();
 						int indiceLv = 0;
@@ -641,13 +752,15 @@ public class Controlador implements ActionListener {
 						objLv.actualizar(indiceLv, null);
 
 						break;
-					default:
+					}
+					default: {
 						break;
 					}
-				case 5:
+					}
+				case 5: {
 					break;
 				}
+				}
+			} while (opcion != 5);
 			}
-		} while (opcion != 5);
-	}
-}
+		}

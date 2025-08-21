@@ -5,7 +5,7 @@ public class Revista extends Publicacion {
 	private String autor;
 	private String fuente;
 	private String terminosGeograficos;
-	private String descipcionFisica;
+	private String descripcionFisica;
 
 	public Revista() {
 		super();
@@ -16,16 +16,16 @@ public class Revista extends Publicacion {
 		this.autor = autor;
 		this.fuente = fuente;
 		this.terminosGeograficos = terminosGeograficos;
-		this.descipcionFisica = descipcionFisica;
+		this.descripcionFisica = descipcionFisica;
 	}
 
 	public Revista(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion, String idioma,
-			String autor, String fuente, String terminosGeograficos, String descipcionFisica) {
+			String autor, String fuente, String terminosGeograficos, String descripcionFisica) {
 		super(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma);
 		this.autor = autor;
 		this.fuente = fuente;
 		this.terminosGeograficos = terminosGeograficos;
-		this.descipcionFisica = descipcionFisica;
+		this.descripcionFisica = descripcionFisica;
 	}
 
 	public Revista(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion,
@@ -58,18 +58,18 @@ public class Revista extends Publicacion {
 		this.terminosGeograficos = terminosGeograficos;
 	}
 
-	public String getDescipcionFisica() {
-		return descipcionFisica;
+	public String getDescripcionFisica() {
+		return descripcionFisica;
 	}
 
-	public void setDescipcionFisica(String descipcionFisica) {
-		this.descipcionFisica = descipcionFisica;
+	public void setDescripcionFisica(String descripcionFisica) {
+		this.descripcionFisica = descripcionFisica;
 	}
 
 	@Override
 	public String toString() {
 		return super.toString() + " Revista [autor=" + autor + ", fuente=" + fuente + ", terminosGeograficos="
-				+ terminosGeograficos + ", descipcionFisica=" + descipcionFisica + "]";
+				+ terminosGeograficos + ", descripcionFisica=" + descripcionFisica + "]";
 	}
 
 }
