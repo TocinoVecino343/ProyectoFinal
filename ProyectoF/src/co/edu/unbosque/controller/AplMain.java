@@ -4,7 +4,7 @@ public class AplMain {
 
 	public static void main(String[] args) {
 		Controlador c = new Controlador();
-		c.runGUI(); // Corre la ventana principal cuando el usuario selecciona SALIR
+		c.runGUI();
 
 	}
 

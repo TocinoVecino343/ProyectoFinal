@@ -14,7 +14,7 @@ public class VentanaActualizarLibroFisico extends JFrame {
 		setTitle("Actualizar Libro Físico");
 		setBounds(10, 10, 600, 550);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 
 		labelIdBuscar = new JLabel("ID Libro:");

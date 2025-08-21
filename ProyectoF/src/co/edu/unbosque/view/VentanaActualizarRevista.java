@@ -14,7 +14,7 @@ public class VentanaActualizarRevista extends JFrame {
 		setTitle("Actualizar Revista");
 		setBounds(10, 10, 600, 550);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 
 		labelIdBuscar = new JLabel("ID Revista:");

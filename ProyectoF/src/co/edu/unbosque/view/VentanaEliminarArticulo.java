@@ -14,7 +14,7 @@ public class VentanaEliminarArticulo extends JFrame {
 	public VentanaEliminarArticulo() {
 		setTitle("Eliminar Artículo");
 		setSize(350, 200);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 		setLocationRelativeTo(null);
 

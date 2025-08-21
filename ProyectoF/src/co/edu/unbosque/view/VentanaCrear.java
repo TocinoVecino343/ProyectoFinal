@@ -40,7 +40,7 @@ public class VentanaCrear extends JFrame {
 		setTitle("Menú de Creación");
 	    setBounds(10, 10, 1280, 800);
 	    setResizable(false);
-	    setDefaultCloseOperation(EXIT_ON_CLOSE);
+	    setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	    setLayout(null);
 
 	    labelPublicacion = new JLabel("Publicación:");

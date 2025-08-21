@@ -35,7 +35,7 @@ public class VentanaActualizarPelicula extends JFrame {
 		setTitle("Actualizar Película");
 		setBounds(10, 10, 600, 500);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 
 		labelIdBuscar = new JLabel("ID Película:");

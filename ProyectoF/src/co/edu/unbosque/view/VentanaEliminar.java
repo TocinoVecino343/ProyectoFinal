@@ -17,7 +17,7 @@ public class VentanaEliminar extends JFrame {
 	public VentanaEliminar() {
 		this.setTitle("Eliminar Publicación");
 		this.setSize(400, 350);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLayout(null);
 		this.setLocationRelativeTo(null);
 

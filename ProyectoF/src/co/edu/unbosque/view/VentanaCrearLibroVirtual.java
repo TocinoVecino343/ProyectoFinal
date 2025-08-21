@@ -23,7 +23,7 @@ public class VentanaCrearLibroVirtual extends JFrame {
 		this.setTitle("Creación archivo digital");
 		this.setBounds(50, 50, 1280, 800);
 		this.setResizable(false);
-		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLayout(null);
 
 		labelTipoArchivo = new JLabel("Ingrese el tipo de archivo:");

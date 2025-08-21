@@ -17,7 +17,7 @@ public class VentanaMostrarLibroFisico extends JFrame {
         this.setTitle("Mostrar libros físicos");
         this.setBounds(50, 50, 1280, 800);
         this.setResizable(false);
-        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLayout(null);
 
         textoMostrarLibroFisico = new JTextArea();

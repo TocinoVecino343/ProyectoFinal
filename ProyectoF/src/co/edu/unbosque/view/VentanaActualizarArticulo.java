@@ -14,7 +14,7 @@ public class VentanaActualizarArticulo extends JFrame {
 		setTitle("Actualizar Artículo");
 		setBounds(10, 10, 600, 500);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 
 		labelIdBuscar = new JLabel("ID Artículo:");

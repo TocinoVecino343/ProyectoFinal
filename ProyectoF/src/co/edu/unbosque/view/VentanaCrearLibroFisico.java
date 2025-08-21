@@ -23,7 +23,7 @@ public class VentanaCrearLibroFisico extends JFrame {
 		this.setTitle("Creación libro");
 		this.setBounds(50, 50, 1280, 800);
 		this.setResizable(false);
-		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLayout(null);
 		
 		labelCantidadCopias = new JLabel("Ingrese la cantidad de copias del libro:");

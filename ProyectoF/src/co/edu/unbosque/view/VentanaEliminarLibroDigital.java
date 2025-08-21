@@ -14,7 +14,7 @@ public class VentanaEliminarLibroDigital extends JFrame {
 	public VentanaEliminarLibroDigital() {
 		setTitle("Eliminar Libro Digital");
 		setSize(350, 200);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 		setLocationRelativeTo(null);
 

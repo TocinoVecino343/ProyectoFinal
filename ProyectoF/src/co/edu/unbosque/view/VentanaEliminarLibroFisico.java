@@ -14,7 +14,7 @@ public class VentanaEliminarLibroFisico extends JFrame {
 	public VentanaEliminarLibroFisico() {
 		setTitle("Eliminar Libro Físico");
 		setSize(350, 200);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 		setLocationRelativeTo(null);
 

@@ -14,7 +14,7 @@ public class VentanaActualizarLibroVirtual extends JFrame {
 		setTitle("Actualizar Libro Virtual");
 		setBounds(10, 10, 600, 600);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 
 		labelIdBuscar = new JLabel("ID Libro:");

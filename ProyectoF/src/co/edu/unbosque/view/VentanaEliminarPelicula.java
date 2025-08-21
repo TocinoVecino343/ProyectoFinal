@@ -14,7 +14,7 @@ public class VentanaEliminarPelicula extends JFrame {
 	public VentanaEliminarPelicula() {
 		setTitle("Eliminar Película");
 		setSize(350, 200);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 		setLocationRelativeTo(null);
 

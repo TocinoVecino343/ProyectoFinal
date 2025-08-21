@@ -14,7 +14,7 @@ public class VentanaEliminarJuego extends JFrame {
 	public VentanaEliminarJuego() {
 		setTitle("Eliminar Juego");
 		setSize(350, 200);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 		setLocationRelativeTo(null);
 

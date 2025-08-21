@@ -25,7 +25,7 @@ public class VentanaCrearJuego extends JFrame {
 		this.setTitle("Creación videojuego");
 		this.setBounds(50, 50, 1280, 800);
 		this.setResizable(false);
-		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLayout(null);
 
 		labelDesarrolladora = new JLabel("Ingrese la desarrolladora:");

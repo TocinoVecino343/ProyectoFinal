@@ -42,7 +42,7 @@ public class VentanaActualizar extends JFrame {
 		setTitle("Menú de Actualización");
 		setBounds(10, 10, 1280, 800);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 
 		labelIdBuscar = new JLabel("ID a Buscar:");

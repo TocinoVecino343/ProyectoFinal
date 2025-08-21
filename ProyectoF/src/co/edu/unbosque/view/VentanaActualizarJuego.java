@@ -22,7 +22,7 @@ public class VentanaActualizarJuego extends JFrame {
 	public VentanaActualizarJuego() {
 		setTitle("Actualizar Juego");
 		setSize(400, 350);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 		setLocationRelativeTo(null);
 
