@@ -56,8 +56,8 @@ public class Steam extends Publicacion {
 
 	@Override
 	public String toString() {
-		return super.toString() + " Steam [desarrolladora=" + desarrolladora + ", editor=" + editor + ", genero="
-				+ genero + "]";
+		return super.toString() + " -----Steam-----" + "\nDesarrolladora: " + desarrolladora + "\nEditor: " + editor + "\nGénero: "
+				+ genero;
 	}
 
 }

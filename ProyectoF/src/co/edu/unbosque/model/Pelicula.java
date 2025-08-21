@@ -136,12 +136,8 @@ public class Pelicula extends Publicacion{
 
 	@Override
 	public String toString() {
-		return super.toString()+" Pelicula [productora=" + productora + ", pais=" + pais + ", director=" + director + ", guion=" + guion
-				+ ", fotografia=" + fotografia + ", musica=" + musica + ", reparto=" + reparto + ", duracion="
-				+ duracion + ", idiomasDisponibles=" + idiomasDisponibles + ", subtitulos=" + subtitulos + "]";
+		return super.toString()+" -----Pelicula-----" + "\nProductora: " + productora + "\nPaís: " + pais + "\nDirector: " + director + "\nGuión: " + guion
+				+ "\nFotogría: " + fotografia + "\nMúsica: " + musica + "\nReparto: " + reparto + "\nDuración: "
+				+ duracion + "\nIdiomasDisponibles: " + idiomasDisponibles + "\nSubtitulos: " + subtitulos;
 	}
-	
-	
-	
-	
 }

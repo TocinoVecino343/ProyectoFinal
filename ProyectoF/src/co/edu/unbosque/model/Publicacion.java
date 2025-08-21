@@ -74,8 +74,8 @@ public abstract class Publicacion {
 
 	@Override
 	public String toString() {
-		return "Publicacion [id=" + id + ", titulo=" + titulo + ", clasificacion=" + clasificacion + ", facultad="
-				+ facultad + ", fechaDePublicacion=" + fechaDePublicacion + ", idioma=" + idioma + "]";
+		return " -----Publicación-----" + "\nId: " + id + "\nTítulo: " + titulo + "\nClasificación: " + clasificacion + "\nFacultad: "
+				+ facultad + "\nFecha De Publicación: " + fechaDePublicacion + "\nIdioma: " + idioma;
 	}
 
 }

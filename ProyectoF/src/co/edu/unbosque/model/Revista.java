@@ -68,8 +68,8 @@ public class Revista extends Publicacion {
 
 	@Override
 	public String toString() {
-		return super.toString() + " Revista [autor=" + autor + ", fuente=" + fuente + ", terminosGeograficos="
-				+ terminosGeograficos + ", descripcionFisica=" + descripcionFisica + "]";
+		return super.toString() + " -----Revista-----" + "\nAutor: " + autor + "\nFuente: " + fuente + "\nTérminosGeograficos: "
+				+ terminosGeograficos + "Descripción Física: " + descripcionFisica;
 	}
 
 }
