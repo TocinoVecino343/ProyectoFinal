@@ -56,4 +56,83 @@ public class LibroFisicoDAO implements DAO<LibroFisico> {
 		return listaLibrosFisicos.size();
 	}
 
+	@Override
+	public String filtrar(char datoABuscar) {
+		String contenido = "";
+		for (LibroFisico libroFisico : listaLibrosFisicos) {
+			char charLibroFisico = libroFisico.getTitulo().charAt(0);
+
+			if (charLibroFisico == datoABuscar) {
+				contenido += libroFisico.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarFecha(int fechaABuscar) {
+		String contenido = "";
+		for (LibroFisico libroFisico : listaLibrosFisicos) {
+			if (libroFisico.getFechaDePublicacion() == fechaABuscar) {
+				contenido += libroFisico.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarTitulo(String tituloABuscar) {
+		String contenido = "";
+		for (LibroFisico libroFisico : listaLibrosFisicos) {
+			if (libroFisico.getTitulo() == tituloABuscar) {
+				contenido += libroFisico.toString();
+			}
+		}
+		return contenido;
+
+	}
+
+	@Override
+	public String filtrarFacultad(String facultadABuscar) {
+		String contenido = "";
+		for (LibroFisico libroFisico : listaLibrosFisicos) {
+			if (libroFisico.getFacultad() == facultadABuscar) {
+				contenido += libroFisico.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarIdioma(String idiomaABuscar) {
+		String contenido = "";
+		for (LibroFisico libroFisico : listaLibrosFisicos) {
+			if (libroFisico.getIdioma() == idiomaABuscar) {
+				contenido += libroFisico.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarId(int idABuscar) {
+		String contenido = "";
+		for (int i = 0; i < listaLibrosFisicos.size(); i++) {
+			if (listaLibrosFisicos.get(i).getId() == idABuscar) {
+				contenido = listaLibrosFisicos.get(i).toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarClasificacion(String clasificacionABuscar) {
+		String contenido = "";
+		for (LibroFisico libroFisico : listaLibrosFisicos) {
+			if (libroFisico.getClasificacion() == clasificacionABuscar) {
+				contenido += libroFisico.toString();
+			}
+		}
+		return contenido;
+	}
 }

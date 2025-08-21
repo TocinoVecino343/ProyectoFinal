@@ -56,4 +56,83 @@ public class PeliculaDAO implements DAO<Pelicula> {
 		return listaPeliculas.size();
 	}
 
+	@Override
+	public String filtrar(char datoABuscar) {
+		String contenido = "";
+		for (Pelicula pelicula : listaPeliculas) {
+			char charPelicula = pelicula.getTitulo().charAt(0);
+
+			if (charPelicula == datoABuscar) {
+				contenido += pelicula.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarFecha(int fechaABuscar) {
+		String contenido = "";
+		for (Pelicula pelicula : listaPeliculas) {
+			if (pelicula.getFechaDePublicacion() == fechaABuscar) {
+				contenido += pelicula.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarTitulo(String tituloABuscar) {
+		String contenido = "";
+		for (Pelicula pelicula : listaPeliculas) {
+			if (pelicula.getTitulo() == tituloABuscar) {
+				contenido += pelicula.toString();
+			}
+		}
+		return contenido;
+
+	}
+
+	@Override
+	public String filtrarFacultad(String facultadABuscar) {
+		String contenido = "";
+		for (Pelicula pelicula : listaPeliculas) {
+			if (pelicula.getFacultad() == facultadABuscar) {
+				contenido += pelicula.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarIdioma(String idiomaABuscar) {
+		String contenido = "";
+		for (Pelicula pelicula : listaPeliculas) {
+			if (pelicula.getIdioma() == idiomaABuscar) {
+				contenido += pelicula.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarId(int idABuscar) {
+		String contenido = "";
+		for (int i = 0; i < listaPeliculas.size(); i++) {
+			if (listaPeliculas.get(i).getId() == idABuscar) {
+				contenido = listaPeliculas.get(i).toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarClasificacion(String clasificacionABuscar) {
+		String contenido = "";
+		for (Pelicula pelicula : listaPeliculas) {
+			if (pelicula.getClasificacion() == clasificacionABuscar) {
+				contenido += pelicula.toString();
+			}
+		}
+		return contenido;
+	}
 }

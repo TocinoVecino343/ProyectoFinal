@@ -149,7 +149,6 @@ public class Controlador implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String alias = e.getActionCommand();
-		System.out.println(e); // Quitar este syso una vez terminado todo
 
 		switch (alias) {
 
@@ -432,6 +431,7 @@ public class Controlador implements ActionListener {
 			vp.setVisible(true);
 		}
 			break;
+
 		}
 	}
 

@@ -56,4 +56,84 @@ public class ArticuloDAO implements DAO<Articulo> {
 		return listaArticulos.size();
 	}
 
+	@Override
+	public String filtrar(char datoABuscar) {
+		String contenido = "";
+		for (Articulo articulo : listaArticulos) {
+			char charArticulo = articulo.getTitulo().charAt(0);
+
+			if (charArticulo == datoABuscar) {
+				contenido += articulo.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarFecha(int fechaABuscar) {
+		String contenido = "";
+		for (Articulo articulo : listaArticulos) {
+			if (articulo.getFechaDePublicacion() == fechaABuscar) {
+				contenido += articulo.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarTitulo(String tituloABuscar) {
+		String contenido = "";
+		for (Articulo articulo : listaArticulos) {
+			if (articulo.getTitulo() == tituloABuscar) {
+				contenido += articulo.toString();
+			}
+		}
+		return contenido;
+
+	}
+
+	@Override
+	public String filtrarFacultad(String facultadABuscar) {
+		String contenido = "";
+		for (Articulo articulo : listaArticulos) {
+			if (articulo.getFacultad() == facultadABuscar) {
+				contenido += articulo.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarIdioma(String idiomaABuscar) {
+		String contenido = "";
+		for (Articulo articulo : listaArticulos) {
+			if (articulo.getIdioma() == idiomaABuscar) {
+				contenido += articulo.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarId(int idABuscar) {
+		String contenido = "";
+		for (int i = 0; i < listaArticulos.size(); i++) {
+			if (listaArticulos.get(i).getId() == idABuscar) {
+				contenido = listaArticulos.get(i).toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarClasificacion(String clasificacionABuscar) {
+		String contenido = "";
+		for (Articulo articulo : listaArticulos) {
+			if (articulo.getClasificacion() == clasificacionABuscar) {
+				contenido += articulo.toString();
+			}
+		}
+		return contenido;
+	}
+
 }

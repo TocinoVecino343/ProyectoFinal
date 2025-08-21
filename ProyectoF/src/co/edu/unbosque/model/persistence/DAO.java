@@ -10,5 +10,19 @@ public interface DAO<E> {
 
 	public boolean actualizar(int indice, E datoActualizado);
 
+	public String filtrar(char datoABuscar);
+
+	public String filtrarFecha(int fechaABuscar);
+
+	public String filtrarTitulo(String tituloABuscar);
+
+	public String filtrarFacultad(String facultadABuscar);
+
+	public String filtrarIdioma(String idiomaABuscar);
+
+	public String filtrarId(int idABuscar);
+
+	public String filtrarClasificacion(String clasificacionABuscar);
+
 	public int contar();
 }

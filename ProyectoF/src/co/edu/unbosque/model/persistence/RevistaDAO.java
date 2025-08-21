@@ -64,4 +64,83 @@ public class RevistaDAO implements DAO<Revista> {
 		return listaRevistas.size();
 	}
 
+	@Override
+	public String filtrar(char datoABuscar) {
+		String contenido = "";
+		for (Revista revista : listaRevistas) {
+			char charRevista = revista.getTitulo().charAt(0);
+
+			if (charRevista == datoABuscar) {
+				contenido += revista.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarFecha(int fechaABuscar) {
+		String contenido = "";
+		for (Revista revista : listaRevistas) {
+			if (revista.getFechaDePublicacion() == fechaABuscar) {
+				contenido += revista.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarTitulo(String tituloABuscar) {
+		String contenido = "";
+		for (Revista revista : listaRevistas) {
+			if (revista.getTitulo() == tituloABuscar) {
+				contenido += revista.toString();
+			}
+		}
+		return contenido;
+
+	}
+
+	@Override
+	public String filtrarFacultad(String facultadABuscar) {
+		String contenido = "";
+		for (Revista revista : listaRevistas) {
+			if (revista.getFacultad() == facultadABuscar) {
+				contenido += revista.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarIdioma(String idiomaABuscar) {
+		String contenido = "";
+		for (Revista revista : listaRevistas) {
+			if (revista.getIdioma() == idiomaABuscar) {
+				contenido += revista.toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarId(int idABuscar) {
+		String contenido = "";
+		for (int i = 0; i < listaRevistas.size(); i++) {
+			if (listaRevistas.get(i).getId() == idABuscar) {
+				contenido = listaRevistas.get(i).toString();
+			}
+		}
+		return contenido;
+	}
+
+	@Override
+	public String filtrarClasificacion(String clasificacionABuscar) {
+		String contenido = "";
+		for (Revista revista : listaRevistas) {
+			if (revista.getClasificacion() == clasificacionABuscar) {
+				contenido += revista.toString();
+			}
+		}
+		return contenido;
+	}
 }
