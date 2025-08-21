@@ -3,10 +3,7 @@ package co.edu.unbosque.view;
 import javax.swing.*;
 
 public class VentanaActualizarPelicula extends JFrame {
-
-	private JLabel labelIdBuscar;
-	private JTextField textoIdBuscar;
-	private JButton botonBuscar;
+	
 
 	private JLabel labelTitulo;
 	private JTextField textoTitulo;
@@ -37,19 +34,7 @@ public class VentanaActualizarPelicula extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
-
-		labelIdBuscar = new JLabel("ID Película:");
-		labelIdBuscar.setBounds(50, 20, 100, 30);
-		add(labelIdBuscar);
-
-		textoIdBuscar = new JTextField();
-		textoIdBuscar.setBounds(160, 20, 150, 30);
-		add(textoIdBuscar);
-
-		botonBuscar = new JButton("Buscar");
-		botonBuscar.setBounds(330, 20, 100, 30);
-		add(botonBuscar);
-
+		
 		labelTitulo = new JLabel("Título:");
 		labelTitulo.setBounds(50, 70, 100, 30);
 		add(labelTitulo);
@@ -109,150 +94,8 @@ public class VentanaActualizarPelicula extends JFrame {
 		botonActualizar = new JButton("Actualizar Película");
 		botonActualizar.setBounds(200, 420, 180, 40);
 		add(botonActualizar);
+		
+		
 	}
 
-	public JLabel getLabelIdBuscar() {
-		return labelIdBuscar;
-	}
-
-	public void setLabelIdBuscar(JLabel labelIdBuscar) {
-		this.labelIdBuscar = labelIdBuscar;
-	}
-
-	public JTextField getTextoIdBuscar() {
-		return textoIdBuscar;
-	}
-
-	public void setTextoIdBuscar(JTextField textoIdBuscar) {
-		this.textoIdBuscar = textoIdBuscar;
-	}
-
-	public JButton getBotonBuscar() {
-		return botonBuscar;
-	}
-
-	public void setBotonBuscar(JButton botonBuscar) {
-		this.botonBuscar = botonBuscar;
-	}
-
-	public JLabel getLabelTitulo() {
-		return labelTitulo;
-	}
-
-	public void setLabelTitulo(JLabel labelTitulo) {
-		this.labelTitulo = labelTitulo;
-	}
-
-	public JTextField getTextoTitulo() {
-		return textoTitulo;
-	}
-
-	public void setTextoTitulo(JTextField textoTitulo) {
-		this.textoTitulo = textoTitulo;
-	}
-
-	public JLabel getLabelDirector() {
-		return labelDirector;
-	}
-
-	public void setLabelDirector(JLabel labelDirector) {
-		this.labelDirector = labelDirector;
-	}
-
-	public JTextField getTextoDirector() {
-		return textoDirector;
-	}
-
-	public void setTextoDirector(JTextField textoDirector) {
-		this.textoDirector = textoDirector;
-	}
-
-	public JLabel getLabelGenero() {
-		return labelGenero;
-	}
-
-	public void setLabelGenero(JLabel labelGenero) {
-		this.labelGenero = labelGenero;
-	}
-
-	public JTextField getTextoGenero() {
-		return textoGenero;
-	}
-
-	public void setTextoGenero(JTextField textoGenero) {
-		this.textoGenero = textoGenero;
-	}
-
-	public JLabel getLabelClasificacion() {
-		return labelClasificacion;
-	}
-
-	public void setLabelClasificacion(JLabel labelClasificacion) {
-		this.labelClasificacion = labelClasificacion;
-	}
-
-	public JTextField getTextoClasificacion() {
-		return textoClasificacion;
-	}
-
-	public void setTextoClasificacion(JTextField textoClasificacion) {
-		this.textoClasificacion = textoClasificacion;
-	}
-
-	public JLabel getLabelFacultad() {
-		return labelFacultad;
-	}
-
-	public void setLabelFacultad(JLabel labelFacultad) {
-		this.labelFacultad = labelFacultad;
-	}
-
-	public JTextField getTextoFacultad() {
-		return textoFacultad;
-	}
-
-	public void setTextoFacultad(JTextField textoFacultad) {
-		this.textoFacultad = textoFacultad;
-	}
-
-	public JLabel getLabelFecha() {
-		return labelFecha;
-	}
-
-	public void setLabelFecha(JLabel labelFecha) {
-		this.labelFecha = labelFecha;
-	}
-
-	public JTextField getTextoFecha() {
-		return textoFecha;
-	}
-
-	public void setTextoFecha(JTextField textoFecha) {
-		this.textoFecha = textoFecha;
-	}
-
-	public JLabel getLabelIdioma() {
-		return labelIdioma;
-	}
-
-	public void setLabelIdioma(JLabel labelIdioma) {
-		this.labelIdioma = labelIdioma;
-	}
-
-	public JTextField getTextoIdioma() {
-		return textoIdioma;
-	}
-
-	public void setTextoIdioma(JTextField textoIdioma) {
-		this.textoIdioma = textoIdioma;
-	}
-
-	public JButton getBotonActualizar() {
-		return botonActualizar;
-	}
-
-	public void setBotonActualizar(JButton botonActualizar) {
-		this.botonActualizar = botonActualizar;
-	}
-
-}
+	

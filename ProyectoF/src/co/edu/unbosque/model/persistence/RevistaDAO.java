@@ -143,4 +143,15 @@ public class RevistaDAO implements DAO<Revista> {
 		}
 		return contenido;
 	}
+
+	@Override
+	public int filtrarActualizar(int id) {
+		int indice = -1;
+		for (int i = 0; i < listaRevistas.size(); i++) {
+			if (listaRevistas.get(i).getId() == id) {
+				indice = i;
+			}
+		}
+		return indice;
+	}
 }

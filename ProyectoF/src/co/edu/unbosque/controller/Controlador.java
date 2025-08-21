@@ -130,7 +130,7 @@ public class Controlador implements ActionListener {
 		vm.getBotonMostrarLibroVirtual().addActionListener(this);
 		vm.getBotonMostrarLibroVirtual().setActionCommand("boton_mostrar_libro_virtual");
 
-		// OyentesEliminar
+		// Oyentes eliminar
 		ve.getBotonEliminarPelicula().addActionListener(this);
 		ve.getBotonEliminarPelicula().setActionCommand("boton_eliminar_pelicula");
 		ve.getBotonEliminarArticulo().addActionListener(this);
@@ -142,8 +142,13 @@ public class Controlador implements ActionListener {
 		ve.getBotonEliminarLibroDigital().addActionListener(this);
 		ve.getBotonEliminarLibroDigital().setActionCommand("boton_eliminar_libro_virtual");
 		ve.getBotonCancelar().addActionListener(this);
-		ve.getBotonCancelar().setActionCommand("boton_cancelar");
+		ve.getBotonCancelar().setActionCommand("boton_cancelar_eliminar");
 
+		// Oyentes actualizar
+		va.getBotonActualizar().addActionListener(this);
+		va.getBotonActualizar().setActionCommand("boton_actualizar");
+		va.getBotonCancelar().addActionListener(this);
+		va.getBotonCancelar().setActionCommand("boton_cancelar_actualizar");
 	}
 
 	@Override
@@ -368,7 +373,7 @@ public class Controlador implements ActionListener {
 			velv.setVisible(true);
 			break;
 		}
-		case "boton_cancelar": {
+		case "boton_cancelar_eliminar": {
 			ve.setVisible(false);
 			vp.setVisible(true);
 			break;
@@ -429,6 +434,31 @@ public class Controlador implements ActionListener {
 			}
 			velv.setVisible(false);
 			vp.setVisible(true);
+		}
+			break;
+
+		case "boton_actualizar": {
+			int id = Integer.parseInt(va.getIdField().getText());
+			int valorA = objA.filtrarActualizar(id);
+			int valorP = objP.filtrarActualizar(id);
+			int valorR = objR.filtrarActualizar(id);
+			int valorLf = objLf.filtrarActualizar(id);
+			int valorLv = objLv.filtrarActualizar(id);
+
+			if (valorA != -1) {
+
+			} else if (valorP != -1) {
+			
+			} else if (valorR != -1) {
+
+			} else if (valorLf != -1) {
+
+			} else if (valorLv != -1) {
+
+			} else {
+				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado una publicacion con aquel id",
+						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			}
 		}
 			break;
 

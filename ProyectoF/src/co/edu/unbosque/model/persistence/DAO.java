@@ -24,5 +24,7 @@ public interface DAO<E> {
 
 	public String filtrarClasificacion(String clasificacionABuscar);
 
+	public int filtrarActualizar(int id);
+
 	public int contar();
 }

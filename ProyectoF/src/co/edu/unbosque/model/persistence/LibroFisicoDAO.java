@@ -135,4 +135,15 @@ public class LibroFisicoDAO implements DAO<LibroFisico> {
 		}
 		return contenido;
 	}
+
+	@Override
+	public int filtrarActualizar(int id) {
+		int indice = -1;
+		for (int i = 0; i < listaLibrosFisicos.size(); i++) {
+			if (listaLibrosFisicos.get(i).getId() == id) {
+				indice = i;
+			}
+		}
+		return indice;
+	}
 }

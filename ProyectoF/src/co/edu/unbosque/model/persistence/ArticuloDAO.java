@@ -136,4 +136,15 @@ public class ArticuloDAO implements DAO<Articulo> {
 		return contenido;
 	}
 
+	@Override
+	public int filtrarActualizar(int id) {
+		int indice = -1;
+		for (int i = 0; i < listaArticulos.size(); i++) {
+			if (listaArticulos.get(i).getId() == id) {
+				indice = i;
+			}
+		}
+		return indice;
+	}
+
 }

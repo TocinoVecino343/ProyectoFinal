@@ -135,4 +135,15 @@ public class LibroVirtualDAO implements DAO<LibroVirtual> {
 		}
 		return contenido;
 	}
+
+	@Override
+	public int filtrarActualizar(int id) {
+		int indice = -1;
+		for (int i = 0; i < listaLibrosVirtuales.size(); i++) {
+			if (listaLibrosVirtuales.get(i).getId() == id) {
+				indice = i;
+			}
+		}
+		return indice;
+	}
 }

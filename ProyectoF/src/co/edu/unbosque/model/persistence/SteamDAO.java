@@ -132,4 +132,15 @@ public class SteamDAO implements DAO<Steam> {
 		return contenido;
 	}
 
+	@Override
+	public int filtrarActualizar(int id) {
+		int indice = -1;
+		for (int i = 0; i < listaSteam.size(); i++) {
+			if (listaSteam.get(i).getId() == id) {
+				indice = i;
+			}
+		}
+		return indice;
+	}
+
 }
