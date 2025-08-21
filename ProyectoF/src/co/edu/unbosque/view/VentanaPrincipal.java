@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.text.AttributeSet.ColorAttribute;
+import javax.swing.ImageIcon;
+import java.awt.BorderLayout;
 
 import org.w3c.dom.css.RGBColor;
 
@@ -23,6 +25,7 @@ public class VentanaPrincipal extends JFrame {
 
 	public VentanaPrincipal() {
 		inicializarComponentes();
+		setVisible(true);
 	}
 
 	public void inicializarComponentes() {
@@ -32,13 +35,6 @@ public class VentanaPrincipal extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Finaliza el programa completamente.
 		this.setResizable(false);
 		this.setLayout(null);
-
-		// Universidad
-		mensajeBienvenida = new JLabel("UEB", SwingConstants.CENTER);
-		mensajeBienvenida.setBounds(0, 40, 400, 30);
-		mensajeBienvenida.setForeground(Color.decode("#144031"));
-		mensajeBienvenida.setFont(new Font("Times New Roman", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
-		this.add(mensajeBienvenida);
 		
 		//Titulo h
 		titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
@@ -49,7 +45,7 @@ public class VentanaPrincipal extends JFrame {
 
 		// Botones menú principal
 		botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
-		botonCrearPublicacion.setBounds(40, 150, 200, 60); // Posición y tamaño del botón
+		botonCrearPublicacion.setBounds(40, 200, 200, 60); // Posición y tamaño del botón
 		botonCrearPublicacion.setBackground(Color.decode("#f5f5dc"));// Color del FONDO del botón
 		botonCrearPublicacion.setForeground(Color.decode("#144031"));
 		botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
@@ -57,7 +53,7 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonMostrarPublicacion = new JButton("Mostrar publicación");
-		botonMostrarPublicacion.setBounds(40, 250, 200, 60);
+		botonMostrarPublicacion.setBounds(40, 300, 200, 60);
 		botonMostrarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonMostrarPublicacion.setForeground(Color.decode("#144031"));
 		botonMostrarPublicacion.setFocusPainted(false);
@@ -65,7 +61,7 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonEliminarPublicacion = new JButton("Eliminar publicación");
-		botonEliminarPublicacion.setBounds(40, 350, 200, 60);
+		botonEliminarPublicacion.setBounds(40, 400, 200, 60);
 		botonEliminarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonEliminarPublicacion.setForeground(Color.decode("#144031"));
 		botonEliminarPublicacion.setFocusPainted(false);
@@ -73,12 +69,19 @@ public class VentanaPrincipal extends JFrame {
 		this.setLayout(null);
 		//
 		botonActualizarPublicacion = new JButton("Actualizar publicación");
-		botonActualizarPublicacion.setBounds(40, 459, 200, 60);
+		botonActualizarPublicacion.setBounds(40, 500, 200, 60);
 		botonActualizarPublicacion.setBackground(Color.decode("#f5f5dc"));
 		botonActualizarPublicacion.setForeground(Color.decode("#144031"));
 		botonActualizarPublicacion.setFocusPainted(false);
 		this.add(botonActualizarPublicacion);
 		this.setLayout(null);
+		
+		//imagen
+	
+		ImageIcon imagen = new ImageIcon(getClass().getResource("logoUEB.jpg"));
+		JLabel labelImagen = new JLabel(imagen);
+		labelImagen.setBounds(40, 0, 200, 200);
+		add(labelImagen);
 		
 	}
 
