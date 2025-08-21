@@ -28,13 +28,17 @@ public class LibroFisicoDAO implements DAO<LibroFisico> {
 	}
 
 	@Override
-	public boolean eliminarDato(int indice) {
-		if (indice < 0 || indice >= listaLibrosFisicos.size()) {
-			return false;
-		} else {
-			listaLibrosFisicos.remove(indice);
-			return true;
+	public boolean eliminarDato(int idEliminar) {
+		boolean retorno = false;
+		for (int i = 0; i < listaLibrosFisicos.size(); i++) {
+			if (listaLibrosFisicos.get(i).getId() == idEliminar) {
+				listaLibrosFisicos.remove(i);
+				retorno = true;
+			} else {
+				retorno = false;
+			}
 		}
+		return retorno;
 	}
 
 	@Override

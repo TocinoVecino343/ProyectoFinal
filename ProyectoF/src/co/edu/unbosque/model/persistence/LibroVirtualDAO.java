@@ -28,13 +28,17 @@ public class LibroVirtualDAO implements DAO<LibroVirtual> {
 	}
 
 	@Override
-	public boolean eliminarDato(int indice) {
-		if (indice < 0 || indice >= listaLibrosVirtuales.size()) {
-			return false;
-		} else {
-			listaLibrosVirtuales.remove(indice);
-			return true;
+	public boolean eliminarDato(int idEliminar) {
+		boolean retorno = false;
+		for (int i = 0; i < listaLibrosVirtuales.size(); i++) {
+			if (listaLibrosVirtuales.get(i).getId() == idEliminar) {
+				listaLibrosVirtuales.remove(i);
+				retorno = true;
+			} else {
+				retorno = false;
+			}
 		}
+		return retorno;
 	}
 
 	@Override

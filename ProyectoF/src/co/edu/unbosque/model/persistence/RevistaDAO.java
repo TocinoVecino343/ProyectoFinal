@@ -36,13 +36,17 @@ public class RevistaDAO implements DAO<Revista> {
 	}
 
 	@Override
-	public boolean eliminarDato(int indice) {
-		if (indice < 0 || indice >= listaRevistas.size()) {
-			return false;
-		} else {
-			listaRevistas.remove(indice);
-			return true;
+	public boolean eliminarDato(int idEliminar) {
+		boolean retorno = false;
+		for (int i = 0; i < listaRevistas.size(); i++) {
+			if (listaRevistas.get(i).getId() == idEliminar) {
+				listaRevistas.remove(i);
+				retorno = true;
+			} else {
+				retorno = false;
+			}
 		}
+		return retorno;
 	}
 
 	@Override

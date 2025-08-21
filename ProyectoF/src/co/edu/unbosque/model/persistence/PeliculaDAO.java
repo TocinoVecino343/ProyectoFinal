@@ -28,13 +28,17 @@ public class PeliculaDAO implements DAO<Pelicula> {
 	}
 
 	@Override
-	public boolean eliminarDato(int indice) {
-		if (indice < 0 || indice >= listaPeliculas.size()) {
-			return false;
-		} else {
-			listaPeliculas.remove(indice);
-			return true;
+	public boolean eliminarDato(int idEliminar) {
+		boolean retorno = false;
+		for (int i = 0; i < listaPeliculas.size(); i++) {
+			if (listaPeliculas.get(i).getId() == idEliminar) {
+				listaPeliculas.remove(i);
+				retorno = true;
+			} else {
+				retorno = false;
+			}
 		}
+		return retorno;
 	}
 
 	@Override

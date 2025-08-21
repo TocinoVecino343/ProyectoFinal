@@ -4,15 +4,15 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class VentanaMostrarTodo extends JFrame{
-	
+public class VentanaMostrarTodo extends JFrame {
+
 	private JTextArea textoMostrarTodo;
 	private JScrollPane scrollMostrarTodo;
-	
+
 	public VentanaMostrarTodo() {
 		inicializarVentanaMostrarTodo();
 	}
-	
+
 	public void inicializarVentanaMostrarTodo() {
 		this.setTitle("Mostrar todo");
 		this.setBounds(50, 50, 1280, 800);
@@ -25,6 +25,22 @@ public class VentanaMostrarTodo extends JFrame{
 		scrollMostrarTodo = new JScrollPane(textoMostrarTodo);
 		scrollMostrarTodo.setBounds(50, 50, 1150, 650);
 		this.add(scrollMostrarTodo);
+	}
+
+	public JTextArea getTextoMostrarTodo() {
+		return textoMostrarTodo;
+	}
+
+	public void setTextoMostrarTodo(JTextArea textoMostrarTodo) {
+		this.textoMostrarTodo = textoMostrarTodo;
+	}
+
+	public JScrollPane getScrollMostrarTodo() {
+		return scrollMostrarTodo;
+	}
+
+	public void setScrollMostrarTodo(JScrollPane scrollMostrarTodo) {
+		this.scrollMostrarTodo = scrollMostrarTodo;
 	}
 
 }

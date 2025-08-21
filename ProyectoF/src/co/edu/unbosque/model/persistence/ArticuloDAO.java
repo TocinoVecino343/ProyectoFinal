@@ -28,13 +28,17 @@ public class ArticuloDAO implements DAO<Articulo> {
 	}
 
 	@Override
-	public boolean eliminarDato(int indice) {
-		if (indice < 0 || indice >= listaArticulos.size()) {
-			return false;
-		} else {
-			listaArticulos.remove(indice);
-			return true;
+	public boolean eliminarDato(int idEliminar) {
+		boolean retorno = false;
+		for (int i = 0; i < listaArticulos.size(); i++) {
+			if (listaArticulos.get(i).getId() == idEliminar) {
+				listaArticulos.remove(i);
+				retorno = true;
+			} else {
+				retorno = false;
+			}
 		}
+		return retorno;
 	}
 
 	@Override

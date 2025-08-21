@@ -3,6 +3,8 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import co.edu.unbosque.model.*;
 import co.edu.unbosque.model.persistence.*;
 import co.edu.unbosque.view.*;
@@ -145,7 +147,7 @@ public class Controlador implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String alias = e.getActionCommand();
-		System.out.println(e); //Quitar este syso una vez terminado todo
+		System.out.println(e); // Quitar este syso una vez terminado todo
 
 		switch (alias) {
 
@@ -236,7 +238,8 @@ public class Controlador implements ActionListener {
 			String terminosGeograficos = "" + vca.getTextoGeograficos().getText();
 			int cantidadDePaginas = Integer.parseInt("" + vca.getTextoCantidadPaginas().getText());
 
-			Articulo tempA = new Articulo(id1, titulo1, clasificacion1, facultad1, fechaDePublicacion1, idioma1, autor, fuente, terminosGeograficos, cantidadDePaginas);
+			Articulo tempA = new Articulo(id1, titulo1, clasificacion1, facultad1, fechaDePublicacion1, idioma1, autor,
+					fuente, terminosGeograficos, cantidadDePaginas);
 			objA.crear(tempA);
 			vca.setVisible(false);
 			vp.setVisible(true);
@@ -255,8 +258,10 @@ public class Controlador implements ActionListener {
 			String terminosGeograficos1 = "" + vcr.getTextoGeograficos().getText();
 			String descripcionFisica = "" + vcr.getTextoDescripcionFisica().getText();
 
-			Revista tempR = new Revista(id2, titulo2, clasificacion2, facultad2, fechaDePublicacion2, idioma2, autor1, fuente1, terminosGeograficos1, descripcionFisica);
-			objR.crear(tempR);;
+			Revista tempR = new Revista(id2, titulo2, clasificacion2, facultad2, fechaDePublicacion2, idioma2, autor1,
+					fuente1, terminosGeograficos1, descripcionFisica);
+			objR.crear(tempR);
+			;
 			vcr.setVisible(false);
 			vp.setVisible(true);
 			break;
@@ -272,8 +277,10 @@ public class Controlador implements ActionListener {
 			int cantidadDeCopias = Integer.parseInt("" + vclf.getTextoCantidadCopias().getText());
 			int tiempoDePrestamo = Integer.parseInt("" + vclf.getTextoTiempoPrestamo().getText());
 
-			LibroFisico tempLf = new LibroFisico(id3, titulo3, clasificacion3, facultad3, fechaDePublicacion3, idioma3, cantidadDeCopias, facultad3, idioma3, cantidadDeCopias, tiempoDePrestamo);
-			objLf.crear(tempLf);;
+			LibroFisico tempLf = new LibroFisico(id3, titulo3, clasificacion3, facultad3, fechaDePublicacion3, idioma3,
+					cantidadDeCopias, facultad3, idioma3, cantidadDeCopias, tiempoDePrestamo);
+			objLf.crear(tempLf);
+			;
 			vclf.setVisible(false);
 			vp.setVisible(true);
 			break;
@@ -289,8 +296,10 @@ public class Controlador implements ActionListener {
 			String tipoDeArchivo = "" + vclv.getTextoTipoArchivo().getText();
 			boolean esAudioLibro = vclv.getTextoEsAudioLibro(); // Por revisar
 
-			LibroVirtual tempLv = new LibroVirtual(id4, titulo4, clasificacion4, facultad4, fechaDePublicacion4, idioma4, id4, facultad4, idioma4, tipoDeArchivo, esAudioLibro);
-			objLv.crear(tempLv);;
+			LibroVirtual tempLv = new LibroVirtual(id4, titulo4, clasificacion4, facultad4, fechaDePublicacion4,
+					idioma4, id4, facultad4, idioma4, tipoDeArchivo, esAudioLibro);
+			objLv.crear(tempLv);
+			;
 			vclv.setVisible(false);
 			vp.setVisible(true);
 			break;
@@ -361,6 +370,64 @@ public class Controlador implements ActionListener {
 			vp.setVisible(true);
 			break;
 		}
+
+		// Botones eliminar especifico
+
+		case "eliminar_pelicula": {
+			int idEliminarPelicula = Integer.parseInt(vep.getIdField().getText());
+			boolean retorno = objP.eliminarDato(idEliminarPelicula);
+			if (retorno == false) {
+				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado una pelicula con aquel id",
+						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			}
+			vep.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
+		case "eliminar_articulo": {
+			int idEliminarArticulo = Integer.parseInt(vea.getIdField().getText());
+			boolean retorno = objA.eliminarDato(idEliminarArticulo);
+			if (retorno == false) {
+				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado un articulo con aquel id",
+						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			}
+			vea.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
+		case "eliminar_revista": {
+			int idEliminarRevista = Integer.parseInt(ver.getIdField().getText());
+			boolean retorno = objR.eliminarDato(idEliminarRevista);
+			if (retorno == false) {
+				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado una revista con aquel id",
+						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			}
+			ver.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
+		case "eliminar_libro_fisico": {
+			int idEliminarLibroFisico = Integer.parseInt(velf.getIdField().getText());
+			boolean retorno = objLf.eliminarDato(idEliminarLibroFisico);
+			if (retorno == false) {
+				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado un libro fisico con aquel id",
+						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			}
+			velf.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
+		case "eliminar_libro_virtual": {
+			int idEliminarLibroVirtual = Integer.parseInt(velv.getIdField().getText());
+			boolean retorno = objLv.eliminarDato(idEliminarLibroVirtual);
+			if (retorno == false) {
+				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado un libro virtual con aquel id",
+						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			}
+			velv.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
 		}
 	}
 
@@ -766,4 +833,4 @@ public class Controlador implements ActionListener {
 			}
 		} while (opcion != 5);
 	}
-}	
+}

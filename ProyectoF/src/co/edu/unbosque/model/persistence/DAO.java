@@ -6,7 +6,7 @@ public interface DAO<E> {
 
 	public String mostrarDatos();
 
-	public boolean eliminarDato(int indice);
+	public boolean eliminarDato(int idELiminar);
 
 	public boolean actualizar(int indice, E datoActualizado);
 
