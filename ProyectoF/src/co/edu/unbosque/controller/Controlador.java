@@ -272,7 +272,7 @@ public class Controlador implements ActionListener {
 			int cantidadDeCopias = Integer.parseInt("" + vclf.getTextoCantidadCopias().getText());
 			int tiempoDePrestamo = Integer.parseInt("" + vclf.getTextoTiempoPrestamo().getText());
 
-			LibroFisico tempLf = new LibroFisico(id3, titulo3, clasificacion3, facultad3, fechaDePublicacion3, idioma3, cantidadDePaginas, autor1, autor, cantidadDeCopias, tiempoDePrestamo);
+			LibroFisico tempLf = new LibroFisico(id3, titulo3, clasificacion3, facultad3, fechaDePublicacion3, idioma3, cantidadDeCopias, facultad3, idioma3, cantidadDeCopias, tiempoDePrestamo);
 			objLf.crear(tempLf);;
 			vclf.setVisible(false);
 			vp.setVisible(true);
@@ -287,9 +287,9 @@ public class Controlador implements ActionListener {
 			String idioma4 = "" + vc.getTextoIdioma().getText();
 
 			String tipoDeArchivo = "" + vclv.getTextoTipoArchivo().getText();
-			boolean esAudioLibro = vclv.getTextoEsAudioLibro();
+			boolean esAudioLibro = vclv.getTextoEsAudioLibro(); // Por revisar
 
-			LibroVirtual tempLv = new LibroVirtual(id4, titulo4, clasificacion4, facultad4, fechaDePublicacion4, idioma4, cantidadDePaginas, autor1, autor, tipoDeArchivo, esAudioLibro);
+			LibroVirtual tempLv = new LibroVirtual(id4, titulo4, clasificacion4, facultad4, fechaDePublicacion4, idioma4, id4, facultad4, idioma4, tipoDeArchivo, esAudioLibro);
 			objLv.crear(tempLv);;
 			vclv.setVisible(false);
 			vp.setVisible(true);
@@ -757,10 +757,13 @@ public class Controlador implements ActionListener {
 						break;
 					}
 					}
+				}
 				case 5: {
 					break;
 				}
 				}
-			} while (opcion != 5);
 			}
-		}
+			}
+		} while (opcion != 5);
+	}
+}	
