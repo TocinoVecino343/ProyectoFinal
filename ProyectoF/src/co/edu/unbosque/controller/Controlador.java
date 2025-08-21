@@ -294,8 +294,9 @@ public class Controlador implements ActionListener {
 			String idioma4 = "" + vc.getTextoIdioma().getText();
 
 			String tipoDeArchivo = "" + vclv.getTextoTipoArchivo().getText();
-			boolean esAudioLibro = vclv.getTextoEsAudioLibro(); // Por revisar
-
+			String respuestaAudioLibro = vclv.getTextoEsAudioLibro().getText();
+			boolean esAudioLibro = respuestaAudioLibro.equalsIgnoreCase("Sí");
+			
 			LibroVirtual tempLv = new LibroVirtual(id4, titulo4, clasificacion4, facultad4, fechaDePublicacion4,
 					idioma4, id4, facultad4, idioma4, tipoDeArchivo, esAudioLibro);
 			objLv.crear(tempLv);
