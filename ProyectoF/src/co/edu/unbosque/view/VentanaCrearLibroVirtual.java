@@ -47,12 +47,12 @@ public class VentanaCrearLibroVirtual extends JFrame {
 
 		botonGuardarLibroVirtual = new JButton("Guardar archivo digital");
 		botonGuardarLibroVirtual.setBackground(Color.decode("#E8F5E9"));
-		botonGuardarLibroVirtual.setBounds(250, 160, 220, 40);
+		botonGuardarLibroVirtual.setBounds(250, 160, 150, 40);
 		this.add(botonGuardarLibroVirtual);
 		
 		cancelar = new JButton("Cancelar");
 		cancelar.setBackground(Color.decode("#E8F5E9"));
-		cancelar.setBounds(600, 160, 200, 30);
+		cancelar.setBounds(450, 160, 150, 40);
 		this.add(cancelar);
 	}
 

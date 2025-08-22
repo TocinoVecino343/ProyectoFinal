@@ -52,7 +52,7 @@ public class VentanaCrearLibroFisico extends JFrame {
 		
 		cancelar = new JButton("Cancelar");
 		cancelar.setBackground(Color.decode("#E8F5E9"));
-		cancelar.setBounds(600, 160, 200, 30);
+		cancelar.setBounds(450, 160, 180, 40);
 		this.add(cancelar);
 	}
 
