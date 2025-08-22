@@ -72,6 +72,7 @@ public class VentanaCrearRevista extends JFrame {
 		botonCancelar = new JButton("Cancelar");
 		botonCancelar.setBackground(Color.decode("#E8F5E9"));
 		botonCancelar.setBounds(100, 460, 200, 30);
+		botonCancelar.setBounds(100, 520, 200, 30);
 		this.add(botonCancelar);
 	}
 
