@@ -33,6 +33,7 @@ public class VentanaCrearPelicula extends JFrame{
     
     
     private JButton botonGuardarPelicula;
+    private JButton botonCancelar;
     
     public VentanaCrearPelicula() {
     	incializarCrearPelicula();
@@ -129,6 +130,11 @@ public class VentanaCrearPelicula extends JFrame{
         botonGuardarPelicula.setBackground(Color.decode("#E8F5E9"));
         botonGuardarPelicula.setBounds(300, 560, 150, 40);
         this.add(botonGuardarPelicula);  	
+        
+        botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
+		botonCancelar.setBounds(100, 460, 200, 30);
+		this.add(botonCancelar);
     }
 
 	public JTextField getTextoProductora() {
@@ -298,8 +304,14 @@ public class VentanaCrearPelicula extends JFrame{
 	public void setBotonGuardarPelicula(JButton botonGuardarPelicula) {
 		this.botonGuardarPelicula = botonGuardarPelicula;
 	}
-    
-    
+	
+	public JButton getBotonCancelar() {
+		return botonCancelar;
+	}
+	
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
     
 
 }

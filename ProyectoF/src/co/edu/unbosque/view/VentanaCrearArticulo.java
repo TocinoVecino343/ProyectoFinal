@@ -69,6 +69,11 @@ public class VentanaCrearArticulo extends JFrame {
 		botonGuardarArticulo.setBackground(Color.decode("#E8F5E9"));
 		botonGuardarArticulo.setBounds(250, 260, 180, 40);
 		this.add(botonGuardarArticulo);
+		
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
+		botonCancelar.setBounds(100, 460, 200, 30);
+		this.add(botonCancelar);
 	}
 
 	public JLabel getLabelAutor() {
@@ -141,6 +146,14 @@ public class VentanaCrearArticulo extends JFrame {
 
 	public void setBotonGuardarArticulo(JButton botonGuardarArticulo) {
 		this.botonGuardarArticulo = botonGuardarArticulo;
+	}
+
+	public JButton getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
 	}
 
 }

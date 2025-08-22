@@ -119,6 +119,16 @@ public class Controlador implements ActionListener {
 		vc.getBotonCrearLibroVirtual().setActionCommand("boton_crear_libro_virtual");
 		vc.getBotonCancelar().addActionListener(this);
 		vc.getBotonCancelar().setActionCommand("boton_cancelar_crear");
+		vca.getBotonCancelar().addActionListener(this);		
+		vca.getBotonCancelar().setActionCommand("cancelar_crear_articulo");
+		vclf.getBotonCancelar().addActionListener(this);
+		vclf.getBotonCancelar().setActionCommand("cancelar_crear_libro_fisico");
+		vclv.getBotonCancelar().addActionListener(this);
+		vclv.getBotonCancelar().setActionCommand("cancelar_crear_libro_virtual");
+		vcp.getBotonCancelar().addActionListener(this);
+		vcp.getBotonCancelar().setActionCommand("cancelar_crear_pelicula");
+		vcr.getBotonCancelar().addActionListener(this);
+		vcr.getBotonCancelar().setActionCommand("cancelar_crear_revista");
 
 		// Oyentes guardar objeto
 		vcp.getBotonGuardarPelicula().addActionListener(this);

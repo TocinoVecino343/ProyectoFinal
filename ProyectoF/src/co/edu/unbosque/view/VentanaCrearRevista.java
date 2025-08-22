@@ -19,6 +19,7 @@ public class VentanaCrearRevista extends JFrame {
 	private JTextField textoDescripcionFisica;
 
 	private JButton botonGuardarRevista;
+	private JButton botonCancelar;
 
 	public VentanaCrearRevista() {
 		inicializarCrearRevista();
@@ -67,6 +68,11 @@ public class VentanaCrearRevista extends JFrame {
 		botonGuardarRevista.setBackground(Color.decode("#E8F5E9"));
 		botonGuardarRevista.setBounds(300, 260, 180, 40);
 		this.add(botonGuardarRevista);
+		
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
+		botonCancelar.setBounds(100, 460, 200, 30);
+		this.add(botonCancelar);
 	}
 
 	public JLabel getLabelAutor() {
@@ -141,4 +147,13 @@ public class VentanaCrearRevista extends JFrame {
 		this.botonGuardarRevista = botonGuardarRevista;
 	}
 
+	public JButton getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
+	
+	
 }
