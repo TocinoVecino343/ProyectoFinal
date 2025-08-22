@@ -74,11 +74,11 @@ public class VentanaEliminarPelicula extends JFrame {
 		this.eliminar = eliminar;
 	}
 
-	public JButton getCancelar() {
+	public JButton getBotonCancelar() {
 		return cancelar;
 	}
 
-	public void setCancelar(JButton cancelar) {
+	public void setBotonCancelar(JButton cancelar) {
 		this.cancelar = cancelar;
 	}
 
