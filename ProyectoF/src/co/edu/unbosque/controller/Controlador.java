@@ -755,6 +755,7 @@ public class Controlador implements ActionListener {
 		case "boton_cancelar_actualizar": {
 			va.setVisible(false);
 			vp.setVisible(true);
+			break;
 		}
 		
 		case "boton_salir": {
