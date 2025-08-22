@@ -11,7 +11,10 @@ public class LibroFisicoDAO implements DAO<LibroFisico> {
 	public LibroFisicoDAO() {
 		listaLibrosFisicos = new ArrayList<LibroFisico>();
 	}
-
+	
+	public ArrayList<LibroFisico> getListaLibrosFisicos() {
+	    return listaLibrosFisicos;
+	}
 	@Override
 	public void crear(LibroFisico nuevoDato) {
 		listaLibrosFisicos.add(nuevoDato);

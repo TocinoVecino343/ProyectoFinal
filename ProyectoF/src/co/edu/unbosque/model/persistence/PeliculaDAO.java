@@ -12,6 +12,10 @@ public class PeliculaDAO implements DAO<Pelicula> {
 		listaPeliculas = new ArrayList<Pelicula>();
 	}
 
+	public ArrayList<Pelicula> listaPeliculas() {
+	    return listaPeliculas;
+	}
+	
 	@Override
 	public void crear(Pelicula nuevoDato) {
 		listaPeliculas.add(nuevoDato);

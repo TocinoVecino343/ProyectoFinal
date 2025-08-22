@@ -149,6 +149,9 @@ public class Controlador implements ActionListener {
 		va.getBotonActualizar().setActionCommand("boton_actualizar");
 		va.getBotonCancelar().addActionListener(this);
 		va.getBotonCancelar().setActionCommand("boton_cancelar_actualizar");
+		
+		vp.getBotonBuscar().addActionListener(this);
+		vp.getBotonBuscar().setActionCommand("boton_buscar");
 	}
 
 	@Override

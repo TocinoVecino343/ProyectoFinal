@@ -15,7 +15,7 @@ public class RevistaDAO implements DAO<Revista> {
 	public ArrayList<Revista> getListaRevistas() {
 		return listaRevistas;
 	}
-
+	
 	public void setListaRevistas(ArrayList<Revista> listaRevistas) {
 		this.listaRevistas = listaRevistas;
 	}
