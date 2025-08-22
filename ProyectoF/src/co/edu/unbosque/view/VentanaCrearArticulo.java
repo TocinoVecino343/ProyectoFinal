@@ -69,6 +69,11 @@ public class VentanaCrearArticulo extends JFrame {
 		botonGuardarArticulo.setBackground(Color.decode("#E8F5E9"));
 		botonGuardarArticulo.setBounds(250, 260, 180, 40);
 		this.add(botonGuardarArticulo);
+
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
+		botonCancelar.setBounds(100, 520, 200, 30);
+		this.add(botonCancelar);
 	}
 
 	public JLabel getLabelAutor() {
