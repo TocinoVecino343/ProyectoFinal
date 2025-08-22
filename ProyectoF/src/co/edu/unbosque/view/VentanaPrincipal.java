@@ -67,21 +67,21 @@ public class VentanaPrincipal extends JFrame {
 		botonCrearPublicacion.setForeground(Color.decode("#144031"));
 		botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
 		this.add(botonCrearPublicacion);
-		//
+		
 		botonMostrarPublicacion = new JButton("Mostrar publicación");
 		botonMostrarPublicacion.setBounds(40, 300, 200, 60);
 		botonMostrarPublicacion.setBackground(Color.decode("#E8F5E9"));
 		botonMostrarPublicacion.setForeground(Color.decode("#144031"));
 		botonMostrarPublicacion.setFocusPainted(false);
 		this.add(botonMostrarPublicacion);
-		//
+		
 		botonEliminarPublicacion = new JButton("Eliminar publicación");
 		botonEliminarPublicacion.setBounds(40, 400, 200, 60);
 		botonEliminarPublicacion.setBackground(Color.decode("#E8F5E9"));
 		botonEliminarPublicacion.setForeground(Color.decode("#144031"));
 		botonEliminarPublicacion.setFocusPainted(false);
 		this.add(botonEliminarPublicacion);
-		//
+		
 		botonActualizarPublicacion = new JButton("Actualizar publicación");
 		botonActualizarPublicacion.setBounds(40, 500, 200, 60);
 		botonActualizarPublicacion.setBackground(Color.decode("#E8F5E9"));

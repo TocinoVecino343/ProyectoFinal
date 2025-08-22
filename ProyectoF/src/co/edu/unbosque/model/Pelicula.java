@@ -10,15 +10,15 @@ public class Pelicula extends Publicacion{
 	private String musica;
 	private String reparto;
 	private String duracion;
-	private String idiomasDisponibles;
-	private String subtitulos;
+	private String idiomaDisponible;
+	private String subtitulo;
 	
 	public Pelicula() {
 		super();
 	}
 
 	public Pelicula(String productora, String pais, String director, String guion, String fotografia, String musica,
-			String reparto, String duracion, String idiomasDisponibles, String subtitulos) {
+			String reparto, String duracion, String idiomaDisponible, String subtitulo) {
 		super();
 		this.productora = productora;
 		this.pais = pais;
@@ -28,13 +28,13 @@ public class Pelicula extends Publicacion{
 		this.musica = musica;
 		this.reparto = reparto;
 		this.duracion = duracion;
-		this.idiomasDisponibles = idiomasDisponibles;
-		this.subtitulos = subtitulos;
+		this.idiomaDisponible = idiomaDisponible;
+		this.subtitulo = subtitulo;
 	}
 
 	public Pelicula(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion, String idioma,
 			String productora, String pais, String director, String guion, String fotografia, String musica,
-			String reparto, String duracion, String idiomasDisponibles, String subtitulos) {
+			String reparto, String duracion, String idiomaDisponible, String subtitulo) {
 		super(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma);
 		this.productora = productora;
 		this.pais = pais;
@@ -44,8 +44,8 @@ public class Pelicula extends Publicacion{
 		this.musica = musica;
 		this.reparto = reparto;
 		this.duracion = duracion;
-		this.idiomasDisponibles = idiomasDisponibles;
-		this.subtitulos = subtitulos;
+		this.idiomaDisponible = idiomaDisponible;
+		this.subtitulo = subtitulo;
 	}
 
 	public Pelicula(int id, String titulo, String clasificacion, String facultad, int fechaDePublicacion,
@@ -118,26 +118,26 @@ public class Pelicula extends Publicacion{
 		this.duracion = duracion;
 	}
 
-	public String getIdiomasDisponibles() {
-		return idiomasDisponibles;
+	public String getIdiomaDisponible() {
+		return idiomaDisponible;
 	}
 
-	public void setIdiomasDisponibles(String idiomasDisponibles) {
-		this.idiomasDisponibles = idiomasDisponibles;
+	public void setIdiomaDisponible(String idiomaDisponible) {
+		this.idiomaDisponible = idiomaDisponible;
 	}
 
-	public String getSubtitulos() {
-		return subtitulos;
+	public String getSubtitulo() {
+		return subtitulo;
 	}
 
-	public void setSubtitulos(String subtitulos) {
-		this.subtitulos = subtitulos;
+	public void setSubtitulo(String subtitulo) {
+		this.subtitulo = subtitulo;
 	}
 
 	@Override
 	public String toString() {
 		return super.toString()+" \n-----Pelicula-----" + "\nProductora: " + productora + "\nPaís: " + pais + "\nDirector: " + director + "\nGuión: " + guion
 				+ "\nFotogría: " + fotografia + "\nMúsica: " + musica + "\nReparto: " + reparto + "\nDuración: "
-				+ duracion + "\nIdiomasDisponibles: " + idiomasDisponibles + "\nSubtitulos: " + subtitulos;
+				+ duracion + "\nIdiomasDisponibles: " + idiomaDisponible + "\nSubtitulos: " + subtitulo;
 	}
 }

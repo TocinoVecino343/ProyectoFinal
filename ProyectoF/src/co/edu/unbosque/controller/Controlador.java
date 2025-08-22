@@ -17,7 +17,6 @@ public class Controlador implements ActionListener {
 	private RevistaDAO objR;
 	private PeliculaDAO objP;
 	private ArticuloDAO objA;
-	private Consola con;
 
 	private VentanaPrincipal vp; // Clases interfaz gráfica
 	private VentanaCrear vc;
@@ -56,7 +55,6 @@ public class Controlador implements ActionListener {
 		objR = new RevistaDAO();
 		objP = new PeliculaDAO();
 		objA = new ArticuloDAO();
-		con = new Consola();
 
 		vp = new VentanaPrincipal(this);
 		vc = new VentanaCrear();
@@ -88,7 +86,6 @@ public class Controlador implements ActionListener {
 		vaa = new VentanaActualizarArticulo();
 		valf = new VentanaActualizarLibroFisico();
 		valv = new VentanaActualizarLibroVirtual();
-		vap.setVisible(true);
 		asignarOyentes();
 	}
 
@@ -119,7 +116,7 @@ public class Controlador implements ActionListener {
 		vc.getBotonCrearLibroVirtual().setActionCommand("boton_crear_libro_virtual");
 		vc.getBotonCancelar().addActionListener(this);
 		vc.getBotonCancelar().setActionCommand("boton_cancelar_crear");
-		vca.getBotonCancelar().addActionListener(this);		
+		vca.getBotonCancelar().addActionListener(this);
 		vca.getBotonCancelar().setActionCommand("cancelar_crear_articulo");
 		vclf.getBotonCancelar().addActionListener(this);
 		vclf.getBotonCancelar().setActionCommand("cancelar_crear_libro_fisico");
@@ -132,7 +129,7 @@ public class Controlador implements ActionListener {
 		//
 		vc.getBotonCancelar().addActionListener(this);
 		vc.getBotonCancelar().setActionCommand("boton_cancelar_crear");
-				
+
 		// Oyentes guardar objeto
 		vcp.getBotonGuardarPelicula().addActionListener(this);
 		vcp.getBotonGuardarPelicula().setActionCommand("boton_guardar_pelicula");
@@ -232,8 +229,7 @@ public class Controlador implements ActionListener {
 		// Oyentes buscador
 		vp.getBotonBuscar().addActionListener(this);
 		vp.getBotonBuscar().setActionCommand("boton_buscar");
-		
-		
+
 	}
 
 	@Override
@@ -571,23 +567,26 @@ public class Controlador implements ActionListener {
 			if (valorP != -1) {
 				va.setVisible(false);
 				vap.setVisible(true);
+				va.setVisible(false);
+				vap.setVisible(true);
 
-				vap.getTextoTitulo().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getTitulo()));
-				vap.getTextoClasificacion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getClasificacion()));
-				vap.getTextoFacultad().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFacultad()));
-				vap.getTextoFechaDePublicacion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFechaDePublicacion()));
-				vap.getTextoIdioma().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getIdioma()));
-				vap.getTextoProductora().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getProductora()));
-				vap.getTextoPais().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getPais()));
-				vap.getTextoDirector().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getDirector()));
-				vap.getTextoGuion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getGuion()));
-				vap.getTextoFotografia().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFotografia()));
-				vap.getTextoMusica().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getMusica()));
-				vap.getTextoReparto().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getReparto()));
-				vap.getTextoDuracion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getDuracion()));
-				vap.getTextoIdiomasDisponibles().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getIdiomasDisponibles()));
-				vap.getTextoSubtitulos().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getSubtitulos()));
-				System.out.println(objP.getListaPeliculas().get(valorP).getDirector());
+				vap.getTextoTitulo().setText(objP.getListaPeliculas().get(valorP).getTitulo());
+				vap.getTextoClasificacion().setText(objP.getListaPeliculas().get(valorP).getClasificacion());
+				vap.getTextoFacultad().setText(objP.getListaPeliculas().get(valorP).getFacultad());
+				vap.getTextoFechaDePublicacion()
+						.setText("" + objP.getListaPeliculas().get(valorP).getFechaDePublicacion());
+				vap.getTextoIdioma().setText(objP.getListaPeliculas().get(valorP).getIdioma());
+				vap.getTextoProductora().setText(objP.getListaPeliculas().get(valorP).getProductora());
+				vap.getTextoPais().setText(objP.getListaPeliculas().get(valorP).getPais());
+				vap.getTextoDirector().setText(objP.getListaPeliculas().get(valorP).getDirector());
+				vap.getTextoGuion().setText(objP.getListaPeliculas().get(valorP).getGuion());
+				vap.getTextoFotografia().setText(objP.getListaPeliculas().get(valorP).getFotografia());
+				vap.getTextoMusica().setText(objP.getListaPeliculas().get(valorP).getMusica());
+				vap.getTextoReparto().setText(objP.getListaPeliculas().get(valorP).getReparto());
+				vap.getTextoDuracion().setText(objP.getListaPeliculas().get(valorP).getDuracion());
+				vap.getTextoIdiomasDisponibles().setText(objP.getListaPeliculas().get(valorP).getIdiomaDisponible());
+				vap.getTextoSubtitulos().setText(objP.getListaPeliculas().get(valorP).getSubtitulo());
+
 			} else if (valorR != -1) {
 				va.setVisible(false);
 				var.setVisible(true);
@@ -596,7 +595,7 @@ public class Controlador implements ActionListener {
 				var.getTextoClasificacion().setText(objR.getListaRevistas().get(valorR).getClasificacion());
 				var.getTextoFacultad().setText(objR.getListaRevistas().get(valorR).getFacultad());
 				var.getTextoFechaDePublicacion()
-						.setText(String.valueOf(objR.getListaRevistas().get(valorR).getFechaDePublicacion()));
+						.setText("" + objR.getListaRevistas().get(valorR).getFechaDePublicacion());
 				var.getTextoIdioma().setText(objR.getListaRevistas().get(valorR).getIdioma());
 				var.getTextoAutor().setText(objR.getListaRevistas().get(valorR).getAutor());
 				var.getTextoFuente().setText(objR.getListaRevistas().get(valorR).getFuente());
@@ -611,16 +610,16 @@ public class Controlador implements ActionListener {
 				valf.getTextoClasificacion().setText(objLf.getListaLibrosFisicos().get(valorLf).getClasificacion());
 				valf.getTextoFacultad().setText(objLf.getListaLibrosFisicos().get(valorLf).getFacultad());
 				valf.getTextoFechaDePublicacion()
-						.setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getFechaDePublicacion()));
+						.setText("" + objLf.getListaLibrosFisicos().get(valorLf).getFechaDePublicacion());
 				valf.getTextoIdioma().setText(objLf.getListaLibrosFisicos().get(valorLf).getIdioma());
 				valf.getTextoCantidadDePaginas()
-						.setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getCantidadDePaginas()));
+						.setText("" + objLf.getListaLibrosFisicos().get(valorLf).getCantidadDePaginas());
 				valf.getTextoAutor().setText(objLf.getListaLibrosFisicos().get(valorLf).getAutor());
 				valf.getTextoEditorial().setText(objLf.getListaLibrosFisicos().get(valorLf).getEditorial());
 				valf.getTextoCantidadDeCopias()
-						.setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getCantidadDeCopias()));
+						.setText("" + objLf.getListaLibrosFisicos().get(valorLf).getCantidadDeCopias());
 				valf.getTextoTiempoDePrestamo()
-						.setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getTiempoDePrestamo()));
+						.setText("" + objLf.getListaLibrosFisicos().get(valorLf).getTiempoDePrestamo());
 
 			} else if (valorLv != -1) {
 				va.setVisible(false);
@@ -630,10 +629,10 @@ public class Controlador implements ActionListener {
 				valv.getTextoClasificacion().setText(objLv.getListaLibrosVirtuales().get(valorLv).getClasificacion());
 				valv.getTextoFacultad().setText(objLv.getListaLibrosVirtuales().get(valorLv).getFacultad());
 				valv.getTextoFechaDePublicacion()
-						.setText(String.valueOf(objLv.getListaLibrosVirtuales().get(valorLv).getFechaDePublicacion()));
+						.setText("" + objLv.getListaLibrosVirtuales().get(valorLv).getFechaDePublicacion());
 				valv.getTextoIdioma().setText(objLv.getListaLibrosVirtuales().get(valorLv).getIdioma());
 				valv.getTextoCantidadDePaginas()
-						.setText(String.valueOf(objLv.getListaLibrosVirtuales().get(valorLv).getCantidadDePaginas()));
+						.setText("" + objLv.getListaLibrosVirtuales().get(valorLv).getCantidadDePaginas());
 				valv.getTextoAutor().setText(objLv.getListaLibrosVirtuales().get(valorLv).getAutor());
 				valv.getTextoEditorial().setText(objLv.getListaLibrosVirtuales().get(valorLv).getEditorial());
 				valv.getTextoTipoDeArchivo().setText(objLv.getListaLibrosVirtuales().get(valorLv).getTipoDeArchivo());
@@ -650,14 +649,14 @@ public class Controlador implements ActionListener {
 				vaa.getTextoClasificacion().setText(objA.getListaArticulos().get(valorA).getClasificacion());
 				vaa.getTextoFacultad().setText(objA.getListaArticulos().get(valorA).getFacultad());
 				vaa.getTextoFechaDePublicacion()
-						.setText(String.valueOf(objA.getListaArticulos().get(valorA).getFechaDePublicacion()));
+						.setText("" + objA.getListaArticulos().get(valorA).getFechaDePublicacion());
 				vaa.getTextoIdioma().setText(objA.getListaArticulos().get(valorA).getIdioma());
 				vaa.getTextoAutor().setText(objA.getListaArticulos().get(valorA).getAutor());
 				vaa.getTextoFuente().setText(objA.getListaArticulos().get(valorA).getFuente());
 				vaa.getTextoTerminosGeograficos()
 						.setText(objA.getListaArticulos().get(valorA).getTerminosGeograficos());
 				vaa.getTextoCantidadDePaginas()
-						.setText(String.valueOf(objA.getListaArticulos().get(valorA).getCantidadDePaginas()));
+						.setText("" + objA.getListaArticulos().get(valorA).getCantidadDePaginas());
 
 			} else {
 				JOptionPane.showMessageDialog(null, "ERROR - No se ha hallado una publicación con ese ID",
@@ -874,101 +873,81 @@ public class Controlador implements ActionListener {
 			vm.setVisible(false);
 			vp.setVisible(true);
 			break;
-		
+
 		}
 		case "cancelar_mostrar_articulo": {
-		    vma.setVisible(false);
-		    vm.setVisible(true);
-		    break;
+			vma.setVisible(false);
+			vm.setVisible(true);
+			break;
 		}
 
 		case "cancelar_mostrar_libro_fisico": {
-		    vmlf.setVisible(false);
-		    vm.setVisible(true);
-		    break;
+			vmlf.setVisible(false);
+			vm.setVisible(true);
+			break;
 		}
 		case "cancelar_mostrar_libro_virtual": {
-		    vmlv.setVisible(false);
-		    vm.setVisible(true);
-		    break;
+			vmlv.setVisible(false);
+			vm.setVisible(true);
+			break;
 		}
 		case "cancelar_mostrar_pelicula": {
-		    vmp.setVisible(false);
-		    vm.setVisible(true);
-		    break;
+			vmp.setVisible(false);
+			vm.setVisible(true);
+			break;
 		}
 		case "cancelar_mostrar_revista": {
-		    vmr.setVisible(false);
-		    vm.setVisible(true);
-		    break;
+			vmr.setVisible(false);
+			vm.setVisible(true);
+			break;
 		}
 		case "cancelar_mostrar_todo": {
-		    vmt.setVisible(false);
-		    vm.setVisible(true);
-		    break;
+			vmt.setVisible(false);
+			vm.setVisible(true);
+			break;
 		}
-		
+
 		//
 		case "boton_cancelar_crear": {
-		    vc.setVisible(false);
-		    vp.setVisible(true);
-		    break;
+			vc.setVisible(false);
+			vp.setVisible(true);
+			break;
 		}
 
 		// Lógica para el botón cancelar en las ventanas de creación específicas
 		case "cancelar_crear_pelicula": {
-		    vcp.setVisible(false);
-		    vc.setVisible(true);
-		    break;
+			vcp.setVisible(false);
+			vc.setVisible(true);
+			break;
 		}
 		case "cancelar_crear_articulo": {
-		    vca.setVisible(false);
-		    vc.setVisible(true);
-		    break;
+			vca.setVisible(false);
+			vc.setVisible(true);
+			break;
 		}
 		case "cancelar_crear_revista": {
-		    vcr.setVisible(false);
-		    vc.setVisible(true);
-		    break;
+			vcr.setVisible(false);
+			vc.setVisible(true);
+			break;
 		}
 		case "cancelar_crear_libro_fisico": {
-		    vclf.setVisible(false);
-		    vc.setVisible(true);
-		    break;
+			vclf.setVisible(false);
+			vc.setVisible(true);
+			break;
 		}
 		case "cancelar_crear_libro_virtual": {
-		    vclv.setVisible(false);
-		    vc.setVisible(true);
-		    break;
+			vclv.setVisible(false);
+			vc.setVisible(true);
+			break;
 		}
 		//
 
 		}
-	
+
 	}
 
 	public void runGUI() { // Run de la ventana
 		vp.setVisible(true);
-	}
-
-	public LibroFisicoDAO getObjLf() {
-		return objLf;
-	}
-
-	public LibroVirtualDAO getObjLv() {
-		return objLv;
-	}
-
-	public ArticuloDAO getObjA() {
-		return objA;
-	}
-
-	public PeliculaDAO getObjP() {
-		return objP;
-	}
-
-	public RevistaDAO getObjR() {
-		return objR;
 	}
 
 }
