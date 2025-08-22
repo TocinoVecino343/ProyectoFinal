@@ -16,7 +16,7 @@ public class VentanaCrearLibroVirtual extends JFrame {
 	private JTextField textoEsAudioLibro;
 
 	private JButton botonGuardarLibroVirtual;
-	private JButton botonCancelar;
+	private JButton cancelar;
 
 	public VentanaCrearLibroVirtual() {
 		inicializarCrearLibroVirtual();
@@ -50,11 +50,11 @@ public class VentanaCrearLibroVirtual extends JFrame {
 		botonGuardarLibroVirtual.setBounds(250, 160, 220, 40);
 		this.add(botonGuardarLibroVirtual);
 		
-		botonCancelar = new JButton("Cancelar");
-		botonCancelar.setBackground(Color.decode("#E8F5E9"));
-		botonCancelar.setBounds(100, 460, 200, 30);
-		botonCancelar.setBounds(100, 520, 200, 30);
-		this.add(botonCancelar);
+		cancelar = new JButton("Cancelar");
+		cancelar.setBackground(Color.decode("#E8F5E9"));
+		cancelar.setBounds(100, 460, 200, 30);
+		cancelar.setBounds(100, 520, 200, 30);
+		this.add(cancelar);
 	}
 
 	public JLabel getLabelTipoArchivo() {
@@ -97,12 +97,11 @@ public class VentanaCrearLibroVirtual extends JFrame {
 		this.botonGuardarLibroVirtual = botonGuardarLibroVirtual;
 	}
 
-	public JButton getBotonCancelar() {
-		return botonCancelar;
+	public JButton getCancelar() {
+		return cancelar;
 	}
 
-	public void setBotonCancelar(JButton botonCancelar) {
-		this.botonCancelar = botonCancelar;
+	public void setCancelar(JButton cancelar) {
+		this.cancelar = cancelar;
 	}
-
 }
