@@ -35,6 +35,8 @@ public class VentanaActualizarLibroVirtual extends JFrame {
 	private JTextField textoEsAudioLibro;
 
 	private JButton botonActualizar;
+	private JButton botonCancelar;
+
 
 	public VentanaActualizarLibroVirtual() {
 		this.setTitle("Actualizar Libro Virtual");
@@ -128,6 +130,11 @@ public class VentanaActualizarLibroVirtual extends JFrame {
 		botonActualizar = new JButton("Actualizar");
 		botonActualizar.setBounds(200, 450, 180, 40);
 		add(botonActualizar);
+
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBounds(180, 110, 100, 30);
+		this.add(botonCancelar);
+
 	}
 
 
@@ -298,5 +305,17 @@ public class VentanaActualizarLibroVirtual extends JFrame {
 	public void setBotonActualizar(JButton botonActualizar) {
 		this.botonActualizar = botonActualizar;
 	}
+
+
+	public JButton getBotonCancelar() {
+		return botonCancelar;
+	}
+
+
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
+	
+	
 
 }

@@ -229,6 +229,18 @@ public class Controlador implements ActionListener {
 		// Oyentes buscador
 		vp.getBotonBuscar().addActionListener(this);
 		vp.getBotonBuscar().setActionCommand("boton_buscar");
+		
+		//cancelar actualizar
+		vap.getBotonCancelar().addActionListener(this);
+		vap.getBotonCancelar().setActionCommand("boton_cancelar_actualizar_pelicula");
+		vaa.getBotonCancelar().addActionListener(this);
+		vaa.getBotonCancelar().setActionCommand("boton_cancelar_actualizar_articulo");
+		var.getBotonCancelar().addActionListener(this);
+		var.getBotonCancelar().setActionCommand("boton_cancelar_actualizar_revista");
+		valf.getBotonCancelar().addActionListener(this);
+		valf.getBotonCancelar().setActionCommand("boton_cancelar_actualizar_libro_fisico");
+		valv.getBotonCancelar().addActionListener(this);
+		valv.getBotonCancelar().setActionCommand("boton_cancelar_actualizar_libro_virtual");
 
 	}
 
@@ -939,7 +951,23 @@ public class Controlador implements ActionListener {
 			vc.setVisible(true);
 			break;
 		}
-		//
+		//lógica para el botón cancelar en las ventanas de actualización específicas
+				case "cancelar_actualizar_pelicula":{
+					vap.setVisible(false);
+					vap.setVisible(true);
+				}
+				case "cancelar_actualizar_articulo":{
+					vaa.setVisible(false);
+					vaa.setVisible(true);
+				}
+				case "cancelar_actualizar_libro_fisico":{
+					valf.setVisible(false);
+					valv.setVisible(true);
+				}
+				case "cancelar_actualizar_revista":{
+					var.setVisible(false);
+					var.setVisible(true);
+				}
 
 		}
 
