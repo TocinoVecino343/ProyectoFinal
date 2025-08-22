@@ -51,104 +51,105 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	public void inicializarComponentes() {
-		// Configuración de la ventana
-		this.setTitle("Biblioteca UEB");
-		this.setBounds(10, 10, 1280, 720); 
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Finaliza el programa completamente
-		this.setResizable(false);
-		this.setLayout(null);
-		
-		//Titulo 
-		titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
-		titulo.setBounds(200, 40, 600, 30);
-		titulo.setForeground(Color.decode("#144031"));
-		titulo.setFont(new Font("Times New Roman", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
-		this.add(titulo);
+	    // Configuración de la ventana
+	    this.setTitle("Biblioteca UEB");
+	    this.setBounds(10, 10, 1280, 720);
+	    this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Finaliza el programa completamente
+	    this.setResizable(false);
+	    this.setLayout(null);
 
-		// Botones menú principal
-		botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
-		botonCrearPublicacion.setBounds(40, 200, 200, 60); // Posición y tamaño del botón
-		botonCrearPublicacion.setBackground(Color.decode("#f5f5dc"));// Color del FONDO del botón
-		botonCrearPublicacion.setForeground(Color.decode("#144031"));
-		botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
-		this.add(botonCrearPublicacion);
-		//
-		botonMostrarPublicacion = new JButton("Mostrar publicación");
-		botonMostrarPublicacion.setBounds(40, 300, 200, 60);
-		botonMostrarPublicacion.setBackground(Color.decode("#f5f5dc"));
-		botonMostrarPublicacion.setForeground(Color.decode("#144031"));
-		botonMostrarPublicacion.setFocusPainted(false);
-		this.add(botonMostrarPublicacion);
-		//
-		botonEliminarPublicacion = new JButton("Eliminar publicación");
-		botonEliminarPublicacion.setBounds(40, 400, 200, 60);
-		botonEliminarPublicacion.setBackground(Color.decode("#f5f5dc"));
-		botonEliminarPublicacion.setForeground(Color.decode("#144031"));
-		botonEliminarPublicacion.setFocusPainted(false);
-		this.add(botonEliminarPublicacion);
-		//
-		botonActualizarPublicacion = new JButton("Actualizar publicación");
-		botonActualizarPublicacion.setBounds(40, 500, 200, 60);
-		botonActualizarPublicacion.setBackground(Color.decode("#f5f5dc"));
-		botonActualizarPublicacion.setForeground(Color.decode("#144031"));
-		botonActualizarPublicacion.setFocusPainted(false);
-		this.add(botonActualizarPublicacion);
-		
-		//imagen
-		ImageIcon imagen = new ImageIcon(getClass().getResource("logoUEB.jpg"));
-		JLabel labelImagen = new JLabel(imagen);
-		labelImagen.setBounds(40, 0, 200, 200);
-		add(labelImagen);
-		
-		//imagen 2
-		ImageIcon imagen2 = new ImageIcon(getClass().getResource("tita (1).png"));
-		JLabel labelImagen2 = new JLabel(imagen2);
-		labelImagen2.setBounds(220, 5, 400, 600);  
-		add(labelImagen2);
-		
-		//seccion busqueda
-		etiquetaBusqueda = new JLabel("Buscar publicación:");
-		etiquetaBusqueda.setBounds(750, 120, 150, 25);
-		etiquetaBusqueda.setForeground(Color.decode("#144031"));
-		etiquetaBusqueda.setFont(new Font("Arial", Font.BOLD, 14));
-		this.add(etiquetaBusqueda);
+	    //Titulo
+	    titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
+	    titulo.setBounds(200, 40, 600, 30);
+	    titulo.setForeground(Color.decode("#144031"));
+	    titulo.setFont(new Font("Times New Roman", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
+	    this.add(titulo);
 
+	    // Botones menú principal
+	    botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
+	    botonCrearPublicacion.setBounds(40, 200, 200, 60); // Posición y tamaño del botón
+	    botonCrearPublicacion.setBackground(Color.decode("#f5f5dc"));// Color del FONDO del botón
+	    botonCrearPublicacion.setForeground(Color.decode("#144031"));
+	    botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
+	    this.add(botonCrearPublicacion);
+	    //
+	    botonMostrarPublicacion = new JButton("Mostrar publicación");
+	    botonMostrarPublicacion.setBounds(40, 300, 200, 60);
+	    botonMostrarPublicacion.setBackground(Color.decode("#f5f5dc"));
+	    botonMostrarPublicacion.setForeground(Color.decode("#144031"));
+	    botonMostrarPublicacion.setFocusPainted(false);
+	    this.add(botonMostrarPublicacion);
+	    //
+	    botonEliminarPublicacion = new JButton("Eliminar publicación");
+	    botonEliminarPublicacion.setBounds(40, 400, 200, 60);
+	    botonEliminarPublicacion.setBackground(Color.decode("#f5f5dc"));
+	    botonEliminarPublicacion.setForeground(Color.decode("#144031"));
+	    botonEliminarPublicacion.setFocusPainted(false);
+	    this.add(botonEliminarPublicacion);
+	    //
+	    botonActualizarPublicacion = new JButton("Actualizar publicación");
+	    botonActualizarPublicacion.setBounds(40, 500, 200, 60);
+	    botonActualizarPublicacion.setBackground(Color.decode("#f5f5dc"));
+	    botonActualizarPublicacion.setForeground(Color.decode("#144031"));
+	    botonActualizarPublicacion.setFocusPainted(false);
+	    this.add(botonActualizarPublicacion);
 
-		campoBusqueda = new JTextField();
-		campoBusqueda.setBounds(750, 150, 250, 35);
-		campoBusqueda.setFont(new Font("Arial", Font.PLAIN, 14));
-		campoBusqueda.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 2));
-		campoBusqueda.addKeyListener(new KeyListener() {
-		    @Override
-		    public void keyTyped(KeyEvent e) {}
-		    
-		    @Override
-		    public void keyPressed(KeyEvent e) {}
-		    
-		    @Override
-		    public void keyReleased(KeyEvent e) {
-		        buscarEnTiempoReal();
-		    }
-		});
-		this.add(campoBusqueda);
+	    //imagen
+	    ImageIcon imagen = new ImageIcon(getClass().getResource("logoUEB.jpg"));
+	    JLabel labelImagen = new JLabel(imagen);
+	    labelImagen.setBounds(40, 0, 200, 200);
+	    add(labelImagen);
 
-		botonBuscar = new JButton("Buscar");
-		botonBuscar.setBounds(920, 150, 80, 35);
-		botonBuscar.setBackground(Color.decode("#f5f5dc"));
-		botonBuscar.setForeground(Color.decode("#144031"));
-		botonBuscar.setFocusPainted(false);
-		this.add(botonBuscar);
+	    //imagen 2
+	    ImageIcon imagen2 = new ImageIcon(getClass().getResource("tita (1).png"));
+	    JLabel labelImagen2 = new JLabel(imagen2);
+	    labelImagen2.setBounds(220, 5, 400, 600);
+	    add(labelImagen2);
 
-		// Lista para mostrar resultados
-		modeloLista = new DefaultListModel<>();
-		listaResultados = new JList<>(modeloLista);
-		listaResultados.setFont(new Font("Arial", Font.PLAIN, 12));
-		listaResultados.setBackground(Color.decode("#f9f9f9"));
+	    // Etiqueta para el campo de búsqueda.
+	    etiquetaBusqueda = new JLabel("Buscar publicación:");
+	    etiquetaBusqueda.setBounds(750, 120, 200, 25);
+	    etiquetaBusqueda.setForeground(Color.decode("#144031"));
+	    etiquetaBusqueda.setFont(new Font("Arial", Font.BOLD, 14));
+	    this.add(etiquetaBusqueda);
 
-		scrollResultados = new JScrollPane(listaResultados);
-		scrollResultados.setBounds(750, 200, 350, 300);
-		scrollResultados.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 1));
-		this.add(scrollResultados);
+	    // Campo de texto para la búsqueda
+	    campoBusqueda = new JTextField();
+	    campoBusqueda.setBounds(750, 150, 265, 35); 
+	    campoBusqueda.setFont(new Font("Arial", Font.PLAIN, 14));
+	    campoBusqueda.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 2));
+	    campoBusqueda.addKeyListener(new KeyListener() {
+	        @Override
+	        public void keyTyped(KeyEvent e) {}
+
+	        @Override
+	        public void keyPressed(KeyEvent e) {}
+
+	        @Override
+	        public void keyReleased(KeyEvent e) {
+	            // buscarEnTiempoReal();
+	        }
+	    });
+	    this.add(campoBusqueda);
+
+	    // Botón de búsqueda
+	    botonBuscar = new JButton("Buscar");
+	    botonBuscar.setBounds(1020, 150, 80, 35); 
+	    botonBuscar.setBackground(Color.decode("#f5f5dc"));
+	    botonBuscar.setForeground(Color.decode("#144031"));
+	    botonBuscar.setFocusPainted(false);
+	    this.add(botonBuscar);
+
+	    // Lista para mostrar resultados
+	    modeloLista = new DefaultListModel<>();
+	    listaResultados = new JList<>(modeloLista);
+	    listaResultados.setFont(new Font("Arial", Font.PLAIN, 12));
+	    listaResultados.setBackground(Color.decode("#f9f9f9"));
+
+	    scrollResultados = new JScrollPane(listaResultados);
+	    scrollResultados.setBounds(750, 195, 350, 300); 
+	    scrollResultados.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 1));
+	    this.add(scrollResultados);
 	}
 
 	// metodos de busqueda
