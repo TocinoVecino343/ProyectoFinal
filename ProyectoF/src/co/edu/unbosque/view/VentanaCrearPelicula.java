@@ -306,11 +306,11 @@ public class VentanaCrearPelicula extends JFrame{
 		this.botonGuardarPelicula = botonGuardarPelicula;
 	}
 	
-	public JButton getCancelar() {
+	public JButton getBotonCancelar() {
 		return cancelar;
 	}
 	
-	public void setCancelar(JButton cancelar) {
+	public void setBotonCancelar(JButton cancelar) {
 		this.cancelar = cancelar;
 	}
 	

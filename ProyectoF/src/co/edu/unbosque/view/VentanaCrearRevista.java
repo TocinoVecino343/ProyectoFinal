@@ -148,11 +148,11 @@ public class VentanaCrearRevista extends JFrame {
 		this.botonGuardarRevista = botonGuardarRevista;
 	}
 
-	public JButton getCancelar() {
+	public JButton getBotonCancelar() {
 		return cancelar;
 	}
 
-	public void setCancelar(JButton cancelar) {
+	public void setBotonCancelar(JButton cancelar) {
 		this.cancelar = cancelar;
 	}
 	

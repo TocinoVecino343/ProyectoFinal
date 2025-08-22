@@ -97,11 +97,11 @@ public class VentanaCrearLibroVirtual extends JFrame {
 		this.botonGuardarLibroVirtual = botonGuardarLibroVirtual;
 	}
 
-	public JButton getCancelar() {
+	public JButton getBotonCancelar() {
 		return cancelar;
 	}
 
-	public void setCancelar(JButton cancelar) {
+	public void setBotonCancelar(JButton cancelar) {
 		this.cancelar = cancelar;
 	}
 }
