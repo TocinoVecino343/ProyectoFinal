@@ -106,12 +106,12 @@ public class VentanaCrear extends JFrame {
 
 	    botonCrearLibroFisico = new JButton("Crear Libro Físico");
 	    botonCrearLibroFisico.setBackground(Color.decode("#E8F5E9"));
-	    botonCrearLibroFisico.setBounds(500, 450, 200, 30);
+	    botonCrearLibroFisico.setBounds(500, 400, 200, 30);
 	    add(botonCrearLibroFisico);
 
 	    botonCrearLibroVirtual = new JButton("Crear Libro Virtual");
 	    botonCrearLibroVirtual.setBackground(Color.decode("#E8F5E9"));
-	    botonCrearLibroVirtual.setBounds(500, 500, 200, 30);
+	    botonCrearLibroVirtual.setBounds(500, 450, 200, 30);
 	    add(botonCrearLibroVirtual);
 	}
 
