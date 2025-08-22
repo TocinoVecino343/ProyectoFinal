@@ -20,6 +20,7 @@ public class VentanaCrearArticulo extends JFrame {
 	private JTextField textoCantidadPaginas;
 
 	private JButton botonGuardarArticulo;
+	private JButton botonCancelar;
 
 	public VentanaCrearArticulo() {
 		inicializarCrearArticulo();
