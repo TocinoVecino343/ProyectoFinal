@@ -31,8 +31,9 @@ public class VentanaActualizarRevista extends JFrame {
 	private JLabel labelDescripcionFisica;
 	private JTextField textoDescripcionFisica;
 
-	JButton botonActualizar;
-
+	private JButton botonActualizar;
+	private JButton botonCancelar;
+	
 	public VentanaActualizarRevista() {
 		setTitle("Actualizar Revista");
 		setBounds(10, 10, 600, 550);
@@ -115,6 +116,10 @@ public class VentanaActualizarRevista extends JFrame {
 		botonActualizar = new JButton("Actualizar");
 		botonActualizar.setBounds(200, 470, 180, 40);
 		add(botonActualizar);
+		
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBounds(180, 110, 100, 30);
+		this.add(botonCancelar);
 	}
 
 	public JLabel getLabelTitulo() {
@@ -268,5 +273,14 @@ public class VentanaActualizarRevista extends JFrame {
 	public void setBotonActualizar(JButton botonActualizar) {
 		this.botonActualizar = botonActualizar;
 	}
+
+	public JButton getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
+	
 
 }

@@ -49,6 +49,7 @@ public class Controlador implements ActionListener {
 	private VentanaActualizarRevista var;
 	private VentanaActualizarLibroFisico valf;
 	private VentanaActualizarLibroVirtual valv;
+	
 
 	public Controlador() {
 		objLf = new LibroFisicoDAO();

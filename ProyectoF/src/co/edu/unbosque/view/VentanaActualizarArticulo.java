@@ -116,6 +116,10 @@ public class VentanaActualizarArticulo extends JFrame {
 		botonActualizar = new JButton("Actualizar");
 		botonActualizar.setBounds(200, 420, 180, 40);
 		add(botonActualizar);
+		
+		botonCancelar = new JButton("Cacelar");
+		botonCancelar.setBounds(180, 110, 100, 30);
+		this.add(botonCancelar);
 	}
 
 	public JLabel getLabelTitulo() {
@@ -269,5 +273,14 @@ public class VentanaActualizarArticulo extends JFrame {
 	public void setBotonActualizar(JButton botonActualizar) {
 		this.botonActualizar = botonActualizar;
 	}
+
+	public JButton getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
+	
 
 }

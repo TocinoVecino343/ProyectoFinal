@@ -52,6 +52,7 @@ public class VentanaActualizarPelicula extends JFrame {
 	private JTextField textoSubtitulos;
 
 	private JButton botonActualizar;
+	private JButton botonCancelar;
 
 	public VentanaActualizarPelicula() {
 		this.setTitle("Actualizar Película");
@@ -183,6 +184,10 @@ public class VentanaActualizarPelicula extends JFrame {
 		botonActualizar = new JButton("Actualizar Película");
 		botonActualizar.setBounds(200, 420, 180, 40);
 		this.add(botonActualizar);
+		
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBounds(180, 110, 100, 30);
+		this.add(botonCancelar);
 
 	}
 
@@ -433,5 +438,22 @@ public class VentanaActualizarPelicula extends JFrame {
 	public void setBotonActualizar(JButton botonActualizar) {
 		this.botonActualizar = botonActualizar;
 	}
+
+	public JLabel getLabelGuion() {
+		return labelGuion;
+	}
+
+	public void setLabelGuion(JLabel labelGuion) {
+		this.labelGuion = labelGuion;
+	}
+
+	public JButton getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
+	
 
 }
