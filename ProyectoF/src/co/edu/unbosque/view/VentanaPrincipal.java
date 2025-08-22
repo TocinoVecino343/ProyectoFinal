@@ -104,7 +104,7 @@ public class VentanaPrincipal extends JFrame {
 	    //boton salir ventana principal
 	    botonSalir = new JButton("Salir");
 	    botonSalir.setBounds(40, 600, 100, 50);
-	    botonSalir.setBackground(Color.decode("#E8F5E9")); // Cambié botonCrearPublicacion por botonSalir
+	    botonSalir.setBackground(Color.decode("#C8E6C9")); // Cambié botonCrearPublicacion por botonSalir
 	    botonSalir.setForeground(Color.decode("#144031")); // Cambié botonCrearPublicacion por botonSalir
 	    botonSalir.setFocusPainted(false);
 	    this.add(botonSalir);
