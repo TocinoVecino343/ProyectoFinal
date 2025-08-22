@@ -43,6 +43,7 @@ public class VentanaPrincipal extends JFrame {
 	private JButton botonBuscar;
     private JFrame desplegable;
 	private Controlador controller; 
+	private JButton botonSalir;
 	
 	public VentanaPrincipal(Controlador controller) {
 	    this.controller = controller;
@@ -105,6 +106,14 @@ public class VentanaPrincipal extends JFrame {
 	    JLabel labelImagen2 = new JLabel(imagen2);
 	    labelImagen2.setBounds(220, 5, 400, 600);
 	    add(labelImagen2);
+	    
+	    //boton salir ventana principal
+	    botonSalir = new JButton("Salir");
+	    botonSalir.setBounds(40, 600, 100, 50);
+	    botonSalir.setBackground(Color.decode("#E8F5E9")); // Cambié botonCrearPublicacion por botonSalir
+	    botonSalir.setForeground(Color.decode("#144031")); // Cambié botonCrearPublicacion por botonSalir
+	    botonSalir.setFocusPainted(false);
+	    this.add(botonSalir);
 
 	    // Etiqueta para el campo de búsqueda.
 	    etiquetaBusqueda = new JLabel("Buscar publicación:");
@@ -314,5 +323,9 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setModeloLista(DefaultListModel<String> modeloLista) {
 	    this.modeloLista = modeloLista;
+	}
+	
+	public JButton getBotonSalir() {
+	    return botonSalir;
 	}
 }
