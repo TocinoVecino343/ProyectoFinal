@@ -117,6 +117,8 @@ public class Controlador implements ActionListener {
 		vc.getBotonCrearLibroFisico().setActionCommand("boton_crear_libro_fisico");
 		vc.getBotonCrearLibroVirtual().addActionListener(this);
 		vc.getBotonCrearLibroVirtual().setActionCommand("boton_crear_libro_virtual");
+		vc.getBotonCrearLibroVirtual().addActionListener(this);
+		vc.getBotonCrearLibroVirtual().setActionCommand("boton_cancelar_crear");
 
 		// Oyentes guardar objeto
 		vcp.getBotonGuardarPelicula().addActionListener(this);
@@ -259,6 +261,11 @@ public class Controlador implements ActionListener {
 		case "boton_crear_libro_virtual": {
 			vclv.setVisible(true);
 			vc.setVisible(false);
+			break;
+		}
+		case "boton_cancelar_crear": {
+			vc.setVisible(false);
+			vp.setVisible(true);
 			break;
 		}
 		// Botones guardar
