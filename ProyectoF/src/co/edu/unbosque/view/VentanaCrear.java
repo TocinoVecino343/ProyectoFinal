@@ -29,6 +29,7 @@ public class VentanaCrear extends JFrame {
 	private JButton botonCrearRevista;
 	private JButton botonCrearLibroFisico;
 	private JButton botonCrearLibroVirtual;
+	private JButton botonCancelar;
 	
 	public VentanaCrear() {
 		inicializarCrear();
@@ -113,6 +114,11 @@ public class VentanaCrear extends JFrame {
 	    botonCrearLibroVirtual.setBackground(Color.decode("#E8F5E9"));
 	    botonCrearLibroVirtual.setBounds(500, 450, 200, 30);
 	    add(botonCrearLibroVirtual);
+	    
+	    botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
+		botonCancelar.setBounds(100, 520, 200, 30);
+		this.add(botonCancelar);
 	}
 
 	public JLabel getLabelId() {
@@ -251,5 +257,12 @@ public class VentanaCrear extends JFrame {
 		this.botonCrearLibroVirtual = botonCrearLibroVirtual;
 	}
 
+	public JButton getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(JButton botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
 
 }
