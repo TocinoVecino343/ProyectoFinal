@@ -76,7 +76,7 @@ public final class LibroFisico extends Libro {
 
 	@Override
 	public String toString() {
-		return super.toString() + " -----Libro Físico-----" + "Cantidad de Copias: " + cantidadDeCopias
+		return super.toString() + " \n-----Libro Físico-----" + "Cantidad de Copias: " + cantidadDeCopias
 				+ "Tiempo de Prestamo: " + tiempoDePrestamo;
 	}
 

@@ -70,7 +70,7 @@ public class Articulo extends Publicacion {
 
 	@Override
 	public String toString() {
-		return super.toString() + " -----Artículo------" + "\nAutor: " + autor + "\nFuente:" + fuente
+		return super.toString() + " \n-----Artículo------" + "\nAutor: " + autor + "\nFuente:" + fuente
 				+ "Términos Geograficos: " + terminosGeograficos + "\nCantidad de Páginas: " + cantidadDePaginas;
 	}
 

@@ -56,7 +56,7 @@ public abstract class Libro extends Publicacion {
 
 	@Override
 	public String toString() {
-		return super.toString() + " -----Libro-----" + "\nCantidad de Páginas: " + cantidadDePaginas + "\nAutor: "
+		return super.toString() + " \n-----Libro-----" + "\nCantidad de Páginas: " + cantidadDePaginas + "\nAutor: "
 				+ autor + "\nEditorial: " + editorial;
 	}
 

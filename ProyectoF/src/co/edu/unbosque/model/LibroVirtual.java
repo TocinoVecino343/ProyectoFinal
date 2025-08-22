@@ -76,7 +76,7 @@ public class LibroVirtual extends Libro {
 
 	@Override
 	public String toString() {
-		return super.toString() + " -----Libro Virtual-----" + "\nTipo de Archivo: " + tipoDeArchivo
+		return super.toString() + " \n-----Libro Virtual-----" + "\nTipo de Archivo: " + tipoDeArchivo
 				+ "\n¿Es Audio Libro?: " + esAudioLibro;
 	}
 
