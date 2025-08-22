@@ -208,16 +208,8 @@ public class VentanaPrincipal extends JFrame {
 	                resultados.add("[REVISTA] " + revista.getTitulo() + " - " + revista.getFacultad() + 
 	                             " (ID: " + revista.getId() + ")");
 	            }
-	        }
-	        
-	        // Buscar en Steam (Juegos)
-	        for (Steam juego : controller.getObjS().listaSteam()) {
-	            if (coincideBusqueda(juego, textoBusqueda)) {
-	                resultados.add("[JUEGO] " + juego.getTitulo() + " - " + juego.getFacultad() + 
-	                             " (ID: " + juego.getId() + ")");
-	            }
-	        }
-	        
+	        }      
+	               
 	        // Mostrar resultados
 	        if (resultados.isEmpty()) {
 	            modeloLista.addElement("No se encontraron resultados para: '" + textoBusqueda + "'");
