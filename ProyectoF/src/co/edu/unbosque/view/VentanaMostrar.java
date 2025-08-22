@@ -132,5 +132,6 @@ public class VentanaMostrar extends JFrame {
 	    this.botonCancelar = botonCancelar;
 	}
 	
+	
 
 }
