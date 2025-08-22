@@ -12,7 +12,19 @@ import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.swing.ImageIcon;
 import java.awt.BorderLayout;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JTextField;
+import javax.swing.JScrollPane;
+import javax.swing.JList;
+import javax.swing.DefaultListModel;
+import javax.swing.BorderFactory;
+import java.util.ArrayList;
+
 import org.w3c.dom.css.RGBColor;
+
+import co.edu.unbosque.controller.Controlador;
+import co.edu.unbosque.model.*;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -22,21 +34,30 @@ public class VentanaPrincipal extends JFrame {
 	private JButton botonActualizarPublicacion;
 	private JLabel mensajeBienvenida;
 	private JLabel titulo;
+	private JTextField campoBusqueda;
+	private JLabel etiquetaBusqueda;
+	private JList<String> listaResultados;
+	private DefaultListModel<String> modeloLista;
+	private JScrollPane scrollResultados;
+	private JButton botonBuscar;
 
-	public VentanaPrincipal() {
-		inicializarComponentes();
-		setVisible(true);
+	private Controlador controller; 
+	
+	public VentanaPrincipal(Controlador controller) {
+	    this.controller = controller;
+	    inicializarComponentes();
+	    setVisible(true);
 	}
 
 	public void inicializarComponentes() {
 		// Configuración de la ventana
 		this.setTitle("Biblioteca UEB");
-		this.setBounds(10, 10, 1280, 720); // posición y tamaño de la VENTANA
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Finaliza el programa completamente.
+		this.setBounds(10, 10, 1280, 720); 
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Finaliza el programa completamente
 		this.setResizable(false);
 		this.setLayout(null);
 		
-		//Titulo h
+		//Titulo 
 		titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
 		titulo.setBounds(200, 40, 600, 30);
 		titulo.setForeground(Color.decode("#144031"));
@@ -50,7 +71,6 @@ public class VentanaPrincipal extends JFrame {
 		botonCrearPublicacion.setForeground(Color.decode("#144031"));
 		botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
 		this.add(botonCrearPublicacion);
-		this.setLayout(null);
 		//
 		botonMostrarPublicacion = new JButton("Mostrar publicación");
 		botonMostrarPublicacion.setBounds(40, 300, 200, 60);
@@ -58,7 +78,6 @@ public class VentanaPrincipal extends JFrame {
 		botonMostrarPublicacion.setForeground(Color.decode("#144031"));
 		botonMostrarPublicacion.setFocusPainted(false);
 		this.add(botonMostrarPublicacion);
-		this.setLayout(null);
 		//
 		botonEliminarPublicacion = new JButton("Eliminar publicación");
 		botonEliminarPublicacion.setBounds(40, 400, 200, 60);
@@ -66,7 +85,6 @@ public class VentanaPrincipal extends JFrame {
 		botonEliminarPublicacion.setForeground(Color.decode("#144031"));
 		botonEliminarPublicacion.setFocusPainted(false);
 		this.add(botonEliminarPublicacion);
-		this.setLayout(null);
 		//
 		botonActualizarPublicacion = new JButton("Actualizar publicación");
 		botonActualizarPublicacion.setBounds(40, 500, 200, 60);
@@ -74,17 +92,214 @@ public class VentanaPrincipal extends JFrame {
 		botonActualizarPublicacion.setForeground(Color.decode("#144031"));
 		botonActualizarPublicacion.setFocusPainted(false);
 		this.add(botonActualizarPublicacion);
-		this.setLayout(null);
 		
 		//imagen
-	
 		ImageIcon imagen = new ImageIcon(getClass().getResource("logoUEB.jpg"));
 		JLabel labelImagen = new JLabel(imagen);
 		labelImagen.setBounds(40, 0, 200, 200);
 		add(labelImagen);
 		
+		//imagen 2
+		ImageIcon imagen2 = new ImageIcon(getClass().getResource("tita (1).png"));
+		JLabel labelImagen2 = new JLabel(imagen2);
+		labelImagen2.setBounds(220, 5, 400, 600);  
+		add(labelImagen2);
+		
+		//seccion busqueda
+		etiquetaBusqueda = new JLabel("Buscar publicación:");
+		etiquetaBusqueda.setBounds(750, 120, 150, 25);
+		etiquetaBusqueda.setForeground(Color.decode("#144031"));
+		etiquetaBusqueda.setFont(new Font("Arial", Font.BOLD, 14));
+		this.add(etiquetaBusqueda);
+
+		campoBusqueda = new JTextField();
+		campoBusqueda.setBounds(750, 150, 250, 35);
+		campoBusqueda.setFont(new Font("Arial", Font.PLAIN, 14));
+		campoBusqueda.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 2));
+		campoBusqueda.addKeyListener(new KeyListener() {
+		    @Override
+		    public void keyTyped(KeyEvent e) {}
+		    
+		    @Override
+		    public void keyPressed(KeyEvent e) {}
+		    
+		    @Override
+		    public void keyReleased(KeyEvent e) {
+		        buscarEnTiempoReal();
+		    }
+		});
+		this.add(campoBusqueda);
+
+		botonBuscar = new JButton("Buscar");
+		botonBuscar.setBounds(920, 150, 80, 35);
+		botonBuscar.setBackground(Color.decode("#f5f5dc"));
+		botonBuscar.setForeground(Color.decode("#144031"));
+		botonBuscar.setFocusPainted(false);
+		this.add(botonBuscar);
+
+		// Lista para mostrar resultados
+		modeloLista = new DefaultListModel<>();
+		listaResultados = new JList<>(modeloLista);
+		listaResultados.setFont(new Font("Arial", Font.PLAIN, 12));
+		listaResultados.setBackground(Color.decode("#f9f9f9"));
+
+		scrollResultados = new JScrollPane(listaResultados);
+		scrollResultados.setBounds(750, 200, 350, 300);
+		scrollResultados.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 1));
+		this.add(scrollResultados);
 	}
 
+	// metodos de bsuqueda
+	private void buscarEnTiempoReal() {
+	    String textoBusqueda = campoBusqueda.getText().toLowerCase().trim();
+	    modeloLista.clear();
+	    
+	    if (!textoBusqueda.isEmpty()) {
+	        ArrayList<String> resultados = new ArrayList<>();
+	        
+	        // Buscar en LibroFisico
+	        for (LibroFisico libro : controller.getObjLf().getListaLibrosFisicos()) {
+	            if (coincideBusqueda(libro, textoBusqueda)) {
+	                resultados.add("[FÍSICO] " + libro.getTitulo() + " - " + libro.getAutor() + 
+	                             " (ID: " + libro.getId() + ")");
+	            }
+	        }
+	        
+	        // Buscar en LibroVirtual
+	        for (LibroVirtual libro : controller.getObjLv().getListaLibrosVirtuales()) {
+	            if (coincideBusqueda(libro, textoBusqueda)) {
+	                resultados.add("[VIRTUAL] " + libro.getTitulo() + " - " + libro.getAutor() + 
+	                             " (ID: " + libro.getId() + ")");
+	            }
+	        }
+	        
+	        // Buscar en Articulos
+	        for (Articulo articulo : controller.getObjA().getListaArticulos()) {
+	            if (coincideBusqueda(articulo, textoBusqueda)) {
+	                resultados.add("[ARTÍCULO] " + articulo.getTitulo() + " - " + articulo.getFacultad() + 
+	                             " (ID: " + articulo.getId() + ")");
+	            }
+	        }
+	        
+	        // Buscar en Peliculas
+	        for (Pelicula pelicula : controller.getObjP().getListaPeliculas()) {
+	            if (coincideBusqueda(pelicula, textoBusqueda)) {
+	                resultados.add("[PELÍCULA] " + pelicula.getTitulo() + " - " + pelicula.getFacultad() + 
+	                             " (ID: " + pelicula.getId() + ")");
+	            }
+	        }
+	        
+	        // Buscar en Revistas
+	        for (Revista revista : controller.getObjR().getListaRevistas()) {
+	            if (coincideBusqueda(revista, textoBusqueda)) {
+	                resultados.add("[REVISTA] " + revista.getTitulo() + " - " + revista.getFacultad() + 
+	                             " (ID: " + revista.getId() + ")");
+	            }
+	        }
+	        
+	        // Buscar en Steam (Juegos)
+	        for (Steam juego : controller.getObjS().listaSteam()) {
+	            if (coincideBusqueda(juego, textoBusqueda)) {
+	                resultados.add("[JUEGO] " + juego.getTitulo() + " - " + juego.getFacultad() + 
+	                             " (ID: " + juego.getId() + ")");
+	            }
+	        }
+	        
+	        // Mostrar resultados
+	        if (resultados.isEmpty()) {
+	            modeloLista.addElement("No se encontraron resultados para: '" + textoBusqueda + "'");
+	        } else {
+	            modeloLista.addElement("Encontrados " + resultados.size() + " resultado(s):");
+	            for (String resultado : resultados) {
+	                modeloLista.addElement(resultado);
+	            }
+	        }
+	    }
+	}
+
+	private boolean coincideBusqueda(Object publicacion, String textoBusqueda) {
+	    if (publicacion instanceof LibroFisico) {
+	        LibroFisico libro = (LibroFisico) publicacion;
+	        return buscarEnCampos(libro.getId(), libro.getTitulo(), libro.getClasificacion(), 
+	                            libro.getFacultad(), libro.getIdioma(), libro.getAutor(), textoBusqueda);
+	    }
+	    else if (publicacion instanceof LibroVirtual) {
+	        LibroVirtual libro = (LibroVirtual) publicacion;
+	        return buscarEnCampos(libro.getId(), libro.getTitulo(), libro.getClasificacion(), 
+	                            libro.getFacultad(), libro.getIdioma(), libro.getAutor(), textoBusqueda);
+	    }
+	    else if (publicacion instanceof Articulo) {
+	        Articulo articulo = (Articulo) publicacion;
+	        return buscarEnCampos(articulo.getId(), articulo.getTitulo(), articulo.getClasificacion(), 
+	                            articulo.getFacultad(), articulo.getIdioma(), articulo.getAutor(), textoBusqueda);
+	    }
+	    else if (publicacion instanceof Pelicula) {
+	        Pelicula pelicula = (Pelicula) publicacion;
+	        return buscarEnCampos(pelicula.getId(), pelicula.getTitulo(), pelicula.getClasificacion(), 
+	                            pelicula.getFacultad(), pelicula.getIdioma(), "", textoBusqueda);
+	    }
+	    else if (publicacion instanceof Revista) {
+	        Revista revista = (Revista) publicacion;
+	        return buscarEnCampos(revista.getId(), revista.getTitulo(), revista.getClasificacion(), 
+	                            revista.getFacultad(), revista.getIdioma(), revista.getAutor(), textoBusqueda);
+	    }
+	    else if (publicacion instanceof Steam) {
+	        Steam juego = (Steam) publicacion;
+	        return buscarEnCampos(juego.getId(), juego.getTitulo(), juego.getClasificacion(), 
+	                            juego.getFacultad(), juego.getIdioma(), "", textoBusqueda);
+	    }
+	    
+	    return false;
+	}
+
+	private boolean buscarEnCampos(int id, String titulo, String clasificacion, String facultad, 
+	                              String idioma, String autor, String textoBusqueda) {
+	    
+	    // Convertir todo a minúsculas para búsqueda insensible a mayúsculas
+	    String tituloLower = titulo != null ? titulo.toLowerCase() : "";
+	    String clasificacionLower = clasificacion != null ? clasificacion.toLowerCase() : "";
+	    String facultadLower = facultad != null ? facultad.toLowerCase() : "";
+	    String idiomaLower = idioma != null ? idioma.toLowerCase() : "";
+	    String autorLower = autor != null ? autor.toLowerCase() : "";
+	    
+	    // Buscar por ID (convertir a string)
+	    if (String.valueOf(id).contains(textoBusqueda)) {
+	        return true;
+	    }
+	    
+	    // Buscar por primera letra del título
+	    if (!tituloLower.isEmpty() && tituloLower.startsWith(textoBusqueda)) {
+	        return true;
+	    }
+	    
+	    // Buscar en título (contiene)   //correcion
+	    if (tituloLower.contains(textoBusqueda)) {
+	        return true;
+	    }
+	    
+	    // Buscar en clasificación
+	    if (clasificacionLower.contains(textoBusqueda)) {
+	        return true;
+	    }
+	    
+	    // Buscar en facultad
+	    if (facultadLower.contains(textoBusqueda)) {
+	        return true;
+	    }
+	    
+	    // Buscar en idioma
+	    if (idiomaLower.contains(textoBusqueda)) {
+	        return true;
+	    }
+	    
+	    // Buscar en autor (si hay)
+	    if (!autorLower.isEmpty() && autorLower.contains(textoBusqueda)) {
+	        return true;
+	    }
+	    
+	    return false;
+	}
+		
 	// Getters y setters de los botones
 	public JButton getBotonCrearPublicacion() {
 		return botonCrearPublicacion;
@@ -134,5 +349,35 @@ public class VentanaPrincipal extends JFrame {
 		this.titulo = titulo;
 	}
 	
+	public JTextField getCampoBusqueda() {
+	    return campoBusqueda;
+	}
 
+	public void setCampoBusqueda(JTextField campoBusqueda) {
+	    this.campoBusqueda = campoBusqueda;
+	}
+
+	public JButton getBotonBuscar() {
+	    return botonBuscar;
+	}
+
+	public void setBotonBuscar(JButton botonBuscar) {
+	    this.botonBuscar = botonBuscar;
+	}
+
+	public JList<String> getListaResultados() {
+	    return listaResultados;
+	}
+
+	public void setListaResultados(JList<String> listaResultados) {
+	    this.listaResultados = listaResultados;
+	}
+
+	public DefaultListModel<String> getModeloLista() {
+	    return modeloLista;
+	}
+
+	public void setModeloLista(DefaultListModel<String> modeloLista) {
+	    this.modeloLista = modeloLista;
+	}
 }

@@ -53,7 +53,7 @@ public class Controlador implements ActionListener {
 		objA = new ArticuloDAO();
 		con = new Consola();
 
-		vp = new VentanaPrincipal();
+		vp = new VentanaPrincipal(this);
 		vc = new VentanaCrear();
 		vm = new VentanaMostrar();
 		va = new VentanaActualizar();
@@ -538,4 +538,30 @@ public class Controlador implements ActionListener {
 		 * 5);
 		 */
 	}
+	
+	public LibroFisicoDAO getObjLf() {
+        return objLf;
+    }
+
+    public LibroVirtualDAO getObjLv() {
+        return objLv;
+    }
+
+    public ArticuloDAO getObjA() {
+        return objA;
+    }
+
+    public PeliculaDAO getObjP() {
+        return objP;
+    }
+
+    public RevistaDAO getObjR() {
+        return objR;
+    }
+
+    public SteamDAO getObjS() {
+        return objS;
+    }
+
+
 }
