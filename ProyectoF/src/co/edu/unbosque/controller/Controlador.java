@@ -211,16 +211,16 @@ public class Controlador implements ActionListener {
 		velv.getEliminar().addActionListener(this);
 		velv.getEliminar().setActionCommand("eliminar_libro_virtual");
 
-		vep.getCancelar().addActionListener(this);
-		vep.getCancelar().setActionCommand("cancelar_eliminar_pelicula");
-		vea.getCancelar().addActionListener(this);
-		vea.getCancelar().setActionCommand("cancelar_eliminar_articulo");
-		ver.getCancelar().addActionListener(this);
-		ver.getCancelar().setActionCommand("cancelar_eliminar_revista");
-		velf.getCancelar().addActionListener(this);
-		velf.getCancelar().setActionCommand("cancelar_eliminar_libro_fisico");
-		velv.getCancelar().addActionListener(this);
-		velv.getCancelar().setActionCommand("cancelar_eliminar_libro_virtual");
+		vep.getBotonCancelar().addActionListener(this);
+		vep.getBotonCancelar().setActionCommand("cancelar_eliminar_pelicula");
+		vea.getBotonCancelar().addActionListener(this);
+		vea.getBotonCancelar().setActionCommand("cancelar_eliminar_articulo");
+		ver.getBotonCancelar().addActionListener(this);
+		ver.getBotonCancelar().setActionCommand("cancelar_eliminar_revista");
+		velf.getBotonCancelar().addActionListener(this);
+		velf.getBotonCancelar().setActionCommand("cancelar_eliminar_libro_fisico");
+		velv.getBotonCancelar().addActionListener(this);
+		velv.getBotonCancelar().setActionCommand("cancelar_eliminar_libro_virtual");
 
 		// Oyentes actualizar
 		va.getBotonActualizar().addActionListener(this);
