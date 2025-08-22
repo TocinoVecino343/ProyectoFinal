@@ -143,6 +143,8 @@ public class Controlador implements ActionListener {
 		vm.getBotonMostrarLibroFisico().setActionCommand("boton_mostrar_libro_fisico");
 		vm.getBotonMostrarLibroVirtual().addActionListener(this);
 		vm.getBotonMostrarLibroVirtual().setActionCommand("boton_mostrar_libro_virtual");
+		vm.getBotonCancelar().addActionListener(this);
+		vm.getBotonCancelar().setActionCommand("boton_cancelar_mostrar");
 
 		// Oyentes eliminar
 		ve.getBotonEliminarPelicula().addActionListener(this);
@@ -836,6 +838,14 @@ public class Controlador implements ActionListener {
 			}
 			
 			break;
+			
+			
+		}
+		case "boton_cancelar_mostrar": {
+		    vm.setVisible(false);
+		    vp.setVisible(true);
+		    break;
+		    
 		}
 		}
 

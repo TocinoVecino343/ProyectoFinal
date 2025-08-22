@@ -14,6 +14,7 @@ public class VentanaMostrar extends JFrame {
 	private JButton botonMostrarJuego;
 	private JButton botonMostrarLibroFisico;
 	private JButton botonMostrarLibroVirtual;
+	private JButton botonCancelar;
 	
 	public VentanaMostrar() {
 		inicializarVentanaMostrar();
@@ -60,6 +61,11 @@ public class VentanaMostrar extends JFrame {
 		botonMostrarLibroVirtual.setBackground(Color.decode("#E8F5E9"));
 		botonMostrarLibroVirtual.setBounds(100, 460, 200, 40);
 		this.add(botonMostrarLibroVirtual);
+		
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
+		botonCancelar.setBounds(100, 520, 200, 30);
+		this.add(botonCancelar);
 	}
 
 	public JButton getBotonMostrarTodo() {
@@ -116,6 +122,14 @@ public class VentanaMostrar extends JFrame {
 
 	public void setBotonMostrarLibroVirtual(JButton botonMostrarLibroVirtual) {
 		this.botonMostrarLibroVirtual = botonMostrarLibroVirtual;
+	}
+	
+	public JButton getBotonCancelar() {
+	    return botonCancelar;
+	}
+
+	public void setBotonCancelar(JButton botonCancelar) {
+	    this.botonCancelar = botonCancelar;
 	}
 	
 
