@@ -834,7 +834,7 @@ public class Controlador implements ActionListener {
 			} else {
 				contenido = "No se ha hallado ninguna publicacion que coincida con la busqueda";
 			}
-
+			
 			break;
 		}
 		}
