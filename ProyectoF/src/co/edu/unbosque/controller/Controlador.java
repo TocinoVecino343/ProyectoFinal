@@ -13,7 +13,6 @@ public class Controlador implements ActionListener {
 
 	private LibroFisicoDAO objLf;
 	private LibroVirtualDAO objLv;
-	private SteamDAO objS;
 	private RevistaDAO objR;
 	private PeliculaDAO objP;
 	private ArticuloDAO objA;
@@ -47,7 +46,6 @@ public class Controlador implements ActionListener {
 	public Controlador() {
 		objLf = new LibroFisicoDAO();
 		objLv = new LibroVirtualDAO();
-		objS = new SteamDAO();
 		objR = new RevistaDAO();
 		objP = new PeliculaDAO();
 		objA = new ArticuloDAO();
@@ -561,10 +559,6 @@ public class Controlador implements ActionListener {
 
     public RevistaDAO getObjR() {
         return objR;
-    }
-
-    public SteamDAO getObjS() {
-        return objS;
     }
 
 
