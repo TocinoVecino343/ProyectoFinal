@@ -867,7 +867,7 @@ public class Controlador implements ActionListener {
 			vm.setVisible(false);
 			vp.setVisible(true);
 			break;
-
+		
 		}
 		case "cancelar_mostrar_articulo": {
 		    vma.setVisible(false);
@@ -901,7 +901,7 @@ public class Controlador implements ActionListener {
 		    break;
 		}
 		}
-
+	
 	}
 
 	public void runGUI() { // Run de la ventana
