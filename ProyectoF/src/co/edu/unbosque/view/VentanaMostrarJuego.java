@@ -21,7 +21,8 @@ public class VentanaMostrarJuego extends JFrame {
         this.setLayout(null);
 
         textoMostrarJuego = new JTextArea();
-
+        textoMostrarJuego.setEditable(false);
+        
         scrollMostrarJuego = new JScrollPane(textoMostrarJuego);
         scrollMostrarJuego.setBounds(50, 50, 1150, 650);
         this.add(scrollMostrarJuego);

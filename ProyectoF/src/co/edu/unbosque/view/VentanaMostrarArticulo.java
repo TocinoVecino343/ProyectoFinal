@@ -21,6 +21,7 @@ public class VentanaMostrarArticulo extends JFrame {
 		this.setLayout(null);
 
 		textoMostrarArticulo = new JTextArea();
+		textoMostrarArticulo.setEditable(false);
 
 		scrollMostrarArticulo = new JScrollPane(textoMostrarArticulo);
 		scrollMostrarArticulo.setBounds(50, 50, 1150, 650);

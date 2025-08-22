@@ -22,6 +22,7 @@ public class VentanaMostrarPelicula extends JFrame {
 		this.setLayout(null);
 
 		textoMostrarPelicula = new JTextArea();
+		textoMostrarPelicula.setEditable(false);
 
 		scrollMostrarPelicula = new JScrollPane(textoMostrarPelicula);
 		scrollMostrarPelicula.setBounds(50, 50, 1150, 650);

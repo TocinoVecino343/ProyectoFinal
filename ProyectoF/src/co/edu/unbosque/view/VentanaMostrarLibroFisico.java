@@ -21,7 +21,8 @@ public class VentanaMostrarLibroFisico extends JFrame {
         this.setLayout(null);
 
         textoMostrarLibroFisico = new JTextArea();
-
+        textoMostrarLibroFisico.setEditable(false);
+        	
         scrollMostrarLibroFisico = new JScrollPane(textoMostrarLibroFisico);
         scrollMostrarLibroFisico.setBounds(50, 50, 1150, 650);
         this.add(scrollMostrarLibroFisico);

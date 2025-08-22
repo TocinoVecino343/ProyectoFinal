@@ -21,7 +21,8 @@ public class VentanaMostrarLibroVirtual extends JFrame {
 		this.setLayout(null);
 
 		textoMostrarLibroVirtual = new JTextArea();
-
+		textoMostrarLibroVirtual.setEditable(false);
+		
 		scrollMostrarLibroVirtual = new JScrollPane(textoMostrarLibroVirtual);
 		scrollMostrarLibroVirtual.setBounds(50, 50, 1150, 650);
 		this.add(scrollMostrarLibroVirtual);

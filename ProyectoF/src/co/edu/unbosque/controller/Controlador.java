@@ -82,6 +82,12 @@ public class Controlador implements ActionListener {
 		velf = new VentanaEliminarLibroFisico();
 		velv = new VentanaEliminarLibroDigital();
 
+		vap = new VentanaActualizarPelicula();
+		var = new VentanaActualizarRevista();
+		vaa = new VentanaActualizarArticulo();
+		valf = new VentanaActualizarLibroFisico();
+		valv = new VentanaActualizarLibroVirtual();
+
 		asignarOyentes();
 	}
 
@@ -335,7 +341,8 @@ public class Controlador implements ActionListener {
 		case "boton_mostrar_todo": {
 			vm.setVisible(false);
 			vmt.setVisible(true);
-			String contenido = objP.mostrarDatos() + "\n"+ objA.mostrarDatos() +"\n"+objR.mostrarDatos()+"\n"+objLv.mostrarDatos()+"\n"+objLf.mostrarDatos();
+			String contenido = objP.mostrarDatos() + "\n" + objA.mostrarDatos() + "\n" + objR.mostrarDatos() + "\n"
+					+ objLv.mostrarDatos() + "\n" + objLf.mostrarDatos();
 			vmt.getTextoMostrarTodo().setText(contenido);
 			break;
 		}
