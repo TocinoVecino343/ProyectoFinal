@@ -178,11 +178,7 @@ public class VentanaPrincipal extends JFrame {
 	        return buscarEnCampos(revista.getId(), revista.getTitulo(), revista.getClasificacion(), 
 	                            revista.getFacultad(), revista.getIdioma(), revista.getAutor(), textoBusqueda);
 	    }
-	    else if (publicacion instanceof Steam) {
-	        Steam juego = (Steam) publicacion;
-	        return buscarEnCampos(juego.getId(), juego.getTitulo(), juego.getClasificacion(), 
-	                            juego.getFacultad(), juego.getIdioma(), "", textoBusqueda);
-	    }
+	    
 	    
 	    return false;
 	}
