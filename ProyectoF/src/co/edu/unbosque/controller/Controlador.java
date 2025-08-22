@@ -129,7 +129,21 @@ public class Controlador implements ActionListener {
 		vcp.getBotonCancelar().setActionCommand("cancelar_crear_pelicula");
 		vcr.getBotonCancelar().addActionListener(this);
 		vcr.getBotonCancelar().setActionCommand("cancelar_crear_revista");
-
+		//
+		vc.getBotonCancelar().addActionListener(this);
+		vc.getBotonCancelar().setActionCommand("boton_cancelar_crear");
+		vcp.getBotonCancelar().addActionListener(this);
+		vcp.getBotonCancelar().setActionCommand("cancelar_crear_pelicula");
+		vca.getBotonCancelar().addActionListener(this);
+		vca.getBotonCancelar().setActionCommand("cancelar_crear_articulo");
+		vcr.getBotonCancelar().addActionListener(this);
+		vcr.getBotonCancelar().setActionCommand("cancelar_crear_revista");
+		vclf.getBotonCancelar().addActionListener(this);
+		vclf.getBotonCancelar().setActionCommand("cancelar_crear_libro_fisico");
+		vclv.getBotonCancelar().addActionListener(this);
+		vclv.getBotonCancelar().setActionCommand("cancelar_crear_libro_virtual");
+		//
+		
 		// Oyentes guardar objeto
 		vcp.getBotonGuardarPelicula().addActionListener(this);
 		vcp.getBotonGuardarPelicula().setActionCommand("boton_guardar_pelicula");
@@ -285,11 +299,6 @@ public class Controlador implements ActionListener {
 		case "boton_crear_libro_virtual": {
 			vclv.setVisible(true);
 			vc.setVisible(false);
-			break;
-		}
-		case "boton_cancelar_crear": {
-			vc.setVisible(false);
-			vp.setVisible(true);
 			break;
 		}
 		// Botones guardar
@@ -910,6 +919,42 @@ public class Controlador implements ActionListener {
 		    vm.setVisible(true);
 		    break;
 		}
+		
+		//
+		case "boton_cancelar_crear": {
+		    vc.setVisible(false);
+		    vp.setVisible(true);
+		    break;
+		}
+
+		// Lógica para el botón cancelar en las ventanas de creación específicas
+		case "cancelar_crear_pelicula": {
+		    vcp.setVisible(false);
+		    vc.setVisible(true);
+		    break;
+		}
+		case "cancelar_crear_articulo": {
+		    vca.setVisible(false);
+		    vc.setVisible(true);
+		    break;
+		}
+		case "cancelar_crear_revista": {
+		    vcr.setVisible(false);
+		    vc.setVisible(true);
+		    break;
+		}
+		case "cancelar_crear_libro_fisico": {
+		    vclf.setVisible(false);
+		    vc.setVisible(true);
+		    break;
+		}
+		case "cancelar_crear_libro_virtual": {
+		    vclv.setVisible(false);
+		    vc.setVisible(true);
+		    break;
+		}
+		//
+
 		}
 	
 	}
