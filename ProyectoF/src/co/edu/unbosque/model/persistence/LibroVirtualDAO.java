@@ -150,4 +150,13 @@ public class LibroVirtualDAO implements DAO<LibroVirtual> {
 		}
 		return indice;
 	}
+
+	public ArrayList<LibroVirtual> getListaLibrosVirtuales() {
+		return listaLibrosVirtuales;
+	}
+
+	public void setListaLibrosVirtuales(ArrayList<LibroVirtual> listaLibrosVirtuales) {
+		this.listaLibrosVirtuales = listaLibrosVirtuales;
+	}
+	
 }

@@ -154,4 +154,5 @@ public class RevistaDAO implements DAO<Revista> {
 		}
 		return indice;
 	}
+	
 }

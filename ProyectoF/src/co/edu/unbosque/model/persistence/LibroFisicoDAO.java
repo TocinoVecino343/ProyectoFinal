@@ -149,4 +149,9 @@ public class LibroFisicoDAO implements DAO<LibroFisico> {
 		}
 		return indice;
 	}
+
+	public void setListaLibrosFisicos(ArrayList<LibroFisico> listaLibrosFisicos) {
+		this.listaLibrosFisicos = listaLibrosFisicos;
+	}
+	
 }

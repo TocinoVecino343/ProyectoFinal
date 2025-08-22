@@ -150,4 +150,13 @@ public class PeliculaDAO implements DAO<Pelicula> {
 		}
 		return indice;
 	}
+
+	public ArrayList<Pelicula> getListaPeliculas() {
+		return listaPeliculas;
+	}
+
+	public void setListaPeliculas(ArrayList<Pelicula> listaPeliculas) {
+		this.listaPeliculas = listaPeliculas;
+	}
+	
 }

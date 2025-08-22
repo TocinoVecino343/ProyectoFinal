@@ -151,4 +151,13 @@ public class ArticuloDAO implements DAO<Articulo> {
 		return indice;
 	}
 
+	public ArrayList<Articulo> getListaArticulos() {
+		return listaArticulos;
+	}
+
+	public void setListaArticulos(ArrayList<Articulo> listaArticulos) {
+		this.listaArticulos = listaArticulos;
+	}
+
+	
 }

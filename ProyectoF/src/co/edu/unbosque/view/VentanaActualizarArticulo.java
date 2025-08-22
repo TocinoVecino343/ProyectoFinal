@@ -4,11 +4,34 @@ import javax.swing.*;
 
 public class VentanaActualizarArticulo extends JFrame {
 
-	private JLabel labelIdBuscar, labelTitulo, labelAutor, labelTipo, labelClasificacion, labelFacultad, labelFecha,
-			labelIdioma;
-	private JTextField textoIdBuscar, textoTitulo, textoAutor, textoTipo, textoClasificacion, textoFacultad, textoFecha,
-			textoIdioma;
-	private JButton botonBuscar, botonActualizar;
+	private JLabel labelTitulo;
+	private JTextField textoTitulo;
+
+	private JLabel labelClasificacion;
+	private JTextField textoClasificacion;
+
+	private JLabel labelFacultad;
+	private JTextField textoFacultad;
+
+	private JLabel labelFechaDePublicacion;
+	private JTextField textoFechaDePublicacion;
+
+	private JLabel labelIdioma;
+	private JTextField textoIdioma;
+
+	private JLabel labelAutor;
+	private JTextField textoAutor;
+
+	private JLabel labelFuente;
+	private JTextField textoFuente;
+
+	private JLabel labelTerminosGeograficos;
+	private JTextField textoTerminosGeograficos;
+
+	private JLabel labelCantidadDePaginas;
+	private JTextField textoCantidadDePaginas;
+
+	private JButton botonActualizar;
 
 	public VentanaActualizarArticulo() {
 		setTitle("Actualizar Artículo");
@@ -17,85 +40,81 @@ public class VentanaActualizarArticulo extends JFrame {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(null);
 
-		labelIdBuscar = new JLabel("ID Artículo:");
-		labelIdBuscar.setBounds(50, 20, 100, 30);
-		add(labelIdBuscar);
-
-		textoIdBuscar = new JTextField();
-		textoIdBuscar.setBounds(160, 20, 150, 30);
-		add(textoIdBuscar);
-
-		botonBuscar = new JButton("Buscar");
-		botonBuscar.setBounds(330, 20, 100, 30);
-		add(botonBuscar);
-
 		labelTitulo = new JLabel("Título:");
-		labelTitulo.setBounds(50, 70, 100, 30);
-		add(labelTitulo);
+		labelTitulo.setBounds(50, 20, 150, 30);
+		this.add(labelTitulo);
 
 		textoTitulo = new JTextField();
-		textoTitulo.setBounds(160, 70, 270, 30);
-		add(textoTitulo);
-
-		labelAutor = new JLabel("Autor:");
-		labelAutor.setBounds(50, 120, 100, 30);
-		add(labelAutor);
-
-		textoAutor = new JTextField();
-		textoAutor.setBounds(160, 120, 270, 30);
-		add(textoAutor);
-
-		labelTipo = new JLabel("Tipo:");
-		labelTipo.setBounds(50, 170, 100, 30);
-		add(labelTipo);
-
-		textoTipo = new JTextField();
-		textoTipo.setBounds(160, 170, 270, 30);
-		add(textoTipo);
+		textoTitulo.setBounds(200, 20, 200, 30);
+		this.add(textoTitulo);
 
 		labelClasificacion = new JLabel("Clasificación:");
-		labelClasificacion.setBounds(50, 220, 100, 30);
-		add(labelClasificacion);
+		labelClasificacion.setBounds(50, 60, 150, 30);
+		this.add(labelClasificacion);
 
 		textoClasificacion = new JTextField();
-		textoClasificacion.setBounds(160, 220, 270, 30);
-		add(textoClasificacion);
+		textoClasificacion.setBounds(200, 60, 200, 30);
+		this.add(textoClasificacion);
 
 		labelFacultad = new JLabel("Facultad:");
-		labelFacultad.setBounds(50, 270, 100, 30);
-		add(labelFacultad);
+		labelFacultad.setBounds(50, 100, 150, 30);
+		this.add(labelFacultad);
 
 		textoFacultad = new JTextField();
-		textoFacultad.setBounds(160, 270, 270, 30);
-		add(textoFacultad);
+		textoFacultad.setBounds(200, 100, 200, 30);
+		this.add(textoFacultad);
 
-		labelFecha = new JLabel("Fecha:");
-		labelFecha.setBounds(50, 320, 100, 30);
-		add(labelFecha);
+		labelFechaDePublicacion = new JLabel("Fecha de Publicación:");
+		labelFechaDePublicacion.setBounds(50, 140, 150, 30);
+		this.add(labelFechaDePublicacion);
 
-		textoFecha = new JTextField();
-		textoFecha.setBounds(160, 320, 270, 30);
-		add(textoFecha);
+		textoFechaDePublicacion = new JTextField();
+		textoFechaDePublicacion.setBounds(200, 140, 200, 30);
+		this.add(textoFechaDePublicacion);
 
 		labelIdioma = new JLabel("Idioma:");
-		labelIdioma.setBounds(50, 370, 100, 30);
-		add(labelIdioma);
+		labelIdioma.setBounds(50, 180, 150, 30);
+		this.add(labelIdioma);
 
 		textoIdioma = new JTextField();
-		textoIdioma.setBounds(160, 370, 270, 30);
-		add(textoIdioma);
+		textoIdioma.setBounds(200, 180, 200, 30);
+		this.add(textoIdioma);
+
+		labelAutor = new JLabel("Autor:");
+		labelAutor.setBounds(50, 220, 150, 30);
+		this.add(labelAutor);
+
+		textoAutor = new JTextField();
+		textoAutor.setBounds(200, 220, 200, 30);
+		this.add(textoAutor);
+
+		labelFuente = new JLabel("Fuente:");
+		labelFuente.setBounds(50, 260, 150, 30);
+		this.add(labelFuente);
+
+		textoFuente = new JTextField();
+		textoFuente.setBounds(200, 260, 200, 30);
+		this.add(textoFuente);
+
+		labelTerminosGeograficos = new JLabel("Términos Geográficos:");
+		labelTerminosGeograficos.setBounds(50, 300, 150, 30);
+		this.add(labelTerminosGeograficos);
+
+		textoTerminosGeograficos = new JTextField();
+		textoTerminosGeograficos.setBounds(200, 300, 200, 30);
+		this.add(textoTerminosGeograficos);
+
+		labelCantidadDePaginas = new JLabel("Cantidad de Páginas:");
+		labelCantidadDePaginas.setBounds(50, 340, 150, 30);
+		this.add(labelCantidadDePaginas);
+
+		textoCantidadDePaginas = new JTextField();
+		textoCantidadDePaginas.setBounds(200, 340, 200, 30);
+		this.add(textoCantidadDePaginas);
 
 		botonActualizar = new JButton("Actualizar");
 		botonActualizar.setBounds(200, 420, 180, 40);
 		add(botonActualizar);
-	}
-
-	public JLabel getLabelIdBuscar() {
-		return labelIdBuscar;
-	}
-
-	public void setLabelIdBuscar(JLabel labelIdBuscar) {
-		this.labelIdBuscar = labelIdBuscar;
 	}
 
 	public JLabel getLabelTitulo() {
@@ -106,20 +125,12 @@ public class VentanaActualizarArticulo extends JFrame {
 		this.labelTitulo = labelTitulo;
 	}
 
-	public JLabel getLabelAutor() {
-		return labelAutor;
+	public JTextField getTextoTitulo() {
+		return textoTitulo;
 	}
 
-	public void setLabelAutor(JLabel labelAutor) {
-		this.labelAutor = labelAutor;
-	}
-
-	public JLabel getLabelTipo() {
-		return labelTipo;
-	}
-
-	public void setLabelTipo(JLabel labelTipo) {
-		this.labelTipo = labelTipo;
+	public void setTextoTitulo(JTextField textoTitulo) {
+		this.textoTitulo = textoTitulo;
 	}
 
 	public JLabel getLabelClasificacion() {
@@ -130,68 +141,20 @@ public class VentanaActualizarArticulo extends JFrame {
 		this.labelClasificacion = labelClasificacion;
 	}
 
-	public JLabel getLabelFacultad() {
-		return labelFacultad;
-	}
-
-	public void setLabelFacultad(JLabel labelFacultad) {
-		this.labelFacultad = labelFacultad;
-	}
-
-	public JLabel getLabelFecha() {
-		return labelFecha;
-	}
-
-	public void setLabelFecha(JLabel labelFecha) {
-		this.labelFecha = labelFecha;
-	}
-
-	public JLabel getLabelIdioma() {
-		return labelIdioma;
-	}
-
-	public void setLabelIdioma(JLabel labelIdioma) {
-		this.labelIdioma = labelIdioma;
-	}
-
-	public JTextField getTextoIdBuscar() {
-		return textoIdBuscar;
-	}
-
-	public void setTextoIdBuscar(JTextField textoIdBuscar) {
-		this.textoIdBuscar = textoIdBuscar;
-	}
-
-	public JTextField getTextoTitulo() {
-		return textoTitulo;
-	}
-
-	public void setTextoTitulo(JTextField textoTitulo) {
-		this.textoTitulo = textoTitulo;
-	}
-
-	public JTextField getTextoAutor() {
-		return textoAutor;
-	}
-
-	public void setTextoAutor(JTextField textoAutor) {
-		this.textoAutor = textoAutor;
-	}
-
-	public JTextField getTextoTipo() {
-		return textoTipo;
-	}
-
-	public void setTextoTipo(JTextField textoTipo) {
-		this.textoTipo = textoTipo;
-	}
-
 	public JTextField getTextoClasificacion() {
 		return textoClasificacion;
 	}
 
 	public void setTextoClasificacion(JTextField textoClasificacion) {
 		this.textoClasificacion = textoClasificacion;
+	}
+
+	public JLabel getLabelFacultad() {
+		return labelFacultad;
+	}
+
+	public void setLabelFacultad(JLabel labelFacultad) {
+		this.labelFacultad = labelFacultad;
 	}
 
 	public JTextField getTextoFacultad() {
@@ -202,12 +165,28 @@ public class VentanaActualizarArticulo extends JFrame {
 		this.textoFacultad = textoFacultad;
 	}
 
-	public JTextField getTextoFecha() {
-		return textoFecha;
+	public JLabel getLabelFechaDePublicacion() {
+		return labelFechaDePublicacion;
 	}
 
-	public void setTextoFecha(JTextField textoFecha) {
-		this.textoFecha = textoFecha;
+	public void setLabelFechaDePublicacion(JLabel labelFechaDePublicacion) {
+		this.labelFechaDePublicacion = labelFechaDePublicacion;
+	}
+
+	public JTextField getTextoFechaDePublicacion() {
+		return textoFechaDePublicacion;
+	}
+
+	public void setTextoFechaDePublicacion(JTextField textoFechaDePublicacion) {
+		this.textoFechaDePublicacion = textoFechaDePublicacion;
+	}
+
+	public JLabel getLabelIdioma() {
+		return labelIdioma;
+	}
+
+	public void setLabelIdioma(JLabel labelIdioma) {
+		this.labelIdioma = labelIdioma;
 	}
 
 	public JTextField getTextoIdioma() {
@@ -218,12 +197,68 @@ public class VentanaActualizarArticulo extends JFrame {
 		this.textoIdioma = textoIdioma;
 	}
 
-	public JButton getBotonBuscar() {
-		return botonBuscar;
+	public JLabel getLabelAutor() {
+		return labelAutor;
 	}
 
-	public void setBotonBuscar(JButton botonBuscar) {
-		this.botonBuscar = botonBuscar;
+	public void setLabelAutor(JLabel labelAutor) {
+		this.labelAutor = labelAutor;
+	}
+
+	public JTextField getTextoAutor() {
+		return textoAutor;
+	}
+
+	public void setTextoAutor(JTextField textoAutor) {
+		this.textoAutor = textoAutor;
+	}
+
+	public JLabel getLabelFuente() {
+		return labelFuente;
+	}
+
+	public void setLabelFuente(JLabel labelFuente) {
+		this.labelFuente = labelFuente;
+	}
+
+	public JTextField getTextoFuente() {
+		return textoFuente;
+	}
+
+	public void setTextoFuente(JTextField textoFuente) {
+		this.textoFuente = textoFuente;
+	}
+
+	public JLabel getLabelTerminosGeograficos() {
+		return labelTerminosGeograficos;
+	}
+
+	public void setLabelTerminosGeograficos(JLabel labelTerminosGeograficos) {
+		this.labelTerminosGeograficos = labelTerminosGeograficos;
+	}
+
+	public JTextField getTextoTerminosGeograficos() {
+		return textoTerminosGeograficos;
+	}
+
+	public void setTextoTerminosGeograficos(JTextField textoTerminosGeograficos) {
+		this.textoTerminosGeograficos = textoTerminosGeograficos;
+	}
+
+	public JLabel getLabelCantidadDePaginas() {
+		return labelCantidadDePaginas;
+	}
+
+	public void setLabelCantidadDePaginas(JLabel labelCantidadDePaginas) {
+		this.labelCantidadDePaginas = labelCantidadDePaginas;
+	}
+
+	public JTextField getTextoCantidadDePaginas() {
+		return textoCantidadDePaginas;
+	}
+
+	public void setTextoCantidadDePaginas(JTextField textoCantidadDePaginas) {
+		this.textoCantidadDePaginas = textoCantidadDePaginas;
 	}
 
 	public JButton getBotonActualizar() {

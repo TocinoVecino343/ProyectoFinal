@@ -30,7 +30,7 @@ public class VentanaActualizarPelicula extends JFrame {
 	private JLabel labelDirector;
 	private JTextField textoDirector;
 
-	private JLabel labelGion;
+	private JLabel labelGuion;
 	private JTextField textoGuion;
 
 	private JLabel labelFotografia;
@@ -68,7 +68,7 @@ public class VentanaActualizarPelicula extends JFrame {
 		textoTitulo.setBounds(160, 70, 270, 30);
 		this.add(textoTitulo);
 
-		labelClasificacion = new JLabel("Género:");
+		labelClasificacion = new JLabel("Clasificacion:");
 		labelClasificacion.setBounds(50, 170, 100, 30);
 		this.add(labelClasificacion);
 
@@ -76,7 +76,7 @@ public class VentanaActualizarPelicula extends JFrame {
 		textoClasificacion.setBounds(160, 170, 270, 30);
 		this.add(textoClasificacion);
 
-		labelFacultad = new JLabel("Clasificación:");
+		labelFacultad = new JLabel("Facultad:");
 		labelFacultad.setBounds(50, 220, 100, 30);
 		this.add(labelFacultad);
 
@@ -84,7 +84,7 @@ public class VentanaActualizarPelicula extends JFrame {
 		textoFacultad.setBounds(160, 220, 270, 30);
 		this.add(textoFacultad);
 
-		labelFechaDePublicacion = new JLabel("Facultad:");
+		labelFechaDePublicacion = new JLabel("Fecha de publicacion:");
 		labelFechaDePublicacion.setBounds(50, 270, 100, 30);
 		this.add(labelFechaDePublicacion);
 
@@ -92,7 +92,7 @@ public class VentanaActualizarPelicula extends JFrame {
 		textoFechaDePublicacion.setBounds(160, 270, 270, 30);
 		this.add(textoFechaDePublicacion);
 
-		labelIdioma = new JLabel("Fecha:");
+		labelIdioma = new JLabel("Idioma:");
 		labelIdioma.setBounds(50, 320, 100, 30);
 		this.add(labelIdioma);
 
@@ -100,7 +100,7 @@ public class VentanaActualizarPelicula extends JFrame {
 		textoIdioma.setBounds(160, 320, 270, 30);
 		this.add(textoIdioma);
 
-		labelProductora = new JLabel("Idioma:");
+		labelProductora = new JLabel("Productora:");
 		labelProductora.setBounds(50, 370, 100, 30);
 		this.add(labelProductora);
 
@@ -108,7 +108,7 @@ public class VentanaActualizarPelicula extends JFrame {
 		textoProductora.setBounds(160, 370, 270, 30);
 		this.add(textoProductora);
 
-		labelPais = new JLabel("Director:");
+		labelPais = new JLabel("Pais:");
 		labelPais.setBounds(50, 120, 100, 30);
 		this.add(labelPais);
 
@@ -124,15 +124,15 @@ public class VentanaActualizarPelicula extends JFrame {
 		textoDirector.setBounds(160, 120, 270, 30);
 		this.add(textoDirector);
 
-		labelGion = new JLabel("Director:");
-		labelGion.setBounds(50, 120, 100, 30);
-		this.add(labelGion);
+		labelGuion = new JLabel("Guion:");
+		labelGuion.setBounds(50, 120, 100, 30);
+		this.add(labelGuion);
 
 		textoGuion = new JTextField();
 		textoGuion.setBounds(160, 120, 270, 30);
 		this.add(textoGuion);
 
-		labelFotografia = new JLabel("Director:");
+		labelFotografia = new JLabel("Fotografia:");
 		labelFotografia.setBounds(50, 120, 100, 30);
 		this.add(labelFotografia);
 
@@ -315,11 +315,11 @@ public class VentanaActualizarPelicula extends JFrame {
 	}
 
 	public JLabel getLabelGion() {
-		return labelGion;
+		return labelGuion;
 	}
 
-	public void setLabelGion(JLabel labelGion) {
-		this.labelGion = labelGion;
+	public void setLabelGion(JLabel labelGuion) {
+		this.labelGuion = labelGuion;
 	}
 
 	public JTextField getTextoGuion() {
