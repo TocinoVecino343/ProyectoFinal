@@ -62,34 +62,34 @@ public class VentanaPrincipal extends JFrame {
 	    titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
 	    titulo.setBounds(200, 40, 600, 30);
 	    titulo.setForeground(Color.decode("#144031"));
-	    titulo.setFont(new Font("Times New Roman", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
+	    titulo.setFont(new Font("Georgia", Font.BOLD, 40)); // Tipo de letra, negrilla y tamaño
 	    this.add(titulo);
 
 	    // Botones menú principal
 	    botonCrearPublicacion = new JButton("Crear publicación"); // Texto del botón
 	    botonCrearPublicacion.setBounds(40, 200, 200, 60); // Posición y tamaño del botón
-	    botonCrearPublicacion.setBackground(Color.decode("#f5f5dc"));// Color del FONDO del botón
+	    botonCrearPublicacion.setBackground(Color.decode("#E8F5E9"));// Color del FONDO del botón
 	    botonCrearPublicacion.setForeground(Color.decode("#144031"));
 	    botonCrearPublicacion.setFocusPainted(false); // Quita el marco del texto del botón
 	    this.add(botonCrearPublicacion);
 	    //
 	    botonMostrarPublicacion = new JButton("Mostrar publicación");
 	    botonMostrarPublicacion.setBounds(40, 300, 200, 60);
-	    botonMostrarPublicacion.setBackground(Color.decode("#f5f5dc"));
+	    botonMostrarPublicacion.setBackground(Color.decode("#E8F5E9"));
 	    botonMostrarPublicacion.setForeground(Color.decode("#144031"));
 	    botonMostrarPublicacion.setFocusPainted(false);
 	    this.add(botonMostrarPublicacion);
 	    //
 	    botonEliminarPublicacion = new JButton("Eliminar publicación");
 	    botonEliminarPublicacion.setBounds(40, 400, 200, 60);
-	    botonEliminarPublicacion.setBackground(Color.decode("#f5f5dc"));
+	    botonEliminarPublicacion.setBackground(Color.decode("#E8F5E9"));
 	    botonEliminarPublicacion.setForeground(Color.decode("#144031"));
 	    botonEliminarPublicacion.setFocusPainted(false);
 	    this.add(botonEliminarPublicacion);
 	    //
 	    botonActualizarPublicacion = new JButton("Actualizar publicación");
 	    botonActualizarPublicacion.setBounds(40, 500, 200, 60);
-	    botonActualizarPublicacion.setBackground(Color.decode("#f5f5dc"));
+	    botonActualizarPublicacion.setBackground(Color.decode("#E8F5E9"));
 	    botonActualizarPublicacion.setForeground(Color.decode("#144031"));
 	    botonActualizarPublicacion.setFocusPainted(false);
 	    this.add(botonActualizarPublicacion);
@@ -135,7 +135,7 @@ public class VentanaPrincipal extends JFrame {
 	    // Botón de búsqueda
 	    botonBuscar = new JButton("Buscar");
 	    botonBuscar.setBounds(1020, 150, 80, 35); 
-	    botonBuscar.setBackground(Color.decode("#f5f5dc"));
+	    botonBuscar.setBackground(Color.decode("#AED581"));
 	    botonBuscar.setForeground(Color.decode("#144031"));
 	    botonBuscar.setFocusPainted(false);
 	    this.add(botonBuscar);
@@ -144,72 +144,12 @@ public class VentanaPrincipal extends JFrame {
 	    modeloLista = new DefaultListModel<>();
 	    listaResultados = new JList<>(modeloLista);
 	    listaResultados.setFont(new Font("Arial", Font.PLAIN, 12));
-	    listaResultados.setBackground(Color.decode("#f9f9f9"));
+	    listaResultados.setBackground(Color.decode("#E8F5E9"));
 
 	    scrollResultados = new JScrollPane(listaResultados);
 	    scrollResultados.setBounds(750, 195, 350, 300); 
 	    scrollResultados.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 1));
 	    this.add(scrollResultados);
-	}
-
-	// metodos de busqueda
-	private void buscarEnTiempoReal() {
-	    String textoBusqueda = campoBusqueda.getText().toLowerCase().trim();
-	    modeloLista.clear();
-	    
-	    if (!textoBusqueda.isEmpty()) {
-	        ArrayList<String> resultados = new ArrayList<>();
-	        
-	        // Buscar en LibroFisico
-	        for (LibroFisico libro : controller.getObjLf().getListaLibrosFisicos()) {
-	            if (coincideBusqueda(libro, textoBusqueda)) {
-	                resultados.add("[FÍSICO] " + libro.getTitulo() + " - " + libro.getAutor() + 
-	                             " (ID: " + libro.getId() + ")");
-	            }
-	        }
-	        
-	        // Buscar en LibroVirtual
-	        for (LibroVirtual libro : controller.getObjLv().getListaLibrosVirtuales()) {
-	            if (coincideBusqueda(libro, textoBusqueda)) {
-	                resultados.add("[VIRTUAL] " + libro.getTitulo() + " - " + libro.getAutor() + 
-	                             " (ID: " + libro.getId() + ")");
-	            }
-	        }
-	        
-	        // Buscar en Articulos
-	        for (Articulo articulo : controller.getObjA().getListaArticulos()) {
-	            if (coincideBusqueda(articulo, textoBusqueda)) {
-	                resultados.add("[ARTÍCULO] " + articulo.getTitulo() + " - " + articulo.getFacultad() + 
-	                             " (ID: " + articulo.getId() + ")");
-	            }
-	        }
-	        
-	        // Buscar en Peliculas
-	        for (Pelicula pelicula : controller.getObjP().getListaPeliculas()) {
-	            if (coincideBusqueda(pelicula, textoBusqueda)) {
-	                resultados.add("[PELÍCULA] " + pelicula.getTitulo() + " - " + pelicula.getFacultad() + 
-	                             " (ID: " + pelicula.getId() + ")");
-	            }
-	        }
-	        
-	        // Buscar en Revistas
-	        for (Revista revista : controller.getObjR().getListaRevistas()) {
-	            if (coincideBusqueda(revista, textoBusqueda)) {
-	                resultados.add("[REVISTA] " + revista.getTitulo() + " - " + revista.getFacultad() + 
-	                             " (ID: " + revista.getId() + ")");
-	            }
-	        }      
-	               
-	        // Mostrar resultados
-	        if (resultados.isEmpty()) {
-	            modeloLista.addElement("No se encontraron resultados para: '" + textoBusqueda + "'");
-	        } else {
-	            modeloLista.addElement("Encontrados " + resultados.size() + " resultado(s):");
-	            for (String resultado : resultados) {
-	                modeloLista.addElement(resultado);
-	            }
-	        }
-	    }
 	}
 
 	private boolean coincideBusqueda(Object publicacion, String textoBusqueda) {
