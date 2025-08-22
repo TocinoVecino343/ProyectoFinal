@@ -43,76 +43,13 @@ public class VentanaActualizarLibroVirtual extends JFrame {
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLayout(null);
 
-		labelTitulo = new JLabel("Título:");
-		labelTitulo.setBounds(50, 60, 100, 30);
-		this.add(labelTitulo);
-
-		textoTitulo = new JTextField();
-		textoTitulo.setBounds(160, 60, 150, 30);
-		this.add(textoTitulo);
-
-		labelClasificacion = new JLabel("Clasificación:");
-		labelClasificacion.setBounds(50, 100, 100, 30);
-		this.add(labelClasificacion);
-
-		textoClasificacion = new JTextField();
-		textoClasificacion.setBounds(160, 100, 150, 30);
-		this.add(textoClasificacion);
-
-		labelFacultad = new JLabel("Facultad:");
-		labelFacultad.setBounds(50, 140, 100, 30);
-		this.add(labelFacultad);
-
-		textoFacultad = new JTextField();
-		textoFacultad.setBounds(160, 140, 150, 30);
-		this.add(textoFacultad);
-
-		labelFechaDePublicacion = new JLabel("Fecha de Publicación:");
-		labelFechaDePublicacion.setBounds(50, 180, 150, 30);
-		this.add(labelFechaDePublicacion);
-
-		textoFechaDePublicacion = new JTextField();
-		textoFechaDePublicacion.setBounds(200, 180, 150, 30);
-		this.add(textoFechaDePublicacion);
-
-		labelIdioma = new JLabel("Idioma:");
-		labelIdioma.setBounds(50, 220, 100, 30);
-		this.add(labelIdioma);
-
-		textoIdioma = new JTextField();
-		textoIdioma.setBounds(160, 220, 150, 30);
-		this.add(textoIdioma);
-
-		labelCantidadDePaginas = new JLabel("Cantidad de Páginas:");
-		labelCantidadDePaginas.setBounds(50, 260, 150, 30);
-		this.add(labelCantidadDePaginas);
-
-		textoCantidadDePaginas = new JTextField();
-		textoCantidadDePaginas.setBounds(200, 260, 150, 30);
-		this.add(textoCantidadDePaginas);
-
-		labelAutor = new JLabel("Autor:");
-		labelAutor.setBounds(50, 300, 100, 30);
-		this.add(labelAutor);
-
-		textoAutor = new JTextField();
-		textoAutor.setBounds(160, 300, 150, 30);
-		this.add(textoAutor);
-
-		labelEditorial = new JLabel("Editorial:");
-		labelEditorial.setBounds(50, 340, 100, 30);
-		this.add(labelEditorial);
-
-		textoEditorial = new JTextField();
-		textoEditorial.setBounds(160, 340, 150, 30);
-		this.add(textoEditorial);
-
+		// --- ORDEN CORRECTO DESDE ARRIBA HACIA ABAJO ---
 		labelTipoDeArchivo = new JLabel("Tipo de Archivo:");
 		labelTipoDeArchivo.setBounds(50, 20, 150, 30);
 		this.add(labelTipoDeArchivo);
 
 		textoTipoDeArchivo = new JTextField();
-		textoTipoDeArchivo.setBounds(200, 20, 150, 30);
+		textoTipoDeArchivo.setBounds(200, 20, 200, 30);
 		this.add(textoTipoDeArchivo);
 
 		labelEsAudioLibro = new JLabel("Es AudioLibro:");
@@ -120,13 +57,79 @@ public class VentanaActualizarLibroVirtual extends JFrame {
 		this.add(labelEsAudioLibro);
 
 		textoEsAudioLibro = new JTextField();
-		textoEsAudioLibro.setBounds(200, 60, 150, 30);
+		textoEsAudioLibro.setBounds(200, 60, 200, 30);
 		this.add(textoEsAudioLibro);
 
+		labelTitulo = new JLabel("Título:");
+		labelTitulo.setBounds(50, 100, 100, 30);
+		this.add(labelTitulo);
+
+		textoTitulo = new JTextField();
+		textoTitulo.setBounds(200, 100, 200, 30);
+		this.add(textoTitulo);
+
+		labelClasificacion = new JLabel("Clasificación:");
+		labelClasificacion.setBounds(50, 140, 100, 30);
+		this.add(labelClasificacion);
+
+		textoClasificacion = new JTextField();
+		textoClasificacion.setBounds(200, 140, 200, 30);
+		this.add(textoClasificacion);
+
+		labelFacultad = new JLabel("Facultad:");
+		labelFacultad.setBounds(50, 180, 100, 30);
+		this.add(labelFacultad);
+
+		textoFacultad = new JTextField();
+		textoFacultad.setBounds(200, 180, 200, 30);
+		this.add(textoFacultad);
+
+		labelFechaDePublicacion = new JLabel("Fecha de Publicación:");
+		labelFechaDePublicacion.setBounds(50, 220, 150, 30);
+		this.add(labelFechaDePublicacion);
+
+		textoFechaDePublicacion = new JTextField();
+		textoFechaDePublicacion.setBounds(200, 220, 200, 30);
+		this.add(textoFechaDePublicacion);
+
+		labelIdioma = new JLabel("Idioma:");
+		labelIdioma.setBounds(50, 260, 100, 30);
+		this.add(labelIdioma);
+
+		textoIdioma = new JTextField();
+		textoIdioma.setBounds(200, 260, 200, 30);
+		this.add(textoIdioma);
+
+		labelCantidadDePaginas = new JLabel("Cantidad de Páginas:");
+		labelCantidadDePaginas.setBounds(50, 300, 150, 30);
+		this.add(labelCantidadDePaginas);
+
+		textoCantidadDePaginas = new JTextField();
+		textoCantidadDePaginas.setBounds(200, 300, 200, 30);
+		this.add(textoCantidadDePaginas);
+
+		labelAutor = new JLabel("Autor:");
+		labelAutor.setBounds(50, 340, 100, 30);
+		this.add(labelAutor);
+
+		textoAutor = new JTextField();
+		textoAutor.setBounds(200, 340, 200, 30);
+		this.add(textoAutor);
+
+		labelEditorial = new JLabel("Editorial:");
+		labelEditorial.setBounds(50, 380, 100, 30);
+		this.add(labelEditorial);
+
+		textoEditorial = new JTextField();
+		textoEditorial.setBounds(200, 380, 200, 30);
+		this.add(textoEditorial);
+
+		
 		botonActualizar = new JButton("Actualizar");
-		botonActualizar.setBounds(200, 520, 180, 40);
+		botonActualizar.setBounds(200, 450, 180, 40);
 		add(botonActualizar);
 	}
+
 
 	public JLabel getLabelTitulo() {
 		return labelTitulo;
