@@ -88,7 +88,7 @@ public class Controlador implements ActionListener {
 		vaa = new VentanaActualizarArticulo();
 		valf = new VentanaActualizarLibroFisico();
 		valv = new VentanaActualizarLibroVirtual();
-
+		vap.setVisible(true);
 		asignarOyentes();
 	}
 
@@ -572,23 +572,22 @@ public class Controlador implements ActionListener {
 				va.setVisible(false);
 				vap.setVisible(true);
 
-				vap.getTextoTitulo().setText(objP.getListaPeliculas().get(valorP).getTitulo());
-				vap.getTextoClasificacion().setText(objP.getListaPeliculas().get(valorP).getClasificacion());
-				vap.getTextoFacultad().setText(objP.getListaPeliculas().get(valorP).getFacultad());
-				vap.getTextoFechaDePublicacion()
-						.setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFechaDePublicacion()));
-				vap.getTextoIdioma().setText(objP.getListaPeliculas().get(valorP).getIdioma());
-				vap.getTextoProductora().setText(objP.getListaPeliculas().get(valorP).getProductora());
-				vap.getTextoPais().setText(objP.getListaPeliculas().get(valorP).getPais());
-				vap.getTextoDirector().setText(objP.getListaPeliculas().get(valorP).getDirector());
-				vap.getTextoGuion().setText(objP.getListaPeliculas().get(valorP).getGuion());
-				vap.getTextoFotografia().setText(objP.getListaPeliculas().get(valorP).getFotografia());
-				vap.getTextoMusica().setText(objP.getListaPeliculas().get(valorP).getMusica());
-				vap.getTextoReparto().setText(objP.getListaPeliculas().get(valorP).getReparto());
-				vap.getTextoDuracion().setText(objP.getListaPeliculas().get(valorP).getDuracion());
-				vap.getTextoIdiomasDisponibles().setText(objP.getListaPeliculas().get(valorP).getIdiomasDisponibles());
-				vap.getTextoSubtitulos().setText(objP.getListaPeliculas().get(valorP).getSubtitulos());
-
+				vap.getTextoTitulo().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getTitulo()));
+				vap.getTextoClasificacion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getClasificacion()));
+				vap.getTextoFacultad().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFacultad()));
+				vap.getTextoFechaDePublicacion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFechaDePublicacion()));
+				vap.getTextoIdioma().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getIdioma()));
+				vap.getTextoProductora().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getProductora()));
+				vap.getTextoPais().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getPais()));
+				vap.getTextoDirector().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getDirector()));
+				vap.getTextoGuion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getGuion()));
+				vap.getTextoFotografia().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFotografia()));
+				vap.getTextoMusica().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getMusica()));
+				vap.getTextoReparto().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getReparto()));
+				vap.getTextoDuracion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getDuracion()));
+				vap.getTextoIdiomasDisponibles().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getIdiomasDisponibles()));
+				vap.getTextoSubtitulos().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getSubtitulos()));
+				System.out.println(objP.getListaPeliculas().get(valorP).getDirector());
 			} else if (valorR != -1) {
 				va.setVisible(false);
 				var.setVisible(true);

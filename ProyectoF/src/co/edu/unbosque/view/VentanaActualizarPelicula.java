@@ -55,134 +55,127 @@ public class VentanaActualizarPelicula extends JFrame {
 
 	public VentanaActualizarPelicula() {
 		this.setTitle("Actualizar Película");
-		this.setBounds(10, 10, 600, 500);
+		this.setBounds(10, 10, 1080, 720);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLayout(null);
 
-		labelTitulo = new JLabel("Título:");
-		labelTitulo.setBounds(50, 70, 100, 30);
-		this.add(labelTitulo);
 
-		textoTitulo = new JTextField();
-		textoTitulo.setBounds(160, 70, 270, 30);
-		this.add(textoTitulo);
+	    labelTitulo = new JLabel("Título:");
+	    labelTitulo.setBounds(50, 20, 120, 30);
+	    this.add(labelTitulo);
 
-		labelClasificacion = new JLabel("Clasificacion:");
-		labelClasificacion.setBounds(50, 170, 100, 30);
-		this.add(labelClasificacion);
+	    textoTitulo = new JTextField();
+	    textoTitulo.setBounds(180, 20, 250, 30);
+	    this.add(textoTitulo);
 
-		textoClasificacion = new JTextField();
-		textoClasificacion.setBounds(160, 170, 270, 30);
-		this.add(textoClasificacion);
+	    labelClasificacion = new JLabel("Clasificación:");
+	    labelClasificacion.setBounds(50, 60, 120, 30);
+	    this.add(labelClasificacion);
 
-		labelFacultad = new JLabel("Facultad:");
-		labelFacultad.setBounds(50, 220, 100, 30);
-		this.add(labelFacultad);
+	    textoClasificacion = new JTextField();
+	    textoClasificacion.setBounds(180, 60, 250, 30);
+	    this.add(textoClasificacion);
 
-		textoFacultad = new JTextField();
-		textoFacultad.setBounds(160, 220, 270, 30);
-		this.add(textoFacultad);
+	    labelPais = new JLabel("País:");
+	    labelPais.setBounds(50, 100, 120, 30);
+	    this.add(labelPais);
 
-		labelFechaDePublicacion = new JLabel("Fecha de publicacion:");
-		labelFechaDePublicacion.setBounds(50, 270, 100, 30);
-		this.add(labelFechaDePublicacion);
+	    textoPais = new JTextField();
+	    textoPais.setBounds(180, 100, 250, 30);
+	    this.add(textoPais);
 
-		textoFechaDePublicacion = new JTextField();
-		textoFechaDePublicacion.setBounds(160, 270, 270, 30);
-		this.add(textoFechaDePublicacion);
+	    labelDirector = new JLabel("Director:");
+	    labelDirector.setBounds(50, 140, 120, 30);
+	    this.add(labelDirector);
 
-		labelIdioma = new JLabel("Idioma:");
-		labelIdioma.setBounds(50, 320, 100, 30);
-		this.add(labelIdioma);
+	    textoDirector = new JTextField();
+	    textoDirector.setBounds(180, 140, 250, 30);
+	    this.add(textoDirector);
 
-		textoIdioma = new JTextField();
-		textoIdioma.setBounds(160, 320, 270, 30);
-		this.add(textoIdioma);
+	    labelGuion = new JLabel("Guion:");
+	    labelGuion.setBounds(50, 180, 120, 30);
+	    this.add(labelGuion);
 
-		labelProductora = new JLabel("Productora:");
-		labelProductora.setBounds(50, 370, 100, 30);
-		this.add(labelProductora);
+	    textoGuion = new JTextField();
+	    textoGuion.setBounds(180, 180, 250, 30);
+	    this.add(textoGuion);
 
-		textoProductora = new JTextField();
-		textoProductora.setBounds(160, 370, 270, 30);
-		this.add(textoProductora);
+	    labelFotografia = new JLabel("Fotografía:");
+	    labelFotografia.setBounds(50, 220, 120, 30);
+	    this.add(labelFotografia);
 
-		labelPais = new JLabel("Pais:");
-		labelPais.setBounds(50, 120, 100, 30);
-		this.add(labelPais);
+	    textoFotografia = new JTextField();
+	    textoFotografia.setBounds(180, 220, 250, 30);
+	    this.add(textoFotografia);
 
-		textoPais = new JTextField();
-		textoPais.setBounds(160, 120, 270, 30);
-		this.add(textoPais);
+	    labelMusica = new JLabel("Música:");
+	    labelMusica.setBounds(50, 260, 120, 30);
+	    this.add(labelMusica);
 
-		labelDirector = new JLabel("Director:");
-		labelDirector.setBounds(50, 120, 100, 30);
-		this.add(labelDirector);
+	    textoMusica = new JTextField();
+	    textoMusica.setBounds(180, 260, 250, 30);
+	    this.add(textoMusica);
 
-		textoDirector = new JTextField();
-		textoDirector.setBounds(160, 120, 270, 30);
-		this.add(textoDirector);
+	    labelReparto = new JLabel("Reparto:");
+	    labelReparto.setBounds(50, 300, 120, 30);
+	    this.add(labelReparto);
 
-		labelGuion = new JLabel("Guion:");
-		labelGuion.setBounds(50, 120, 100, 30);
-		this.add(labelGuion);
+	    textoReparto = new JTextField();
+	    textoReparto.setBounds(180, 300, 250, 30);
+	    this.add(textoReparto);
 
-		textoGuion = new JTextField();
-		textoGuion.setBounds(160, 120, 270, 30);
-		this.add(textoGuion);
+	    labelDuracion = new JLabel("Duración:");
+	    labelDuracion.setBounds(50, 340, 120, 30);
+	    this.add(labelDuracion);
 
-		labelFotografia = new JLabel("Fotografia:");
-		labelFotografia.setBounds(50, 120, 100, 30);
-		this.add(labelFotografia);
+	    textoDuracion = new JTextField();
+	    textoDuracion.setBounds(180, 340, 250, 30);
+	    this.add(textoDuracion);
 
-		textoFotografia = new JTextField();
-		textoFotografia.setBounds(160, 120, 270, 30);
-		this.add(textoFotografia);
+	    labelIdiomasDisponibles = new JLabel("Idiomas Disponibles:");
+	    labelIdiomasDisponibles.setBounds(50, 380, 150, 30);
+	    this.add(labelIdiomasDisponibles);
 
-		labelMusica = new JLabel("Música:");
-		labelMusica.setBounds(50, 160, 100, 30);
-		this.add(labelMusica);
+	    textoIdiomasDisponibles = new JTextField();
+	    textoIdiomasDisponibles.setBounds(200, 380, 230, 30);
+	    this.add(textoIdiomasDisponibles);
 
-		textoMusica = new JTextField();
-		textoMusica.setBounds(160, 160, 270, 30);
-		this.add(textoMusica);
+	    labelSubtitulos = new JLabel("Subtítulos:");
+	    labelSubtitulos.setBounds(50, 420, 120, 30);
+	    this.add(labelSubtitulos);
 
-		labelReparto = new JLabel("Reparto:");
-		labelReparto.setBounds(50, 200, 100, 30);
-		this.add(labelReparto);
+	    textoSubtitulos = new JTextField();
+	    textoSubtitulos.setBounds(180, 420, 250, 30);
+	    this.add(textoSubtitulos);
 
-		textoReparto = new JTextField();
-		textoReparto.setBounds(160, 200, 270, 30);
-		this.add(textoReparto);
+	    labelFacultad = new JLabel("Facultad:");
+	    labelFacultad.setBounds(50, 460, 120, 30);
+	    this.add(labelFacultad);
 
-		labelDuracion = new JLabel("Duración:");
-		labelDuracion.setBounds(50, 240, 100, 30);
-		this.add(labelDuracion);
+	    textoFacultad = new JTextField();
+	    textoFacultad.setBounds(180, 460, 250, 30);
+	    this.add(textoFacultad);
 
-		textoDuracion = new JTextField();
-		textoDuracion.setBounds(160, 240, 270, 30);
-		this.add(textoDuracion);
+	    labelFechaDePublicacion = new JLabel("Fecha de publicación:");
+	    labelFechaDePublicacion.setBounds(50, 500, 150, 30);
+	    this.add(labelFechaDePublicacion);
 
-		labelIdiomasDisponibles = new JLabel("Idiomas Disponibles:");
-		labelIdiomasDisponibles.setBounds(50, 280, 120, 30);
-		this.add(labelIdiomasDisponibles);
+	    textoFechaDePublicacion = new JTextField();
+	    textoFechaDePublicacion.setBounds(200, 500, 230, 30);
+	    this.add(textoFechaDePublicacion);
 
-		textoIdiomasDisponibles = new JTextField();
-		textoIdiomasDisponibles.setBounds(180, 280, 250, 30);
-		this.add(textoIdiomasDisponibles);
+	    labelIdioma = new JLabel("Idioma:");
+	    labelIdioma.setBounds(50, 540, 120, 30);
+	    this.add(labelIdioma);
 
-		labelSubtitulos = new JLabel("Subtítulos:");
-		labelSubtitulos.setBounds(50, 320, 100, 30);
-		this.add(labelSubtitulos);
+	    textoIdioma = new JTextField();
+	    textoIdioma.setBounds(180, 540, 250, 30);
+	    this.add(textoIdioma);
 
-		textoSubtitulos = new JTextField();
-		textoSubtitulos.setBounds(160, 320, 270, 30);
-		this.add(textoSubtitulos);
-
-		botonActualizar = new JButton("Actualizar Película");
-		botonActualizar.setBounds(200, 420, 180, 40);
-		this.add(botonActualizar);
+	    botonActualizar = new JButton("Actualizar Película");
+	    botonActualizar.setBounds(180, 590, 200, 40);
+	    this.add(botonActualizar);
 
 	}
 
@@ -432,6 +425,14 @@ public class VentanaActualizarPelicula extends JFrame {
 
 	public void setBotonActualizar(JButton botonActualizar) {
 		this.botonActualizar = botonActualizar;
+	}
+
+	public JLabel getLabelGuion() {
+		return labelGuion;
+	}
+
+	public void setLabelGuion(JLabel labelGuion) {
+		this.labelGuion = labelGuion;
 	}
 
 }
