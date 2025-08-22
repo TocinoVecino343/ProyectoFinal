@@ -2,16 +2,12 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.util.HexFormat;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.swing.ImageIcon;
-import java.awt.BorderLayout;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -20,9 +16,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.BorderFactory;
-import java.util.ArrayList;
-
-import org.w3c.dom.css.RGBColor;
 
 import co.edu.unbosque.controller.Controlador;
 import co.edu.unbosque.model.*;
@@ -41,8 +34,7 @@ public class VentanaPrincipal extends JFrame {
 	private DefaultListModel<String> modeloLista;
 	private JScrollPane scrollResultados;
 	private JButton botonBuscar;
-    private JFrame desplegable;
-	private Controlador controller; 
+	private Controlador controller;
 	
 	public VentanaPrincipal(Controlador controller) {
 	    this.controller = controller;
