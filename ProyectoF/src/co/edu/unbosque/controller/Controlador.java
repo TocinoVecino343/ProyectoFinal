@@ -853,10 +853,10 @@ public class Controlador implements ActionListener {
 			vm.setVisible(false);
 			vp.setVisible(true);
 			break;
-
+		
 		}
 		}
-
+	
 	}
 
 	public void runGUI() { // Run de la ventana
