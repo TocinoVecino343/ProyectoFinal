@@ -52,7 +52,7 @@ public class VentanaCrearLibroVirtual extends JFrame {
 		
 		botonCancelar = new JButton("Cancelar");
 		botonCancelar.setBackground(Color.decode("#E8F5E9"));
-		botonCancelar.setBounds(100, 520, 200, 30);
+		botonCancelar.setBounds(600, 160, 200, 30);
 		this.add(botonCancelar);
 	}
 
