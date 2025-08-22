@@ -3,6 +3,7 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ComboBoxEditor;
 import javax.swing.JOptionPane;
 
 import co.edu.unbosque.model.*;
@@ -101,7 +102,7 @@ public class Controlador implements ActionListener {
 		vp.getBotonEliminarPublicacion().setActionCommand("boton3_eliminar_publicacion");
 		vp.getBotonActualizarPublicacion().addActionListener(this);
 		vp.getBotonActualizarPublicacion().setActionCommand("boton4_actualizar_publicacion");
-		
+
 		vp.getBotonSalir().addActionListener(this);
 		vp.getBotonSalir().setActionCommand("boton_salir");
 
@@ -757,10 +758,84 @@ public class Controlador implements ActionListener {
 			vp.setVisible(true);
 			break;
 		}
-		
+
 		case "boton_salir": {
-		    System.exit(0); // Cierra completamente la aplicación
-		    break;
+			System.exit(0); // Cierra completamente la aplicación
+			break;
+		}
+
+		case "boton_buscar": {
+			String contenido;
+			String opcionComboBox = String.valueOf(vp.getComboBoxFiltrar().getSelectedItem());
+
+			if (opcionComboBox.equals("Letra inicial")) {
+				char datoABuscar = vp.getCampoBusqueda().getText().charAt(0);
+				String datoP = objP.filtrar(datoABuscar);
+				String datoA = objA.filtrar(datoABuscar);
+				String datoR = objR.filtrar(datoABuscar);
+				String datoLf = objLf.filtrar(datoABuscar);
+				String datoLv = objLv.filtrar(datoABuscar);
+
+				contenido = datoP + "\n" + datoA + "\n" + datoR + "\n" + datoLf + "\n" + datoLv;
+			} else if (opcionComboBox.equals("Id")) {
+				int enteroABuscar = Integer.parseInt(vp.getCampoBusqueda().getText());
+				String datoP = objP.filtrarId(enteroABuscar);
+				String datoA = objA.filtrarId(enteroABuscar);
+				String datoR = objR.filtrarId(enteroABuscar);
+				String datoLf = objLf.filtrarId(enteroABuscar);
+				String datoLv = objLv.filtrarId(enteroABuscar);
+				contenido = datoP + "\n" + datoA + "\n" + datoR + "\n" + datoLf + "\n" + datoLv;
+
+			} else if (opcionComboBox.equals("Titulo")) {
+				String tituloABuscar = vp.getCampoBusqueda().getText();
+				String datoP = objP.filtrarTitulo(tituloABuscar);
+				String datoA = objA.filtrarTitulo(tituloABuscar);
+				String datoR = objR.filtrarTitulo(tituloABuscar);
+				String datoLf = objLf.filtrarTitulo(tituloABuscar);
+				String datoLv = objLv.filtrarTitulo(tituloABuscar);
+				contenido = datoP + "\n" + datoA + "\n" + datoR + "\n" + datoLf + "\n" + datoLv;
+
+			} else if (opcionComboBox.equals("Clasificacion")) {
+				String clasificacionABuscar = vp.getCampoBusqueda().getText();
+				String datoP = objP.filtrarClasificacion(clasificacionABuscar);
+				String datoA = objA.filtrarClasificacion(clasificacionABuscar);
+				String datoR = objR.filtrarClasificacion(clasificacionABuscar);
+				String datoLf = objLf.filtrarClasificacion(clasificacionABuscar);
+				String datoLv = objLv.filtrarClasificacion(clasificacionABuscar);
+				contenido = datoP + "\n" + datoA + "\n" + datoR + "\n" + datoLf + "\n" + datoLv;
+
+			} else if (opcionComboBox.equals("Facultad")) {
+				String facultadABuscar = vp.getCampoBusqueda().getText();
+				String datoP = objP.filtrarFacultad(facultadABuscar);
+				String datoA = objA.filtrarFacultad(facultadABuscar);
+				String datoR = objR.filtrarFacultad(facultadABuscar);
+				String datoLf = objLf.filtrarFacultad(facultadABuscar);
+				String datoLv = objLv.filtrarFacultad(facultadABuscar);
+				contenido = datoP + "\n" + datoA + "\n" + datoR + "\n" + datoLf + "\n" + datoLv;
+
+			} else if (opcionComboBox.equals("Idioma")) {
+				String idiomaABuscar = vp.getCampoBusqueda().getText();
+				String datoP = objP.filtrarIdioma(idiomaABuscar);
+				String datoA = objA.filtrarIdioma(idiomaABuscar);
+				String datoR = objR.filtrarIdioma(idiomaABuscar);
+				String datoLf = objLf.filtrarIdioma(idiomaABuscar);
+				String datoLv = objLv.filtrarIdioma(idiomaABuscar);
+				contenido = datoP + "\n" + datoA + "\n" + datoR + "\n" + datoLf + "\n" + datoLv;
+
+			} else if (opcionComboBox.equals("Fecha de publicacion")) {
+				int fechaABuscar = Integer.parseInt(vp.getCampoBusqueda().getText());
+				String datoP = objP.filtrarFecha(fechaABuscar);
+				String datoA = objA.filtrarFecha(fechaABuscar);
+				String datoR = objR.filtrarFecha(fechaABuscar);
+				String datoLf = objLf.filtrarFecha(fechaABuscar);
+				String datoLv = objLv.filtrarFecha(fechaABuscar);
+				contenido = datoP + "\n" + datoA + "\n" + datoR + "\n" + datoLf + "\n" + datoLv;
+
+			} else {
+				contenido = "No se ha hallado ninguna publicacion que coincida con la busqueda";
+			}
+
+			break;
 		}
 		}
 

@@ -121,7 +121,7 @@ public class VentanaPrincipal extends JFrame {
 		campoBusqueda.setBounds(750, 150, 200, 35);
 		campoBusqueda.setFont(new Font("Arial", Font.PLAIN, 14));
 		campoBusqueda.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 2));
-			
+
 		this.add(campoBusqueda);
 
 		// Botón de búsqueda
@@ -223,4 +223,57 @@ public class VentanaPrincipal extends JFrame {
 	public JButton getBotonSalir() {
 		return botonSalir;
 	}
+
+	public JLabel getEtiquetaBusqueda() {
+		return etiquetaBusqueda;
+	}
+
+	public void setEtiquetaBusqueda(JLabel etiquetaBusqueda) {
+		this.etiquetaBusqueda = etiquetaBusqueda;
+	}
+
+	public JList<String> getListaResultados() {
+		return listaResultados;
+	}
+
+	public void setListaResultados(JList<String> listaResultados) {
+		this.listaResultados = listaResultados;
+	}
+
+	public DefaultListModel<String> getModeloLista() {
+		return modeloLista;
+	}
+
+	public void setModeloLista(DefaultListModel<String> modeloLista) {
+		this.modeloLista = modeloLista;
+	}
+
+	public JScrollPane getScrollResultados() {
+		return scrollResultados;
+	}
+
+	public void setScrollResultados(JScrollPane scrollResultados) {
+		this.scrollResultados = scrollResultados;
+	}
+
+	public JFrame getDesplegable() {
+		return desplegable;
+	}
+
+	public void setDesplegable(JFrame desplegable) {
+		this.desplegable = desplegable;
+	}
+
+	public JComboBox getComboBoxFiltrar() {
+		return comboBoxFiltrar;
+	}
+
+	public void setComboBoxFiltrar(JComboBox comboBoxFiltrar) {
+		this.comboBoxFiltrar = comboBoxFiltrar;
+	}
+
+	public void setBotonSalir(JButton botonSalir) {
+		this.botonSalir = botonSalir;
+	}
+
 }
