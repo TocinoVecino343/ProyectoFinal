@@ -774,7 +774,7 @@ public class Controlador implements ActionListener {
 		}
 
 		case "boton_buscar": {
-			String contenido;
+			String contenido = "";
 			String opcionComboBox = String.valueOf(vp.getComboBoxFiltrar().getSelectedItem());
 
 			if (opcionComboBox.equals("Letra inicial")) {
@@ -840,19 +840,20 @@ public class Controlador implements ActionListener {
 				String datoLv = objLv.filtrarFecha(fechaABuscar);
 				contenido = datoP + "\n" + datoA + "\n" + datoR + "\n" + datoLf + "\n" + datoLv;
 
-			} else {
+			}
+
+			if (contenido == null || contenido.trim().isEmpty()) {
 				contenido = "No se ha hallado ninguna publicacion que coincida con la busqueda";
 			}
-			
+			vp.getTextoMostrarResultados().setText(contenido);
 			break;
-			
-			
+
 		}
 		case "boton_cancelar_mostrar": {
-		    vm.setVisible(false);
-		    vp.setVisible(true);
-		    break;
-		    
+			vm.setVisible(false);
+			vp.setVisible(true);
+			break;
+
 		}
 		}
 

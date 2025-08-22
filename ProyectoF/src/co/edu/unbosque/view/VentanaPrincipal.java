@@ -14,6 +14,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.BorderFactory;
@@ -31,13 +32,12 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel titulo;
 	private JTextField campoBusqueda;
 	private JLabel etiquetaBusqueda;
-	private JList<String> listaResultados;
-	private DefaultListModel<String> modeloLista;
 	private JScrollPane scrollResultados;
 	private JButton botonBuscar;
 	private JFrame desplegable;
 	private JButton botonSalir;
 	private JComboBox comboBoxFiltrar;
+	private JTextArea textoMostrarResultados;
 
 	public VentanaPrincipal(Controlador controller) {
 
@@ -132,13 +132,12 @@ public class VentanaPrincipal extends JFrame {
 		botonBuscar.setFocusPainted(false);
 		this.add(botonBuscar);
 
-		// Lista para mostrar resultados
-		modeloLista = new DefaultListModel<>();
-		listaResultados = new JList<>(modeloLista);
-		listaResultados.setFont(new Font("Arial", Font.PLAIN, 12));
-		listaResultados.setBackground(Color.decode("#E8F5E9"));
+		// Mostrar resultados
+		textoMostrarResultados = new JTextArea();
+		textoMostrarResultados.setEditable(false);
+		textoMostrarResultados.setBackground(Color.decode("#E8F5E9"));
 
-		scrollResultados = new JScrollPane(listaResultados);
+		scrollResultados = new JScrollPane(textoMostrarResultados);
 		scrollResultados.setBounds(750, 250, 390, 300);
 		scrollResultados.setBorder(BorderFactory.createLineBorder(Color.decode("#144031"), 1));
 		this.add(scrollResultados);
@@ -232,22 +231,6 @@ public class VentanaPrincipal extends JFrame {
 		this.etiquetaBusqueda = etiquetaBusqueda;
 	}
 
-	public JList<String> getListaResultados() {
-		return listaResultados;
-	}
-
-	public void setListaResultados(JList<String> listaResultados) {
-		this.listaResultados = listaResultados;
-	}
-
-	public DefaultListModel<String> getModeloLista() {
-		return modeloLista;
-	}
-
-	public void setModeloLista(DefaultListModel<String> modeloLista) {
-		this.modeloLista = modeloLista;
-	}
-
 	public JScrollPane getScrollResultados() {
 		return scrollResultados;
 	}
@@ -274,6 +257,14 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setBotonSalir(JButton botonSalir) {
 		this.botonSalir = botonSalir;
+	}
+
+	public JTextArea getTextoMostrarResultados() {
+		return textoMostrarResultados;
+	}
+
+	public void setTextoMostrarResultados(JTextArea textoMostrarResultados) {
+		this.textoMostrarResultados = textoMostrarResultados;
 	}
 
 }
