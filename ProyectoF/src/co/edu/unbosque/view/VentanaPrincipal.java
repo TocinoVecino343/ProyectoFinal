@@ -2,16 +2,12 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.util.HexFormat;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.swing.ImageIcon;
-import java.awt.BorderLayout;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -20,9 +16,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.BorderFactory;
-import java.util.ArrayList;
-
-import org.w3c.dom.css.RGBColor;
 
 import co.edu.unbosque.controller.Controlador;
 import co.edu.unbosque.model.*;
@@ -42,11 +35,12 @@ public class VentanaPrincipal extends JFrame {
 	private JScrollPane scrollResultados;
 	private JButton botonBuscar;
     private JFrame desplegable;
-	private Controlador controller; 
 	private JButton botonSalir;
+
+
 	
 	public VentanaPrincipal(Controlador controller) {
-	    this.controller = controller;
+	
 	    inicializarComponentes();
 	    setVisible(true);
 	}
@@ -187,11 +181,7 @@ public class VentanaPrincipal extends JFrame {
 	        return buscarEnCampos(revista.getId(), revista.getTitulo(), revista.getClasificacion(), 
 	                            revista.getFacultad(), revista.getIdioma(), revista.getAutor(), textoBusqueda);
 	    }
-	    else if (publicacion instanceof Steam) {
-	        Steam juego = (Steam) publicacion;
-	        return buscarEnCampos(juego.getId(), juego.getTitulo(), juego.getClasificacion(), 
-	                            juego.getFacultad(), juego.getIdioma(), "", textoBusqueda);
-	    }
+	    
 	    
 	    return false;
 	}
