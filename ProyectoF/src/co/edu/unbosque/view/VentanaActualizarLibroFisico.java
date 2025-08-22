@@ -125,11 +125,11 @@ public class VentanaActualizarLibroFisico extends JFrame {
 		this.add(textoTiempoDePrestamo);
 
 		botonActualizar = new JButton("Actualizar");
-		botonActualizar.setBounds(200, 470, 180, 40);
-		add(botonActualizar);
+		botonActualizar.setBounds(100, 400, 100, 40);
+		this.add(botonActualizar);
 		
 		botonCancelar = new JButton("Cancelar");
-		botonCancelar.setBounds(180, 110, 100, 30);
+		botonCancelar.setBounds(250, 400, 100, 40);
 		this.add(botonCancelar);
 
 	}

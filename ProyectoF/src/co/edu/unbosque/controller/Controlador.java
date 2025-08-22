@@ -954,20 +954,30 @@ public class Controlador implements ActionListener {
 		//lógica para el botón cancelar en las ventanas de actualización específicas
 				case "cancelar_actualizar_pelicula":{
 					vap.setVisible(false);
-					vap.setVisible(true);
+					va.setVisible(true);
+					break;
 				}
 				case "cancelar_actualizar_articulo":{
 					vaa.setVisible(false);
-					vaa.setVisible(true);
+					va.setVisible(true);
+					break;
 				}
 				case "cancelar_actualizar_libro_fisico":{
 					valf.setVisible(false);
-					valv.setVisible(true);
+					va.setVisible(true);
+					break;
 				}
 				case "cancelar_actualizar_revista":{
 					var.setVisible(false);
-					var.setVisible(true);
+					va.setVisible(true);
+					break;
 				}
+				case "cancelar_actualizar_libro_virtual":{
+					valv.setVisible(false);
+					va.setVisible(true);
+					break;
+				}
+				
 
 		}
 
