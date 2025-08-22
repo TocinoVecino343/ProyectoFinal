@@ -8,27 +8,23 @@ import javax.swing.JTextField;
 
 public class VentanaCrear extends JFrame {
 
-	
-	private JLabel labelPublicacion;
+	private JLabel labelId;
 	private JLabel labelTituloPublicacion;
 	private JLabel labelClasificacion;
 	private JLabel labelFacultad;
 	private JLabel labelFecha;
 	private JLabel labelIdioma;
 	
-	private JTextField textoPublicacion;
+	private JTextField textoId;
 	private JTextField textoTituloPublicacion;
 	private JTextField textoClasificacion;
 	private JTextField textoFacultad;
 	private JTextField textoFecha;
 	private JTextField textoIdioma;
 	
-	private JTextArea menuCreacion;
-	
 	private JButton botonCrearPelicula;
 	private JButton botonCrearArticulo;
 	private JButton botonCrearRevista;
-	private JButton botonCrearJuego4Prot;
 	private JButton botonCrearLibroFisico;
 	private JButton botonCrearLibroVirtual;
 	
@@ -43,13 +39,13 @@ public class VentanaCrear extends JFrame {
 	    setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	    setLayout(null);
 
-	    labelPublicacion = new JLabel("Publicación:");
-	    labelPublicacion.setBounds(50, 50, 150, 30);
-	    add(labelPublicacion);
+	    labelId = new JLabel("Id (NUMEROS):");
+	    labelId.setBounds(50, 50, 150, 30);
+	    add(labelId);
 
-	    textoPublicacion = new JTextField();
-	    textoPublicacion.setBounds(200, 50, 200, 30);
-	    add(textoPublicacion);
+	    textoId = new JTextField();
+	    textoId.setBounds(200, 50, 200, 30);
+	    add(textoId);
 
 	    labelTituloPublicacion = new JLabel("Título:");
 	    labelTituloPublicacion.setBounds(50, 100, 150, 30);
@@ -75,7 +71,7 @@ public class VentanaCrear extends JFrame {
 	    textoFacultad.setBounds(200, 200, 200, 30);
 	    add(textoFacultad);
 
-	    labelFecha = new JLabel("Fecha:");
+	    labelFecha = new JLabel("Fecha (NUMEROS):");
 	    labelFecha.setBounds(50, 250, 150, 30);
 	    add(labelFecha);
 
@@ -91,17 +87,6 @@ public class VentanaCrear extends JFrame {
 	    textoIdioma.setBounds(200, 300, 200, 30);
 	    add(textoIdioma);
 
-	    menuCreacion = new JTextArea(
-	        "1. Crear Película\n" +
-	        "2. Crear Artículo\n" +
-	        "3. Crear Revista\n" +
-	        "4. Crear Juego 4 Prot\n" +
-	        "5. Crear Libro Físico\n" +
-	        "6. Crear Libro Virtual"
-	    );
-	    menuCreacion.setBounds(500, 50, 300, 150);
-	    add(menuCreacion);
-
 	    botonCrearPelicula = new JButton("Crear Película");
 	    botonCrearPelicula.setBounds(500, 250, 200, 30);
 	    add(botonCrearPelicula);
@@ -114,10 +99,6 @@ public class VentanaCrear extends JFrame {
 	    botonCrearRevista.setBounds(500, 350, 200, 30);
 	    add(botonCrearRevista);
 
-	    botonCrearJuego4Prot = new JButton("Crear Juego 4 Prot");
-	    botonCrearJuego4Prot.setBounds(500, 400, 200, 30);
-	    add(botonCrearJuego4Prot);
-
 	    botonCrearLibroFisico = new JButton("Crear Libro Físico");
 	    botonCrearLibroFisico.setBounds(500, 450, 200, 30);
 	    add(botonCrearLibroFisico);
@@ -127,12 +108,12 @@ public class VentanaCrear extends JFrame {
 	    add(botonCrearLibroVirtual);
 	}
 
-	public JLabel getLabelPublicacion() {
-		return labelPublicacion;
+	public JLabel getLabelId() {
+		return labelId;
 	}
 
-	public void setLabelPublicacion(JLabel labelPublicacion) {
-		this.labelPublicacion = labelPublicacion;
+	public void setLabelId(JLabel labelId) {
+		this.labelId = labelId;
 	}
 
 	public JLabel getLabelTituloPublicacion() {
@@ -175,12 +156,12 @@ public class VentanaCrear extends JFrame {
 		this.labelIdioma = labelIdioma;
 	}
 
-	public JTextField getTextoPublicacion() {
-		return textoPublicacion;
+	public JTextField getTextoId() {
+		return textoId;
 	}
 
-	public void setTextoPublicacion(JTextField textoPublicacion) {
-		this.textoPublicacion = textoPublicacion;
+	public void setTextoId(JTextField textoId) {
+		this.textoId = textoId;
 	}
 
 	public JTextField getTextoTituloPublicacion() {
@@ -223,14 +204,6 @@ public class VentanaCrear extends JFrame {
 		this.textoIdioma = textoIdioma;
 	}
 
-	public JTextArea getMenuCreacion() {
-		return menuCreacion;
-	}
-
-	public void setMenuCreacion(JTextArea menuCreacion) {
-		this.menuCreacion = menuCreacion;
-	}
-
 	public JButton getBotonCrearPelicula() {
 		return botonCrearPelicula;
 	}
@@ -255,14 +228,6 @@ public class VentanaCrear extends JFrame {
 		this.botonCrearRevista = botonCrearRevista;
 	}
 
-	public JButton getBotonCrearJuego4Prot() {
-		return botonCrearJuego4Prot;
-	}
-
-	public void setBotonCrearJuego4Prot(JButton botonCrearJuego4Prot) {
-		this.botonCrearJuego4Prot = botonCrearJuego4Prot;
-	}
-
 	public JButton getBotonCrearLibroFisico() {
 		return botonCrearLibroFisico;
 	}
@@ -278,7 +243,6 @@ public class VentanaCrear extends JFrame {
 	public void setBotonCrearLibroVirtual(JButton botonCrearLibroVirtual) {
 		this.botonCrearLibroVirtual = botonCrearLibroVirtual;
 	}
-	
-	
+
 
 }

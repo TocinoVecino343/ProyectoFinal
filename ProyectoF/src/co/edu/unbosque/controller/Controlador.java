@@ -232,7 +232,7 @@ public class Controlador implements ActionListener {
 		}
 		// Botones guardar
 		case "boton_guardar_pelicula": {
-			int id = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			int id = Integer.parseInt("" + vc.getTextoId().getText());
 			String titulo = "" + vc.getTextoTituloPublicacion().getText();
 			String clasificacion = "" + vc.getTextoClasificacion().getText();
 			String facultad = "" + vc.getTextoFacultad().getText();
@@ -258,7 +258,7 @@ public class Controlador implements ActionListener {
 			break;
 		}
 		case "boton_guardar_articulo": {
-			int id1 = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			int id1 = Integer.parseInt("" + vc.getTextoId().getText());
 			String titulo1 = "" + vc.getTextoTituloPublicacion().getText();
 			String clasificacion1 = "" + vc.getTextoClasificacion().getText();
 			String facultad1 = "" + vc.getTextoFacultad().getText();
@@ -278,7 +278,7 @@ public class Controlador implements ActionListener {
 			break;
 		}
 		case "boton_guardar_revista": {
-			int id2 = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			int id2 = Integer.parseInt("" + vc.getTextoId().getText());
 			String titulo2 = "" + vc.getTextoTituloPublicacion().getText();
 			String clasificacion2 = "" + vc.getTextoClasificacion().getText();
 			String facultad2 = "" + vc.getTextoFacultad().getText();
@@ -299,7 +299,7 @@ public class Controlador implements ActionListener {
 			break;
 		}
 		case "boton_guardar_libro_fisico": {
-			int id3 = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			int id3 = Integer.parseInt("" + vc.getTextoId().getText());
 			String titulo3 = "" + vc.getTextoTituloPublicacion().getText();
 			String clasificacion3 = "" + vc.getTextoClasificacion().getText();
 			String facultad3 = "" + vc.getTextoFacultad().getText();
@@ -318,7 +318,7 @@ public class Controlador implements ActionListener {
 			break;
 		}
 		case "boton_guardar_libro_virtual": {
-			int id4 = Integer.parseInt("" + vc.getTextoPublicacion().getText());
+			int id4 = Integer.parseInt("" + vc.getTextoId().getText());
 			String titulo4 = "" + vc.getTextoTituloPublicacion().getText();
 			String clasificacion4 = "" + vc.getTextoClasificacion().getText();
 			String facultad4 = "" + vc.getTextoFacultad().getText();

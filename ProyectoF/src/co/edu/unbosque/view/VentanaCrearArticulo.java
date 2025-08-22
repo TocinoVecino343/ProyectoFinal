@@ -54,7 +54,7 @@ public class VentanaCrearArticulo extends JFrame {
 		textoGeograficos.setBounds(250, 150, 400, 30);
 		this.add(textoGeograficos);
 
-		labelCantidadPaginas = new JLabel("Ingrese la cantidad de páginas:");
+		labelCantidadPaginas = new JLabel("Ingrese la cantidad de páginas (NUMEROS):");
 		labelCantidadPaginas.setBounds(50, 200, 250, 30);
 		this.add(labelCantidadPaginas);
 
