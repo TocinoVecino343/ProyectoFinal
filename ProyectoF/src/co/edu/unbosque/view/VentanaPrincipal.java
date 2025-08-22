@@ -112,17 +112,6 @@ public class VentanaPrincipal extends JFrame {
 		etiquetaBusqueda.setForeground(Color.decode("#144031"));
 		etiquetaBusqueda.setFont(new Font("Arial", Font.BOLD, 14));
 		this.add(etiquetaBusqueda);
-		
-		//JCombobox
-		desplegable = new JFrame("hola soy homelochino");
-		desplegable.setSize(300,600);
-		String[]opciones = {};
-		JComboBox<String> comboBox = new JComboBox<>(opciones);
-	        comboBox.setBounds(50, 50, 150, 30);
-
-	        desplegable.add(comboBox);
-	        desplegable.setVisible(true);
-	        desplegable.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
 		campoBusqueda = new JTextField();
