@@ -567,8 +567,7 @@ public class Controlador implements ActionListener {
 			if (valorP != -1) {
 				va.setVisible(false);
 				vap.setVisible(true);
-				va.setVisible(false);
-				vap.setVisible(true);
+			
 
 				vap.getTextoTitulo().setText(objP.getListaPeliculas().get(valorP).getTitulo());
 				vap.getTextoClasificacion().setText(objP.getListaPeliculas().get(valorP).getClasificacion());
