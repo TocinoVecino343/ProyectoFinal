@@ -16,6 +16,7 @@ public class VentanaCrearLibroFisico extends JFrame {
 	private JTextField textoTiempoPrestamo;
 
 	private JButton botonGuardarLibroFisico;
+	private JButton botonCancelar;
 
 	public VentanaCrearLibroFisico() {
 		inicializarCrearLibroFisico();
@@ -48,6 +49,11 @@ public class VentanaCrearLibroFisico extends JFrame {
 		botonGuardarLibroFisico.setBackground(Color.decode("#E8F5E9"));
 		botonGuardarLibroFisico.setBounds(250, 160, 180, 40);
 		this.add(botonGuardarLibroFisico);
+		
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
+		botonCancelar.setBounds(100, 520, 200, 30);
+		this.add(botonCancelar);
 	}
 
 	public JLabel getLabelCantidadCopias() {
