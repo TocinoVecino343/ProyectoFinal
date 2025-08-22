@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,6 +45,7 @@ public class VentanaCrearLibroFisico extends JFrame {
 		this.add(textoTiempoPrestamo);
 
 		botonGuardarLibroFisico = new JButton("Guardar libro");
+		botonGuardarLibroFisico.setBackground(Color.decode("#E8F5E9"));
 		botonGuardarLibroFisico.setBounds(250, 160, 180, 40);
 		this.add(botonGuardarLibroFisico);
 	}

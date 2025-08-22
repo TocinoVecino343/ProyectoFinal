@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -63,6 +65,7 @@ public class VentanaCrearArticulo extends JFrame {
 		this.add(textoCantidadPaginas);
 
 		botonGuardarArticulo = new JButton("Guardar artículo");
+		botonGuardarArticulo.setBackground(Color.decode("#E8F5E9"));
 		botonGuardarArticulo.setBounds(250, 260, 180, 40);
 		this.add(botonGuardarArticulo);
 	}

@@ -32,10 +32,12 @@ public class VentanaEliminarLibroFisico extends JFrame {
 		add(idField);
 
 		eliminar = new JButton("Eliminar");
+		eliminar.setBackground(Color.decode("#E8F5E9"));
 		eliminar.setBounds(50, 110, 100, 30);
 		add(eliminar);
 
 		cancelar = new JButton("Cancelar");
+		cancelar.setBackground(Color.decode("#E8F5E9"));
 		cancelar.setBounds(180, 110, 100, 30);
 		add(cancelar);
 	}

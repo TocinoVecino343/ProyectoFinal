@@ -36,6 +36,7 @@ public class VentanaEliminarArticulo extends JFrame {
 		add(eliminar);
 
 		cancelar = new JButton("Cancelar");
+		cancelar.setBackground(Color.decode("#E8F5E9"));
 		cancelar.setBounds(180, 110, 100, 30);
 		add(cancelar);
 

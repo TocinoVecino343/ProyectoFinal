@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -62,6 +64,7 @@ public class VentanaCrearRevista extends JFrame {
 		this.add(textoDescripcionFisica);
 
 		botonGuardarRevista = new JButton("Guardar revista");
+		botonGuardarRevista.setBackground(Color.decode("#E8F5E9"));
 		botonGuardarRevista.setBounds(300, 260, 180, 40);
 		this.add(botonGuardarRevista);
 	}

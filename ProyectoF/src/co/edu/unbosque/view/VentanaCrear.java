@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -88,22 +90,27 @@ public class VentanaCrear extends JFrame {
 	    add(textoIdioma);
 
 	    botonCrearPelicula = new JButton("Crear Película");
+	    botonCrearPelicula.setBackground(Color.decode("#E8F5E9"));
 	    botonCrearPelicula.setBounds(500, 250, 200, 30);
 	    add(botonCrearPelicula);
 
 	    botonCrearArticulo = new JButton("Crear Artículo");
+	    botonCrearArticulo.setBackground(Color.decode("#E8F5E9"));
 	    botonCrearArticulo.setBounds(500, 300, 200, 30);
 	    add(botonCrearArticulo);
 
 	    botonCrearRevista = new JButton("Crear Revista");
+	    botonCrearRevista.setBackground(Color.decode("#E8F5E9"));
 	    botonCrearRevista.setBounds(500, 350, 200, 30);
 	    add(botonCrearRevista);
 
 	    botonCrearLibroFisico = new JButton("Crear Libro Físico");
+	    botonCrearLibroFisico.setBackground(Color.decode("#E8F5E9"));
 	    botonCrearLibroFisico.setBounds(500, 450, 200, 30);
 	    add(botonCrearLibroFisico);
 
 	    botonCrearLibroVirtual = new JButton("Crear Libro Virtual");
+	    botonCrearLibroVirtual.setBackground(Color.decode("#E8F5E9"));
 	    botonCrearLibroVirtual.setBounds(500, 500, 200, 30);
 	    add(botonCrearLibroVirtual);
 	}

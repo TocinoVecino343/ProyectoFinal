@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -124,6 +126,7 @@ public class VentanaCrearPelicula extends JFrame{
         this.add(textoSubtitulos);
         
         botonGuardarPelicula = new JButton("Guardar pelicula");
+        botonGuardarPelicula.setBackground(Color.decode("#E8F5E9"));
         botonGuardarPelicula.setBounds(300, 560, 150, 40);
         this.add(botonGuardarPelicula);  	
     }

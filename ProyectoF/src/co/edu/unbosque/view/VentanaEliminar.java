@@ -27,30 +27,37 @@ public class VentanaEliminar extends JFrame {
 		this.add(titulo);
 
 		botonEliminarArticulo = new JButton("Artículo");
+		botonEliminarArticulo.setBackground(Color.decode("#E8F5E9"));
 		botonEliminarArticulo.setBounds(50, 60, 130, 40);
 		this.add(botonEliminarArticulo);
 
 		botonEliminarJuego = new JButton("Juego");
+		botonEliminarJuego.setBackground(Color.decode("#E8F5E9"));
 		botonEliminarJuego.setBounds(220, 60, 130, 40);
 		this.add(botonEliminarJuego);
 
 		botonEliminarRevista = new JButton("Revista");
+		botonEliminarRevista.setBackground(Color.decode("#E8F5E9"));
 		botonEliminarRevista.setBounds(50, 120, 130, 40);
 		this.add(botonEliminarRevista);
 
 		botonEliminarPelicula = new JButton("Película");
+		botonEliminarPelicula.setBackground(Color.decode("#E8F5E9"));
 		botonEliminarPelicula.setBounds(220, 120, 130, 40);
 		this.add(botonEliminarPelicula);
 
 		botonEliminarLibroFisico = new JButton("Libro Físico");
+		botonEliminarLibroFisico.setBackground(Color.decode("#E8F5E9"));
 		botonEliminarLibroFisico.setBounds(50, 180, 130, 40);
 		this.add(botonEliminarLibroFisico);
 
 		botonEliminarLibroDigital = new JButton("Libro Digital");
+		botonEliminarLibroDigital.setBackground(Color.decode("#E8F5E9"));
 		botonEliminarLibroDigital.setBounds(220, 180, 130, 40);
 		this.add(botonEliminarLibroDigital);
 
 		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
 		botonCancelar.setBounds(135, 250, 130, 30);
 		this.add(botonCancelar);
 

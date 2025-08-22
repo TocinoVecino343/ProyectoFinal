@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,6 +45,7 @@ public class VentanaCrearLibroVirtual extends JFrame {
 		this.add(textoEsAudioLibro);
 
 		botonGuardarLibroVirtual = new JButton("Guardar archivo digital");
+		botonGuardarLibroVirtual.setBackground(Color.decode("#E8F5E9"));
 		botonGuardarLibroVirtual.setBounds(250, 160, 220, 40);
 		this.add(botonGuardarLibroVirtual);
 	}
