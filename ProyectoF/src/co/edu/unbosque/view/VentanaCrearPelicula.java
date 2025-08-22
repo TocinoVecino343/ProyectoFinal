@@ -134,7 +134,7 @@ public class VentanaCrearPelicula extends JFrame{
         cancelar = new JButton("Cancelar");
         cancelar.setBackground(Color.decode("#E8F5E9"));
         cancelar.setBounds(100, 460, 200, 30);
-        cancelar.setBounds(100, 520, 200, 30);
+        cancelar.setBounds(600, 560, 200, 30);
 		this.add(cancelar);
     }
 
