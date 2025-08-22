@@ -3,11 +3,14 @@ package co.edu.unbosque.view;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import java.awt.Color;
+import javax.swing.JButton;
 
 public class VentanaMostrarArticulo extends JFrame {
 
 	private JTextArea textoMostrarArticulo;
 	private JScrollPane scrollMostrarArticulo;
+	private JButton botonCancelar;
 
 	public VentanaMostrarArticulo() {
 		inicializarVentanaMostrarArticulo();
@@ -26,6 +29,12 @@ public class VentanaMostrarArticulo extends JFrame {
 		scrollMostrarArticulo = new JScrollPane(textoMostrarArticulo);
 		scrollMostrarArticulo.setBounds(50, 50, 1150, 650);
 		this.add(scrollMostrarArticulo);
+		
+		botonCancelar = new JButton("Cancelar");
+		botonCancelar.setBackground(Color.decode("#E8F5E9"));
+		botonCancelar.setBounds(575, 720, 130, 30);
+		this.add(botonCancelar);
+		
 	}
 
 	public JTextArea getTextoMostrarArticulo() {
@@ -42,6 +51,13 @@ public class VentanaMostrarArticulo extends JFrame {
 
 	public void setScrollMostrarArticulo(JScrollPane scrollMostrarArticulo) {
 		this.scrollMostrarArticulo = scrollMostrarArticulo;
+	}
+	
+	public JButton getBotonCancelar() {
+	    return botonCancelar;
+	}
+	public void setBotonCancelar(JButton botonCancelar) {
+	    this.botonCancelar = botonCancelar;
 	}
 
 }

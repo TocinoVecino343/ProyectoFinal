@@ -118,8 +118,8 @@ public class Controlador implements ActionListener {
 		vc.getBotonCrearLibroFisico().setActionCommand("boton_crear_libro_fisico");
 		vc.getBotonCrearLibroVirtual().addActionListener(this);
 		vc.getBotonCrearLibroVirtual().setActionCommand("boton_crear_libro_virtual");
-		vc.getBotonCrearLibroVirtual().addActionListener(this);
-		vc.getBotonCrearLibroVirtual().setActionCommand("boton_cancelar_crear");
+		vc.getBotonCancelar().addActionListener(this);
+		vc.getBotonCancelar().setActionCommand("boton_cancelar_crear");
 
 		// Oyentes guardar objeto
 		vcp.getBotonGuardarPelicula().addActionListener(this);
@@ -148,6 +148,18 @@ public class Controlador implements ActionListener {
 		vm.getBotonMostrarLibroVirtual().setActionCommand("boton_mostrar_libro_virtual");
 		vm.getBotonCancelar().addActionListener(this);
 		vm.getBotonCancelar().setActionCommand("boton_cancelar_mostrar");
+		vma.getBotonCancelar().addActionListener(this);
+		vma.getBotonCancelar().setActionCommand("cancelar_mostrar_articulo");
+		vmlf.getBotonCancelar().addActionListener(this);
+		vmlf.getBotonCancelar().setActionCommand("cancelar_mostrar_libro_fisico");
+		vmlv.getBotonCancelar().addActionListener(this);
+		vmlv.getBotonCancelar().setActionCommand("cancelar_mostrar_libro_virtual");
+		vmp.getBotonCancelar().addActionListener(this);
+		vmp.getBotonCancelar().setActionCommand("cancelar_mostrar_pelicula");
+		vmr.getBotonCancelar().addActionListener(this);
+		vmr.getBotonCancelar().setActionCommand("cancelar_mostrar_revista");
+		vmt.getBotonCancelar().addActionListener(this);
+		vmt.getBotonCancelar().setActionCommand("cancelar_mostrar_todo");
 
 		// Oyentes eliminar
 		ve.getBotonEliminarPelicula().addActionListener(this);
@@ -208,6 +220,8 @@ public class Controlador implements ActionListener {
 		// Oyentes buscador
 		vp.getBotonBuscar().addActionListener(this);
 		vp.getBotonBuscar().setActionCommand("boton_buscar");
+		
+		
 	}
 
 	@Override
@@ -854,10 +868,41 @@ public class Controlador implements ActionListener {
 			vm.setVisible(false);
 			vp.setVisible(true);
 			break;
+		
+		}
+		case "cancelar_mostrar_articulo": {
+		    vma.setVisible(false);
+		    vm.setVisible(true);
+		    break;
+		}
 
+		case "cancelar_mostrar_libro_fisico": {
+		    vmlf.setVisible(false);
+		    vm.setVisible(true);
+		    break;
+		}
+		case "cancelar_mostrar_libro_virtual": {
+		    vmlv.setVisible(false);
+		    vm.setVisible(true);
+		    break;
+		}
+		case "cancelar_mostrar_pelicula": {
+		    vmp.setVisible(false);
+		    vm.setVisible(true);
+		    break;
+		}
+		case "cancelar_mostrar_revista": {
+		    vmr.setVisible(false);
+		    vm.setVisible(true);
+		    break;
+		}
+		case "cancelar_mostrar_todo": {
+		    vmt.setVisible(false);
+		    vm.setVisible(true);
+		    break;
 		}
 		}
-
+	
 	}
 
 	public void runGUI() { // Run de la ventana
