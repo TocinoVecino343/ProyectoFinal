@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.util.HexFormat;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -40,7 +41,7 @@ public class VentanaPrincipal extends JFrame {
 	private DefaultListModel<String> modeloLista;
 	private JScrollPane scrollResultados;
 	private JButton botonBuscar;
-
+    private JFrame desplegable;
 	private Controlador controller; 
 	
 	public VentanaPrincipal(Controlador controller) {
@@ -111,6 +112,18 @@ public class VentanaPrincipal extends JFrame {
 		etiquetaBusqueda.setForeground(Color.decode("#144031"));
 		etiquetaBusqueda.setFont(new Font("Arial", Font.BOLD, 14));
 		this.add(etiquetaBusqueda);
+		
+		//JCombobox
+		desplegable = new JFrame("hola soy homelochino");
+		desplegable.setSize(300,600);
+		String[]opciones = {};
+		JComboBox<String> comboBox = new JComboBox<>(opciones);
+	        comboBox.setBounds(50, 50, 150, 30);
+
+	        desplegable.add(comboBox);
+	        desplegable.setVisible(true);
+	        desplegable.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
 		campoBusqueda = new JTextField();
 		campoBusqueda.setBounds(750, 150, 250, 35);
@@ -149,7 +162,7 @@ public class VentanaPrincipal extends JFrame {
 		this.add(scrollResultados);
 	}
 
-	// metodos de bsuqueda
+	// metodos de busqueda
 	private void buscarEnTiempoReal() {
 	    String textoBusqueda = campoBusqueda.getText().toLowerCase().trim();
 	    modeloLista.clear();
