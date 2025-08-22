@@ -32,6 +32,7 @@ public class VentanaActualizarArticulo extends JFrame {
 	private JTextField textoCantidadDePaginas;
 
 	private JButton botonActualizar;
+	private JButton botonCancelar;
 
 	public VentanaActualizarArticulo() {
 		setTitle("Actualizar Artículo");
