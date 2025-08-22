@@ -235,7 +235,7 @@ public class Controlador implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String alias = e.getActionCommand();
-		System.out.println(e);
+		int idActualizar = 0;
 
 		switch (alias) {
 
@@ -556,18 +556,17 @@ public class Controlador implements ActionListener {
 
 		// botones de actualizar
 		case "boton_actualizar": {
-			int id = Integer.parseInt(va.getIdField().getText());
+			idActualizar = Integer.parseInt(va.getIdField().getText());
 
-			int valorA = objA.filtrarActualizar(id);
-			int valorP = objP.filtrarActualizar(id);
-			int valorR = objR.filtrarActualizar(id);
-			int valorLf = objLf.filtrarActualizar(id);
-			int valorLv = objLv.filtrarActualizar(id);
+			int valorA = objA.filtrarActualizar(idActualizar);
+			int valorP = objP.filtrarActualizar(idActualizar);
+			int valorR = objR.filtrarActualizar(idActualizar);
+			int valorLf = objLf.filtrarActualizar(idActualizar);
+			int valorLv = objLv.filtrarActualizar(idActualizar);
 
 			if (valorP != -1) {
 				va.setVisible(false);
 				vap.setVisible(true);
-			
 
 				vap.getTextoTitulo().setText(objP.getListaPeliculas().get(valorP).getTitulo());
 				vap.getTextoClasificacion().setText(objP.getListaPeliculas().get(valorP).getClasificacion());
@@ -665,7 +664,7 @@ public class Controlador implements ActionListener {
 			break;
 
 		case "boton_actualizar_pelicula": {
-			int id = Integer.parseInt(va.getIdField().getText());
+			int idP = objP.filtrarActualizar(idActualizar);
 
 			String titulo = vap.getTextoTitulo().getText();
 			String clasificacion = vap.getTextoClasificacion().getText();
@@ -683,9 +682,10 @@ public class Controlador implements ActionListener {
 			String idiomasDisponibles = vap.getTextoIdiomasDisponibles().getText();
 			String subtitulos = vap.getTextoSubtitulos().getText();
 
-			Pelicula tempP = new Pelicula(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, productora,
-					pais, director, guion, fotografia, musica, reparto, duracion, idiomasDisponibles, subtitulos);
-			objP.actualizar(id, tempP);
+			Pelicula tempP = new Pelicula(idP + 2, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
+					productora, pais, director, guion, fotografia, musica, reparto, duracion, idiomasDisponibles,
+					subtitulos);
+			objP.actualizar(idActualizar, tempP);
 
 			vap.setVisible(false);
 			vp.setVisible(true);
@@ -693,7 +693,7 @@ public class Controlador implements ActionListener {
 			break;
 
 		case "boton_actualizar_revista": {
-			int id = Integer.parseInt(va.getIdField().getText());
+			int idR = objR.filtrarActualizar(idActualizar);
 
 			String titulo = var.getTextoTitulo().getText();
 			String clasificacion = var.getTextoClasificacion().getText();
@@ -705,9 +705,9 @@ public class Controlador implements ActionListener {
 			String terminosGeograficos = var.getTextoTerminosGeograficos().getText();
 			String descripcionFisica = var.getTextoDescripcionFisica().getText();
 
-			Revista tempR = new Revista(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autor, fuente,
-					terminosGeograficos, descripcionFisica);
-			objR.actualizar(id, tempR);
+			Revista tempR = new Revista(idR + 2, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autor,
+					fuente, terminosGeograficos, descripcionFisica);
+			objR.actualizar(idR, tempR);
 
 			var.setVisible(false);
 			vp.setVisible(true);
@@ -715,7 +715,7 @@ public class Controlador implements ActionListener {
 			break;
 
 		case "boton_actualizar_libro_fisico": {
-			int id = Integer.parseInt(va.getIdField().getText());
+			int idLf = objLf.filtrarActualizar(idActualizar);
 
 			String titulo = valf.getTextoTitulo().getText();
 			String clasificacion = valf.getTextoClasificacion().getText();
@@ -728,9 +728,9 @@ public class Controlador implements ActionListener {
 			int cantidadDeCopias = Integer.parseInt(valf.getTextoCantidadDeCopias().getText());
 			int tiempoDePrestamo = Integer.parseInt(valf.getTextoTiempoDePrestamo().getText());
 
-			LibroFisico tempLf = new LibroFisico(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
+			LibroFisico tempLf = new LibroFisico(idLf + 2, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
 					cantidadDePaginas, autor, editorial, cantidadDeCopias, tiempoDePrestamo);
-			objLf.actualizar(id, tempLf);
+			objLf.actualizar(idLf, tempLf);
 
 			valf.setVisible(false);
 			vp.setVisible(true);
@@ -738,7 +738,7 @@ public class Controlador implements ActionListener {
 			break;
 
 		case "boton_actualizar_libro_virtual": {
-			int id = Integer.parseInt(va.getIdField().getText());
+			int idLv = objLv.filtrarActualizar(idActualizar);
 
 			String titulo = valv.getTextoTitulo().getText();
 			String clasificacion = valv.getTextoClasificacion().getText();
@@ -751,9 +751,9 @@ public class Controlador implements ActionListener {
 			String tipoDeArchivo = valv.getTextoTipoDeArchivo().getText();
 			boolean esAudioLibro = valv.getTextoEsAudioLibro().getText().toLowerCase().contains("si");
 
-			LibroVirtual tempLv = new LibroVirtual(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
-					cantidadDePaginas, autor, editorial, tipoDeArchivo, esAudioLibro);
-			objLv.actualizar(id, tempLv);
+			LibroVirtual tempLv = new LibroVirtual(idLv + 2, titulo, clasificacion, facultad, fechaDePublicacion,
+					idioma, cantidadDePaginas, autor, editorial, tipoDeArchivo, esAudioLibro);
+			objLv.actualizar(idLv, tempLv);
 
 			valv.setVisible(false);
 			vp.setVisible(true);
@@ -761,7 +761,7 @@ public class Controlador implements ActionListener {
 			break;
 
 		case "boton_actualizar_articulo": {
-			int id = Integer.parseInt(va.getIdField().getText());
+			int idA = objA.filtrarActualizar(idActualizar);
 
 			String titulo = vaa.getTextoTitulo().getText();
 			String clasificacion = vaa.getTextoClasificacion().getText();
@@ -773,9 +773,9 @@ public class Controlador implements ActionListener {
 			String terminosGeograficos = vaa.getTextoTerminosGeograficos().getText();
 			int cantidadDePaginas = Integer.parseInt(vaa.getTextoCantidadDePaginas().getText());
 
-			Articulo tempA = new Articulo(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autor,
+			Articulo tempA = new Articulo(idA + 2, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autor,
 					fuente, terminosGeograficos, cantidadDePaginas);
-			objA.actualizar(id, tempA);
+			objA.actualizar(idA, tempA);
 
 			vaa.setVisible(false);
 			vp.setVisible(true);
