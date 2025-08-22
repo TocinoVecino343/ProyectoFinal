@@ -7,7 +7,6 @@ public class VentanaEliminar extends JFrame {
 
 	private JLabel titulo;
 	private JButton botonEliminarArticulo;
-	private JButton botonEliminarJuego;
 	private JButton botonEliminarRevista;
 	private JButton botonEliminarPelicula;
 	private JButton botonEliminarLibroFisico;
@@ -31,11 +30,6 @@ public class VentanaEliminar extends JFrame {
 		botonEliminarArticulo.setBounds(50, 60, 130, 40);
 		this.add(botonEliminarArticulo);
 
-		botonEliminarJuego = new JButton("Juego");
-		botonEliminarJuego.setBackground(Color.decode("#E8F5E9"));
-		botonEliminarJuego.setBounds(220, 60, 130, 40);
-		this.add(botonEliminarJuego);
-
 		botonEliminarRevista = new JButton("Revista");
 		botonEliminarRevista.setBackground(Color.decode("#E8F5E9"));
 		botonEliminarRevista.setBounds(50, 120, 130, 40);
@@ -43,17 +37,17 @@ public class VentanaEliminar extends JFrame {
 
 		botonEliminarPelicula = new JButton("Película");
 		botonEliminarPelicula.setBackground(Color.decode("#E8F5E9"));
-		botonEliminarPelicula.setBounds(220, 120, 130, 40);
+		botonEliminarPelicula.setBounds(220, 60, 130, 40);
 		this.add(botonEliminarPelicula);
 
 		botonEliminarLibroFisico = new JButton("Libro Físico");
 		botonEliminarLibroFisico.setBackground(Color.decode("#E8F5E9"));
-		botonEliminarLibroFisico.setBounds(50, 180, 130, 40);
+		botonEliminarLibroFisico.setBounds(135, 180, 130, 40);
 		this.add(botonEliminarLibroFisico);
 
-		botonEliminarLibroDigital = new JButton("Libro Digital");
+		botonEliminarLibroDigital = new JButton("Libro Virtual");
 		botonEliminarLibroDigital.setBackground(Color.decode("#E8F5E9"));
-		botonEliminarLibroDigital.setBounds(220, 180, 130, 40);
+		botonEliminarLibroDigital.setBounds(220, 120, 130, 40);
 		this.add(botonEliminarLibroDigital);
 
 		botonCancelar = new JButton("Cancelar");
@@ -77,14 +71,6 @@ public class VentanaEliminar extends JFrame {
 
 	public void setBotonEliminarArticulo(JButton botonEliminarArticulo) {
 		this.botonEliminarArticulo = botonEliminarArticulo;
-	}
-
-	public JButton getBotonEliminarJuego() {
-		return botonEliminarJuego;
-	}
-
-	public void setBotonEliminarJuego(JButton botonEliminarJuego) {
-		this.botonEliminarJuego = botonEliminarJuego;
 	}
 
 	public JButton getBotonEliminarRevista() {

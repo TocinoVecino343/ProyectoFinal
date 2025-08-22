@@ -154,6 +154,30 @@ public class Controlador implements ActionListener {
 		ve.getBotonCancelar().addActionListener(this);
 		ve.getBotonCancelar().setActionCommand("boton_cancelar_eliminar");
 
+		// Oyentes eliminar especificos
+
+		vep.getEliminar().addActionListener(this);
+		vep.getEliminar().setActionCommand("eliminar_pelicula");
+		vea.getEliminar().addActionListener(this);
+		vea.getEliminar().setActionCommand("eliminar_articulo");
+		ver.getEliminar().addActionListener(this);
+		ver.getEliminar().setActionCommand("eliminar_revista");
+		velf.getEliminar().addActionListener(this);
+		velf.getEliminar().setActionCommand("eliminar_libro_fisico");
+		velv.getEliminar().addActionListener(this);
+		velv.getEliminar().setActionCommand("eliminar_libro_virtual");
+
+		vep.getCancelar().addActionListener(this);
+		vep.getCancelar().setActionCommand("cancelar_eliminar_pelicula");
+		vea.getCancelar().addActionListener(this);
+		vea.getCancelar().setActionCommand("cancelar_eliminar_articulo");
+		ver.getCancelar().addActionListener(this);
+		ver.getCancelar().setActionCommand("cancelar_eliminar_revista");
+		velf.getCancelar().addActionListener(this);
+		velf.getCancelar().setActionCommand("cancelar_eliminar_libro_fisico");
+		velv.getCancelar().addActionListener(this);
+		velv.getCancelar().setActionCommand("cancelar_eliminar_libro_virtual");
+
 		// Oyentes actualizar
 		va.getBotonActualizar().addActionListener(this);
 		va.getBotonActualizar().setActionCommand("boton_actualizar");
@@ -181,7 +205,7 @@ public class Controlador implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String alias = e.getActionCommand();
 		System.out.println(e);
-		
+
 		switch (alias) {
 
 		// Botones CRUD
@@ -417,9 +441,10 @@ public class Controlador implements ActionListener {
 			if (retorno == false) {
 				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado una pelicula con aquel id",
 						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			} else {
+				vep.setVisible(false);
+				vp.setVisible(true);
 			}
-			vep.setVisible(false);
-			vp.setVisible(true);
 		}
 			break;
 		case "eliminar_articulo": {
@@ -428,9 +453,10 @@ public class Controlador implements ActionListener {
 			if (retorno == false) {
 				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado un articulo con aquel id",
 						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			} else {
+				vea.setVisible(false);
+				vp.setVisible(true);
 			}
-			vea.setVisible(false);
-			vp.setVisible(true);
 		}
 			break;
 		case "eliminar_revista": {
@@ -439,9 +465,10 @@ public class Controlador implements ActionListener {
 			if (retorno == false) {
 				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado una revista con aquel id",
 						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			} else {
+				ver.setVisible(false);
+				vp.setVisible(true);
 			}
-			ver.setVisible(false);
-			vp.setVisible(true);
 		}
 			break;
 		case "eliminar_libro_fisico": {
@@ -450,230 +477,278 @@ public class Controlador implements ActionListener {
 			if (retorno == false) {
 				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado un libro fisico con aquel id",
 						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			} else {
+				velf.setVisible(false);
+				vp.setVisible(true);
 			}
-			velf.setVisible(false);
-			vp.setVisible(true);
 		}
 			break;
 		case "eliminar_libro_virtual": {
 			int idEliminarLibroVirtual = Integer.parseInt(velv.getIdField().getText());
 			boolean retorno = objLv.eliminarDato(idEliminarLibroVirtual);
+			System.out.println(retorno);
 			if (retorno == false) {
 				JOptionPane.showMessageDialog(null, "ERROR-No se ha hallado un libro virtual con aquel id",
 						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			} else {
+				velv.setVisible(false);
+				vp.setVisible(true);
 			}
+		}
+			break;
+
+		case "cancelar_eliminar_pelicula": {
+			vep.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
+		case "cancelar_eliminar_articulo": {
+			vea.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
+		case "cancelar_eliminar_revista": {
+			ver.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
+		case "cancelar_eliminar_libro_fisico": {
+			velf.setVisible(false);
+			vp.setVisible(true);
+		}
+			break;
+		case "cancelar_eliminar_libro_virtual": {
 			velv.setVisible(false);
 			vp.setVisible(true);
 		}
 			break;
 
+		// botones de actualizar
 		case "boton_actualizar": {
-		    int id = Integer.parseInt(va.getIdField().getText());
+			int id = Integer.parseInt(va.getIdField().getText());
 
-		    int valorA = objA.filtrarActualizar(id);
-		    int valorP = objP.filtrarActualizar(id);
-		    int valorR = objR.filtrarActualizar(id);
-		    int valorLf = objLf.filtrarActualizar(id);
-		    int valorLv = objLv.filtrarActualizar(id);
+			int valorA = objA.filtrarActualizar(id);
+			int valorP = objP.filtrarActualizar(id);
+			int valorR = objR.filtrarActualizar(id);
+			int valorLf = objLf.filtrarActualizar(id);
+			int valorLv = objLv.filtrarActualizar(id);
 
-		    if (valorP != -1) {
-		        va.setVisible(false);
-		        vap.setVisible(true);
+			if (valorP != -1) {
+				va.setVisible(false);
+				vap.setVisible(true);
 
-		        vap.getTextoTitulo().setText(objP.getListaPeliculas().get(valorP).getTitulo());
-		        vap.getTextoClasificacion().setText(objP.getListaPeliculas().get(valorP).getClasificacion());
-		        vap.getTextoFacultad().setText(objP.getListaPeliculas().get(valorP).getFacultad());
-		        vap.getTextoFechaDePublicacion().setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFechaDePublicacion()));
-		        vap.getTextoIdioma().setText(objP.getListaPeliculas().get(valorP).getIdioma());
-		        vap.getTextoProductora().setText(objP.getListaPeliculas().get(valorP).getProductora());
-		        vap.getTextoPais().setText(objP.getListaPeliculas().get(valorP).getPais());
-		        vap.getTextoDirector().setText(objP.getListaPeliculas().get(valorP).getDirector());
-		        vap.getTextoGuion().setText(objP.getListaPeliculas().get(valorP).getGuion());
-		        vap.getTextoFotografia().setText(objP.getListaPeliculas().get(valorP).getFotografia());
-		        vap.getTextoMusica().setText(objP.getListaPeliculas().get(valorP).getMusica());
-		        vap.getTextoReparto().setText(objP.getListaPeliculas().get(valorP).getReparto());
-		        vap.getTextoDuracion().setText(objP.getListaPeliculas().get(valorP).getDuracion());
-		        vap.getTextoIdiomasDisponibles().setText(objP.getListaPeliculas().get(valorP).getIdiomasDisponibles());
-		        vap.getTextoSubtitulos().setText(objP.getListaPeliculas().get(valorP).getSubtitulos());
+				vap.getTextoTitulo().setText(objP.getListaPeliculas().get(valorP).getTitulo());
+				vap.getTextoClasificacion().setText(objP.getListaPeliculas().get(valorP).getClasificacion());
+				vap.getTextoFacultad().setText(objP.getListaPeliculas().get(valorP).getFacultad());
+				vap.getTextoFechaDePublicacion()
+						.setText(String.valueOf(objP.getListaPeliculas().get(valorP).getFechaDePublicacion()));
+				vap.getTextoIdioma().setText(objP.getListaPeliculas().get(valorP).getIdioma());
+				vap.getTextoProductora().setText(objP.getListaPeliculas().get(valorP).getProductora());
+				vap.getTextoPais().setText(objP.getListaPeliculas().get(valorP).getPais());
+				vap.getTextoDirector().setText(objP.getListaPeliculas().get(valorP).getDirector());
+				vap.getTextoGuion().setText(objP.getListaPeliculas().get(valorP).getGuion());
+				vap.getTextoFotografia().setText(objP.getListaPeliculas().get(valorP).getFotografia());
+				vap.getTextoMusica().setText(objP.getListaPeliculas().get(valorP).getMusica());
+				vap.getTextoReparto().setText(objP.getListaPeliculas().get(valorP).getReparto());
+				vap.getTextoDuracion().setText(objP.getListaPeliculas().get(valorP).getDuracion());
+				vap.getTextoIdiomasDisponibles().setText(objP.getListaPeliculas().get(valorP).getIdiomasDisponibles());
+				vap.getTextoSubtitulos().setText(objP.getListaPeliculas().get(valorP).getSubtitulos());
 
-		    } else if (valorR != -1) {
-		        va.setVisible(false);
-		        var.setVisible(true);
+			} else if (valorR != -1) {
+				va.setVisible(false);
+				var.setVisible(true);
 
-		        var.getTextoTitulo().setText(objR.getListaRevistas().get(valorR).getTitulo());
-		        var.getTextoClasificacion().setText(objR.getListaRevistas().get(valorR).getClasificacion());
-		        var.getTextoFacultad().setText(objR.getListaRevistas().get(valorR).getFacultad());
-		        var.getTextoFechaDePublicacion().setText(String.valueOf(objR.getListaRevistas().get(valorR).getFechaDePublicacion()));
-		        var.getTextoIdioma().setText(objR.getListaRevistas().get(valorR).getIdioma());
-		        var.getTextoAutor().setText(objR.getListaRevistas().get(valorR).getAutor());
-		        var.getTextoFuente().setText(objR.getListaRevistas().get(valorR).getFuente());
-		        var.getTextoTerminosGeograficos().setText(objR.getListaRevistas().get(valorR).getTerminosGeograficos());
-		        var.getTextoDescripcionFisica().setText(objR.getListaRevistas().get(valorR).getDescripcionFisica());
+				var.getTextoTitulo().setText(objR.getListaRevistas().get(valorR).getTitulo());
+				var.getTextoClasificacion().setText(objR.getListaRevistas().get(valorR).getClasificacion());
+				var.getTextoFacultad().setText(objR.getListaRevistas().get(valorR).getFacultad());
+				var.getTextoFechaDePublicacion()
+						.setText(String.valueOf(objR.getListaRevistas().get(valorR).getFechaDePublicacion()));
+				var.getTextoIdioma().setText(objR.getListaRevistas().get(valorR).getIdioma());
+				var.getTextoAutor().setText(objR.getListaRevistas().get(valorR).getAutor());
+				var.getTextoFuente().setText(objR.getListaRevistas().get(valorR).getFuente());
+				var.getTextoTerminosGeograficos().setText(objR.getListaRevistas().get(valorR).getTerminosGeograficos());
+				var.getTextoDescripcionFisica().setText(objR.getListaRevistas().get(valorR).getDescripcionFisica());
 
-		    } else if (valorLf != -1) {
-		        va.setVisible(false);
-		        valf.setVisible(true);
+			} else if (valorLf != -1) {
+				va.setVisible(false);
+				valf.setVisible(true);
 
-		        valf.getTextoTitulo().setText(objLf.getListaLibrosFisicos().get(valorLf).getTitulo());
-		        valf.getTextoClasificacion().setText(objLf.getListaLibrosFisicos().get(valorLf).getClasificacion());
-		        valf.getTextoFacultad().setText(objLf.getListaLibrosFisicos().get(valorLf).getFacultad());
-		        valf.getTextoFechaDePublicacion().setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getFechaDePublicacion()));
-		        valf.getTextoIdioma().setText(objLf.getListaLibrosFisicos().get(valorLf).getIdioma());
-		        valf.getTextoCantidadDePaginas().setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getCantidadDePaginas()));
-		        valf.getTextoAutor().setText(objLf.getListaLibrosFisicos().get(valorLf).getAutor());
-		        valf.getTextoEditorial().setText(objLf.getListaLibrosFisicos().get(valorLf).getEditorial());
-		        valf.getTextoCantidadDeCopias().setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getCantidadDeCopias()));
-		        valf.getTextoTiempoDePrestamo().setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getTiempoDePrestamo()));
+				valf.getTextoTitulo().setText(objLf.getListaLibrosFisicos().get(valorLf).getTitulo());
+				valf.getTextoClasificacion().setText(objLf.getListaLibrosFisicos().get(valorLf).getClasificacion());
+				valf.getTextoFacultad().setText(objLf.getListaLibrosFisicos().get(valorLf).getFacultad());
+				valf.getTextoFechaDePublicacion()
+						.setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getFechaDePublicacion()));
+				valf.getTextoIdioma().setText(objLf.getListaLibrosFisicos().get(valorLf).getIdioma());
+				valf.getTextoCantidadDePaginas()
+						.setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getCantidadDePaginas()));
+				valf.getTextoAutor().setText(objLf.getListaLibrosFisicos().get(valorLf).getAutor());
+				valf.getTextoEditorial().setText(objLf.getListaLibrosFisicos().get(valorLf).getEditorial());
+				valf.getTextoCantidadDeCopias()
+						.setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getCantidadDeCopias()));
+				valf.getTextoTiempoDePrestamo()
+						.setText(String.valueOf(objLf.getListaLibrosFisicos().get(valorLf).getTiempoDePrestamo()));
 
-		    } else if (valorLv != -1) {
-		        va.setVisible(false);
-		        valv.setVisible(true);
+			} else if (valorLv != -1) {
+				va.setVisible(false);
+				valv.setVisible(true);
 
-		        valv.getTextoTitulo().setText(objLv.getListaLibrosVirtuales().get(valorLv).getTitulo());
-		        valv.getTextoClasificacion().setText(objLv.getListaLibrosVirtuales().get(valorLv).getClasificacion());
-		        valv.getTextoFacultad().setText(objLv.getListaLibrosVirtuales().get(valorLv).getFacultad());
-		        valv.getTextoFechaDePublicacion().setText(String.valueOf(objLv.getListaLibrosVirtuales().get(valorLv).getFechaDePublicacion()));
-		        valv.getTextoIdioma().setText(objLv.getListaLibrosVirtuales().get(valorLv).getIdioma());
-		        valv.getTextoCantidadDePaginas().setText(String.valueOf(objLv.getListaLibrosVirtuales().get(valorLv).getCantidadDePaginas()));
-		        valv.getTextoAutor().setText(objLv.getListaLibrosVirtuales().get(valorLv).getAutor());
-		        valv.getTextoEditorial().setText(objLv.getListaLibrosVirtuales().get(valorLv).getEditorial());
-		        valv.getTextoTipoDeArchivo().setText(objLv.getListaLibrosVirtuales().get(valorLv).getTipoDeArchivo());
+				valv.getTextoTitulo().setText(objLv.getListaLibrosVirtuales().get(valorLv).getTitulo());
+				valv.getTextoClasificacion().setText(objLv.getListaLibrosVirtuales().get(valorLv).getClasificacion());
+				valv.getTextoFacultad().setText(objLv.getListaLibrosVirtuales().get(valorLv).getFacultad());
+				valv.getTextoFechaDePublicacion()
+						.setText(String.valueOf(objLv.getListaLibrosVirtuales().get(valorLv).getFechaDePublicacion()));
+				valv.getTextoIdioma().setText(objLv.getListaLibrosVirtuales().get(valorLv).getIdioma());
+				valv.getTextoCantidadDePaginas()
+						.setText(String.valueOf(objLv.getListaLibrosVirtuales().get(valorLv).getCantidadDePaginas()));
+				valv.getTextoAutor().setText(objLv.getListaLibrosVirtuales().get(valorLv).getAutor());
+				valv.getTextoEditorial().setText(objLv.getListaLibrosVirtuales().get(valorLv).getEditorial());
+				valv.getTextoTipoDeArchivo().setText(objLv.getListaLibrosVirtuales().get(valorLv).getTipoDeArchivo());
 
-		        String esAudioLibroMostrar = objLv.getListaLibrosVirtuales().get(valorLv).isEsAudioLibro() ? "si" : "no";
-		        valv.getTextoEsAudioLibro().setText(esAudioLibroMostrar);
+				String esAudioLibroMostrar = objLv.getListaLibrosVirtuales().get(valorLv).isEsAudioLibro() ? "si"
+						: "no";
+				valv.getTextoEsAudioLibro().setText(esAudioLibroMostrar);
 
-		    } else if (valorA != -1) {
-		        va.setVisible(false);
-		        vaa.setVisible(true);
+			} else if (valorA != -1) {
+				va.setVisible(false);
+				vaa.setVisible(true);
 
-		        vaa.getTextoTitulo().setText(objA.getListaArticulos().get(valorA).getTitulo());
-		        vaa.getTextoClasificacion().setText(objA.getListaArticulos().get(valorA).getClasificacion());
-		        vaa.getTextoFacultad().setText(objA.getListaArticulos().get(valorA).getFacultad());
-		        vaa.getTextoFechaDePublicacion().setText(String.valueOf(objA.getListaArticulos().get(valorA).getFechaDePublicacion()));
-		        vaa.getTextoIdioma().setText(objA.getListaArticulos().get(valorA).getIdioma());
-		        vaa.getTextoAutor().setText(objA.getListaArticulos().get(valorA).getAutor());
-		        vaa.getTextoFuente().setText(objA.getListaArticulos().get(valorA).getFuente());
-		        vaa.getTextoTerminosGeograficos().setText(objA.getListaArticulos().get(valorA).getTerminosGeograficos());
-		        vaa.getTextoCantidadDePaginas().setText(String.valueOf(objA.getListaArticulos().get(valorA).getCantidadDePaginas()));
+				vaa.getTextoTitulo().setText(objA.getListaArticulos().get(valorA).getTitulo());
+				vaa.getTextoClasificacion().setText(objA.getListaArticulos().get(valorA).getClasificacion());
+				vaa.getTextoFacultad().setText(objA.getListaArticulos().get(valorA).getFacultad());
+				vaa.getTextoFechaDePublicacion()
+						.setText(String.valueOf(objA.getListaArticulos().get(valorA).getFechaDePublicacion()));
+				vaa.getTextoIdioma().setText(objA.getListaArticulos().get(valorA).getIdioma());
+				vaa.getTextoAutor().setText(objA.getListaArticulos().get(valorA).getAutor());
+				vaa.getTextoFuente().setText(objA.getListaArticulos().get(valorA).getFuente());
+				vaa.getTextoTerminosGeograficos()
+						.setText(objA.getListaArticulos().get(valorA).getTerminosGeograficos());
+				vaa.getTextoCantidadDePaginas()
+						.setText(String.valueOf(objA.getListaArticulos().get(valorA).getCantidadDePaginas()));
 
-		    } else {
-		        JOptionPane.showMessageDialog(null, "ERROR - No se ha hallado una publicación con ese ID", "MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
-		    }
+			} else {
+				JOptionPane.showMessageDialog(null, "ERROR - No se ha hallado una publicación con ese ID",
+						"MENSAJE DE ERROR", JOptionPane.ERROR_MESSAGE, null);
+			}
 		}
-		break;
+			break;
 
 		case "boton_actualizar_pelicula": {
-		    int id = Integer.parseInt(va.getIdField().getText());
+			int id = Integer.parseInt(va.getIdField().getText());
 
-		    String titulo = vap.getTextoTitulo().getText();
-		    String clasificacion = vap.getTextoClasificacion().getText();
-		    String facultad = vap.getTextoFacultad().getText();
-		    int fechaDePublicacion = Integer.parseInt(vap.getTextoFechaDePublicacion().getText());
-		    String idioma = vap.getTextoIdioma().getText();
-		    String productora = vap.getTextoProductora().getText();
-		    String pais = vap.getTextoPais().getText();
-		    String director = vap.getTextoDirector().getText();
-		    String guion = vap.getTextoGuion().getText();
-		    String fotografia = vap.getTextoFotografia().getText();
-		    String musica = vap.getTextoMusica().getText();
-		    String reparto = vap.getTextoReparto().getText();
-		    String duracion = vap.getTextoDuracion().getText();
-		    String idiomasDisponibles = vap.getTextoIdiomasDisponibles().getText();
-		    String subtitulos = vap.getTextoSubtitulos().getText();
+			String titulo = vap.getTextoTitulo().getText();
+			String clasificacion = vap.getTextoClasificacion().getText();
+			String facultad = vap.getTextoFacultad().getText();
+			int fechaDePublicacion = Integer.parseInt(vap.getTextoFechaDePublicacion().getText());
+			String idioma = vap.getTextoIdioma().getText();
+			String productora = vap.getTextoProductora().getText();
+			String pais = vap.getTextoPais().getText();
+			String director = vap.getTextoDirector().getText();
+			String guion = vap.getTextoGuion().getText();
+			String fotografia = vap.getTextoFotografia().getText();
+			String musica = vap.getTextoMusica().getText();
+			String reparto = vap.getTextoReparto().getText();
+			String duracion = vap.getTextoDuracion().getText();
+			String idiomasDisponibles = vap.getTextoIdiomasDisponibles().getText();
+			String subtitulos = vap.getTextoSubtitulos().getText();
 
-		    Pelicula tempP = new Pelicula(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, productora, pais, director, guion, fotografia, musica, reparto, duracion, idiomasDisponibles, subtitulos);
-		    objP.actualizar(id, tempP);
+			Pelicula tempP = new Pelicula(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, productora,
+					pais, director, guion, fotografia, musica, reparto, duracion, idiomasDisponibles, subtitulos);
+			objP.actualizar(id, tempP);
 
-		    vap.setVisible(false);
-		    vp.setVisible(true);
+			vap.setVisible(false);
+			vp.setVisible(true);
 		}
-		break;
+			break;
 
 		case "boton_actualizar_revista": {
-		    int id = Integer.parseInt(va.getIdField().getText());
+			int id = Integer.parseInt(va.getIdField().getText());
 
-		    String titulo = var.getTextoTitulo().getText();
-		    String clasificacion = var.getTextoClasificacion().getText();
-		    String facultad = var.getTextoFacultad().getText();
-		    int fechaDePublicacion = Integer.parseInt(var.getTextoFechaDePublicacion().getText());
-		    String idioma = var.getTextoIdioma().getText();
-		    String autor = var.getTextoAutor().getText();
-		    String fuente = var.getTextoFuente().getText();
-		    String terminosGeograficos = var.getTextoTerminosGeograficos().getText();
-		    String descripcionFisica = var.getTextoDescripcionFisica().getText();
+			String titulo = var.getTextoTitulo().getText();
+			String clasificacion = var.getTextoClasificacion().getText();
+			String facultad = var.getTextoFacultad().getText();
+			int fechaDePublicacion = Integer.parseInt(var.getTextoFechaDePublicacion().getText());
+			String idioma = var.getTextoIdioma().getText();
+			String autor = var.getTextoAutor().getText();
+			String fuente = var.getTextoFuente().getText();
+			String terminosGeograficos = var.getTextoTerminosGeograficos().getText();
+			String descripcionFisica = var.getTextoDescripcionFisica().getText();
 
-		    Revista tempR = new Revista(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autor, fuente, terminosGeograficos, descripcionFisica);
-		    objR.actualizar(id, tempR);
+			Revista tempR = new Revista(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autor, fuente,
+					terminosGeograficos, descripcionFisica);
+			objR.actualizar(id, tempR);
 
-		    var.setVisible(false);
-		    vp.setVisible(true);
+			var.setVisible(false);
+			vp.setVisible(true);
 		}
-		break;
+			break;
 
 		case "boton_actualizar_libro_fisico": {
-		    int id = Integer.parseInt(va.getIdField().getText());
+			int id = Integer.parseInt(va.getIdField().getText());
 
-		    String titulo = valf.getTextoTitulo().getText();
-		    String clasificacion = valf.getTextoClasificacion().getText();
-		    String facultad = valf.getTextoFacultad().getText();
-		    int fechaDePublicacion = Integer.parseInt(valf.getTextoFechaDePublicacion().getText());
-		    String idioma = valf.getTextoIdioma().getText();
-		    int cantidadDePaginas = Integer.parseInt(valf.getTextoCantidadDePaginas().getText());
-		    String autor = valf.getTextoAutor().getText();
-		    String editorial = valf.getTextoEditorial().getText();
-		    int cantidadDeCopias = Integer.parseInt(valf.getTextoCantidadDeCopias().getText());
-		    int tiempoDePrestamo = Integer.parseInt(valf.getTextoTiempoDePrestamo().getText());
+			String titulo = valf.getTextoTitulo().getText();
+			String clasificacion = valf.getTextoClasificacion().getText();
+			String facultad = valf.getTextoFacultad().getText();
+			int fechaDePublicacion = Integer.parseInt(valf.getTextoFechaDePublicacion().getText());
+			String idioma = valf.getTextoIdioma().getText();
+			int cantidadDePaginas = Integer.parseInt(valf.getTextoCantidadDePaginas().getText());
+			String autor = valf.getTextoAutor().getText();
+			String editorial = valf.getTextoEditorial().getText();
+			int cantidadDeCopias = Integer.parseInt(valf.getTextoCantidadDeCopias().getText());
+			int tiempoDePrestamo = Integer.parseInt(valf.getTextoTiempoDePrestamo().getText());
 
-		    LibroFisico tempLf = new LibroFisico(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, cantidadDePaginas, autor, editorial, cantidadDeCopias, tiempoDePrestamo);
-		    objLf.actualizar(id, tempLf);
+			LibroFisico tempLf = new LibroFisico(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
+					cantidadDePaginas, autor, editorial, cantidadDeCopias, tiempoDePrestamo);
+			objLf.actualizar(id, tempLf);
 
-		    valf.setVisible(false);
-		    vp.setVisible(true);
+			valf.setVisible(false);
+			vp.setVisible(true);
 		}
-		break;
+			break;
 
 		case "boton_actualizar_libro_virtual": {
-		    int id = Integer.parseInt(va.getIdField().getText());
+			int id = Integer.parseInt(va.getIdField().getText());
 
-		    String titulo = valv.getTextoTitulo().getText();
-		    String clasificacion = valv.getTextoClasificacion().getText();
-		    String facultad = valv.getTextoFacultad().getText();
-		    int fechaDePublicacion = Integer.parseInt(valv.getTextoFechaDePublicacion().getText());
-		    String idioma = valv.getTextoIdioma().getText();
-		    int cantidadDePaginas = Integer.parseInt(valv.getTextoCantidadDePaginas().getText());
-		    String autor = valv.getTextoAutor().getText();
-		    String editorial = valv.getTextoEditorial().getText();
-		    String tipoDeArchivo = valv.getTextoTipoDeArchivo().getText();
-		    boolean esAudioLibro = valv.getTextoEsAudioLibro().getText().toLowerCase().contains("si");
+			String titulo = valv.getTextoTitulo().getText();
+			String clasificacion = valv.getTextoClasificacion().getText();
+			String facultad = valv.getTextoFacultad().getText();
+			int fechaDePublicacion = Integer.parseInt(valv.getTextoFechaDePublicacion().getText());
+			String idioma = valv.getTextoIdioma().getText();
+			int cantidadDePaginas = Integer.parseInt(valv.getTextoCantidadDePaginas().getText());
+			String autor = valv.getTextoAutor().getText();
+			String editorial = valv.getTextoEditorial().getText();
+			String tipoDeArchivo = valv.getTextoTipoDeArchivo().getText();
+			boolean esAudioLibro = valv.getTextoEsAudioLibro().getText().toLowerCase().contains("si");
 
-		    LibroVirtual tempLv = new LibroVirtual(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, cantidadDePaginas, autor, editorial, tipoDeArchivo, esAudioLibro);
-		    objLv.actualizar(id, tempLv);
+			LibroVirtual tempLv = new LibroVirtual(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma,
+					cantidadDePaginas, autor, editorial, tipoDeArchivo, esAudioLibro);
+			objLv.actualizar(id, tempLv);
 
-		    valv.setVisible(false);
-		    vp.setVisible(true);
+			valv.setVisible(false);
+			vp.setVisible(true);
 		}
-		break;
+			break;
 
 		case "boton_actualizar_articulo": {
-		    int id = Integer.parseInt(va.getIdField().getText());
+			int id = Integer.parseInt(va.getIdField().getText());
 
-		    String titulo = vaa.getTextoTitulo().getText();
-		    String clasificacion = vaa.getTextoClasificacion().getText();
-		    String facultad = vaa.getTextoFacultad().getText();
-		    int fechaDePublicacion = Integer.parseInt(vaa.getTextoFechaDePublicacion().getText());
-		    String idioma = vaa.getTextoIdioma().getText();
-		    String autor = vaa.getTextoAutor().getText();
-		    String fuente = vaa.getTextoFuente().getText();
-		    String terminosGeograficos = vaa.getTextoTerminosGeograficos().getText();
-		    int cantidadDePaginas = Integer.parseInt(vaa.getTextoCantidadDePaginas().getText());
+			String titulo = vaa.getTextoTitulo().getText();
+			String clasificacion = vaa.getTextoClasificacion().getText();
+			String facultad = vaa.getTextoFacultad().getText();
+			int fechaDePublicacion = Integer.parseInt(vaa.getTextoFechaDePublicacion().getText());
+			String idioma = vaa.getTextoIdioma().getText();
+			String autor = vaa.getTextoAutor().getText();
+			String fuente = vaa.getTextoFuente().getText();
+			String terminosGeograficos = vaa.getTextoTerminosGeograficos().getText();
+			int cantidadDePaginas = Integer.parseInt(vaa.getTextoCantidadDePaginas().getText());
 
-		    Articulo tempA = new Articulo(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autor, fuente, terminosGeograficos, cantidadDePaginas);
-		    objA.actualizar(id, tempA);
+			Articulo tempA = new Articulo(id, titulo, clasificacion, facultad, fechaDePublicacion, idioma, autor,
+					fuente, terminosGeograficos, cantidadDePaginas);
+			objA.actualizar(id, tempA);
 
-		    vaa.setVisible(false);
-		    vp.setVisible(true);
+			vaa.setVisible(false);
+			vp.setVisible(true);
 		}
-		break;
+			break;
 		case "boton_cancelar_actualizar": {
 			va.setVisible(false);
 			vp.setVisible(true);
