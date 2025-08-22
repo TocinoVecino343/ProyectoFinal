@@ -58,7 +58,7 @@ public class VentanaPrincipal extends JFrame {
 	    this.setResizable(false);
 	    this.setLayout(null);
 
-	    //Titulo
+	    //Título
 	    titulo = new JLabel("Bienvenido a la Biblioteca", SwingConstants.CENTER);
 	    titulo.setBounds(200, 40, 600, 30);
 	    titulo.setForeground(Color.decode("#144031"));
